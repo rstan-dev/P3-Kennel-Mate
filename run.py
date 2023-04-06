@@ -94,7 +94,25 @@ def delete_bkg_menu():
     return delete_menu_choice
 
 
-
+def view_bkg_menu():
+    print('*' * 22)
+    print("View a Booking Menu\n")
+    print('*' * 22)
+    menu_choice = 'x'
+    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 6):
+        print('Please choose an option from the following:\n')
+        print('[1] - View All Bookings')
+        print('[2] - Search by Booking No.')
+        print('[3] - Or, Search bookings by Date')
+        print("[4] - Or, Search bookings by Dog's Name")
+        print('[5] - Return to Main menu')
+        try:
+            delete_menu_choice = int(input())
+            if delete_menu_choice not in range(1, 6):
+                raise ValueError
+        except ValueError:
+            print('Invalid input.  Please enter a number between 1 and 6')
+    return delete_menu_choice
 
 
 
@@ -108,7 +126,8 @@ def test_function_calls():
     # start()
     # display_main_menu()
     # update_bkg_menu()
-    delete_bkg_menu()
+    # delete_bkg_menu()
+    view_bkg_menu()
 
 
 test_function_calls()
