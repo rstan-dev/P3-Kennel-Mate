@@ -22,6 +22,24 @@ def start():
     print("** Welcome to the Doggy Daycare Admin System. **\n")
 
 
+def display_main_menu():
+    print('*' * 50)
+    print("Main Menu\n")
+    menu_choice = 'x'
+    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 6):
+        print('Please choose an option from the following:\n')
+        print('[1] - Create A Booking')
+        print('[2] - Update A Booking')
+        print('[3] - Delete A Booking')
+        print('[4] - View Bookings')
+        print('[5] - Exit')
+        try:
+            main_menu_choice = int(input())
+            if main_menu_choice not in range(1, 6):
+                raise ValueError
+        except ValueError:
+            print('Invalid input.  Please enter a number between 1 and 5')
+    return main_menu_choice
 
 
 
@@ -33,6 +51,8 @@ def test_function_calls():
     '''
     print(all_bookings)
     start()
+    display_main_menu()
+
 
 test_function_calls()
 
