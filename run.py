@@ -33,7 +33,7 @@ def display_main_menu():
     print('*' * 50)
     print("Main Menu\n")
     menu_choice = 'x'
-    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 6):
+    while not str(menu_choice).isnumeric() or int(menu_choice) not in range(1, 6):
         print('Please choose an option from the following:\n')
         print('[1] - Create A Booking')
         print('[2] - Update A Booking')
@@ -41,12 +41,15 @@ def display_main_menu():
         print('[4] - View Bookings')
         print('[5] - Exit')
         try:
-            main_menu_choice = int(input())
-            if main_menu_choice not in range(1, 6):
+            menu_choice = int(input())
+            if menu_choice not in range(1, 6):
                 raise ValueError
         except ValueError:
             print('Invalid input.  Please enter a number between 1 and 5')
-    return main_menu_choice
+    return menu_choice
+
+    
+
 
 
 def update_bkg_menu():
@@ -115,6 +118,28 @@ def view_bkg_menu():
     return delete_menu_choice
 
 
+def choose_main_menu(main_menu_choice):
+    '''
+    Main menu choice passed to this if else statement which activates 
+    one of the relevant functions
+    '''
+    if main_menu_choice == 1:
+        print("Create a new booking\n")
+        display_main_menu()
+    elif main_menu_choice == 2:
+        print("Update a booking\n")
+        display_main_menu()
+    elif main_menu_choice == 3:
+        print("Delete a booking\n")
+        display_main_menu()
+    elif main_menu_choice == 4:
+        print("View bookings\n")  
+        display_main_menu()     
+    elif main_menu_choice == 5:
+        print("Exit\n")
+        display_main_menu() 
+    else:
+        print("Invalid choice, please choose between 1 and 5")
 
 
 def test_function_calls():
@@ -124,11 +149,12 @@ def test_function_calls():
     '''
     # print(all_bookings)
     # start()
-    # display_main_menu()
+    main_menu_choice = display_main_menu()
+    choose_main_menu(main_menu_choice)
     # update_bkg_menu()
     # delete_bkg_menu()
-    view_bkg_menu()
-
+    # view_bkg_menu()
+    
 
 test_function_calls()
 
