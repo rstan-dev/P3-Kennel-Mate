@@ -54,7 +54,7 @@ def display_main_menu():
 
 def update_bkg_menu():
     '''
-    Displays Main menu of options. Try statement validates user input for 
+    Displays Update booking menu options. Try statement validates user input for 
     number between 1 and 4 only
     '''
     print('*' * 22)
@@ -78,6 +78,10 @@ def update_bkg_menu():
 
 
 def delete_bkg_menu():
+    '''
+    Displays Delete menu options. Try statement validates user input for 
+    number between 1 and 4 only
+    '''
     print('*' * 22)
     print("Delete a Booking Menu\n")
     print('*' * 22)
@@ -98,6 +102,10 @@ def delete_bkg_menu():
 
 
 def view_bkg_menu():
+    '''
+    Displays View bookings menu of options. Try statement validates user input for 
+    number between 1 and 4 only
+    '''
     print('*' * 22)
     print("View a Booking Menu\n")
     print('*' * 22)
