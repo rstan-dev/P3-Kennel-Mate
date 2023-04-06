@@ -17,6 +17,9 @@ bookings = SHEET.worksheet('bookings-data')
 all_bookings = bookings.get_all_values()
 
 
+def start():
+    print('*' * 50)
+    print("** Welcome to the Doggy Daycare Admin System. **\n")
 
 
 
@@ -29,6 +32,7 @@ def test_function_calls():
     Delete when project is completed
     '''
     print(all_bookings)
+    start()
 
 test_function_calls()
 
