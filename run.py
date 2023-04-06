@@ -33,7 +33,7 @@ def display_main_menu():
     print('*' * 50)
     print("Main Menu\n")
     menu_choice = 'x'
-    while not str(menu_choice).isnumeric() or int(menu_choice) not in range(1, 6):
+    while True:
         print('Please choose an option from the following:\n')
         print('[1] - Create A Booking')
         print('[2] - Update A Booking')
@@ -44,11 +44,33 @@ def display_main_menu():
             menu_choice = int(input())
             if menu_choice not in range(1, 6):
                 raise ValueError
+            break
         except ValueError:
             print('Invalid input.  Please enter a number between 1 and 5')
     return menu_choice
 
-    
+
+def choose_main_menu(main_menu_choice):
+    '''
+    Main menu choice passed to this if else statement which activates 
+    one of the relevant functions
+    '''
+    while True:
+        if main_menu_choice == 1:
+            print("Create a new booking\n")
+        elif main_menu_choice == 2:
+            print("Update a booking\n")
+        elif main_menu_choice == 3:
+            print("Delete a booking\n")
+        elif main_menu_choice == 4:
+            print("View bookings\n")       
+        elif main_menu_choice == 5:
+            print("Exit\n")
+            break      
+        else:
+            print("Invalid choice, please choose between 1 and 5")
+        main_menu_choice = display_main_menu()
+
 
 
 
@@ -126,28 +148,7 @@ def view_bkg_menu():
     return delete_menu_choice
 
 
-def choose_main_menu(main_menu_choice):
-    '''
-    Main menu choice passed to this if else statement which activates 
-    one of the relevant functions
-    '''
-    if main_menu_choice == 1:
-        print("Create a new booking\n")
-        display_main_menu()
-    elif main_menu_choice == 2:
-        print("Update a booking\n")
-        display_main_menu()
-    elif main_menu_choice == 3:
-        print("Delete a booking\n")
-        display_main_menu()
-    elif main_menu_choice == 4:
-        print("View bookings\n")  
-        display_main_menu()     
-    elif main_menu_choice == 5:
-        print("Exit\n")
-        display_main_menu() 
-    else:
-        print("Invalid choice, please choose between 1 and 5")
+
 
 
 def test_function_calls():
@@ -157,7 +158,14 @@ def test_function_calls():
     '''
     # print(all_bookings)
     # start()
+    # while True:
+    #     main_menu_choice = display_main_menu()
+    #     choose_main_menu(main_menu_choice)
+    #     if main_menu_choice == 5:
+    #     # Exit the program
+    #         break
     main_menu_choice = display_main_menu()
+    # print(main_menu_choice)
     choose_main_menu(main_menu_choice)
     # update_bkg_menu()
     # delete_bkg_menu()
