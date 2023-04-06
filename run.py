@@ -23,6 +23,11 @@ def start():
     '''
     print('*' * 50)
     print("** Welcome to the Doggy Daycare Admin System. **\n")
+    print("Press any key + Enter to start the program...")
+    input()
+    main_menu_choice = display_main_menu()
+    choose_main_menu(main_menu_choice)
+
 
 
 def display_main_menu():
@@ -66,7 +71,7 @@ def choose_main_menu(main_menu_choice):
             print("View bookings\n")       
         elif main_menu_choice == 5:
             print("Exit\n")
-            break      
+            start()      
         else:
             print("Invalid choice, please choose between 1 and 5")
         main_menu_choice = display_main_menu()
@@ -164,12 +169,13 @@ def test_function_calls():
     #     if main_menu_choice == 5:
     #     # Exit the program
     #         break
-    main_menu_choice = display_main_menu()
-    # print(main_menu_choice)
-    choose_main_menu(main_menu_choice)
+    # main_menu_choice = display_main_menu()
+    # # print(main_menu_choice)
+    # choose_main_menu(main_menu_choice)
     # update_bkg_menu()
     # delete_bkg_menu()
     # view_bkg_menu()
+    start()
     
 
 test_function_calls()
