@@ -27,8 +27,8 @@ def start():
 
 def display_main_menu():
     '''
-    Displays Main menu of options.  Try statement validates user input 
-    for integer between 1 and 5 only
+    Displays Main menu of options. Try statement validates user input for 
+    number between 1 and 5 only
     '''
     print('*' * 50)
     print("Main Menu\n")
@@ -51,24 +51,29 @@ def display_main_menu():
 
 def update_bkg_menu():
     '''
-    Displays Main menu of options.  Try statement validates user input 
-    for integer between 1 and 5 only
+    Displays Main menu of options. Try statement validates user input for 
+    number between 1 and 5 only
     '''
     print('*' * 22)
     print("Update a Booking Menu\n")
     print('*' * 22)
     print("To update a booking, you will need the Booking Number\n")
     menu_choice = 'x'
-    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 6):
+    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 5):
         print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search bookings by Date')
         print("[3] - Or, Search bookings by Dog's Name")
         print('[4] - Return to Main menu')
-        menu_choice = input()
-
-    return int(menu_choice)
-
+        try:
+            update_menu_choice = int(input())
+            if update_menu_choice not in range(1, 5):
+                raise ValueError
+        except ValueError:
+            print('Invalid input.  Please enter a number between 1 and 4')
+    return update_menu_choice
+        
+        
 
 
 
@@ -79,9 +84,10 @@ def test_function_calls():
     A place to keep all test function calls during the build process.
     Delete when project is completed
     '''
-    print(all_bookings)
-    start()
-    display_main_menu()
+    # print(all_bookings)
+    # start()
+    # display_main_menu()
+    update_bkg_menu()
 
 
 test_function_calls()
