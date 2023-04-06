@@ -18,11 +18,18 @@ all_bookings = bookings.get_all_values()
 
 
 def start():
+    '''
+    Starts the program - generates a welcome screen to the user
+    '''
     print('*' * 50)
     print("** Welcome to the Doggy Daycare Admin System. **\n")
 
 
 def display_main_menu():
+    '''
+    Displays Main menu of options.  Try statement validates user input 
+    for integer between 1 and 5 only
+    '''
     print('*' * 50)
     print("Main Menu\n")
     menu_choice = 'x'
@@ -40,6 +47,29 @@ def display_main_menu():
         except ValueError:
             print('Invalid input.  Please enter a number between 1 and 5')
     return main_menu_choice
+
+
+def update_bkg_menu():
+    '''
+    Displays Main menu of options.  Try statement validates user input 
+    for integer between 1 and 5 only
+    '''
+    print('*' * 22)
+    print("Update a Booking Menu\n")
+    print('*' * 22)
+    print("To update a booking, you will need the Booking Number\n")
+    menu_choice = 'x'
+    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 6):
+        print('Please choose an option from the following:\n')
+        print('[1] - Enter Booking No.')
+        print('[2] - Or, Search bookings by Date')
+        print("[3] - Or, Search bookings by Dog's Name")
+        print('[4] - Return to Main menu')
+        menu_choice = input()
+
+    return int(menu_choice)
+
+
 
 
 
