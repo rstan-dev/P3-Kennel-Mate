@@ -91,7 +91,7 @@ def delete_bkg_menu():
     print("Delete a Booking Menu\n")
     print('*' * 22)
     menu_choice = 'x'
-    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 5):
+    while True:
         print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search bookings by Date')
@@ -101,6 +101,7 @@ def delete_bkg_menu():
             delete_menu_choice = int(input())
             if delete_menu_choice not in range(1, 5):
                 raise ValueError
+            break
         except ValueError:
             print('Invalid input.  Please enter a number between 1 and 4')
     return delete_menu_choice
@@ -133,7 +134,7 @@ def view_bkg_menu():
 
 def choose_update_menu():
     '''
-    Main menu choice passed to this if else statement which activates 
+    Update menu choice passed to this if else statement which activates 
     one of the relevant functions
     '''
     update_menu_choice = update_bkg_menu()
@@ -156,6 +157,30 @@ def choose_update_menu():
             print("Invalid choice, please choose between 1 and 4")
         
 
+def choose_delete_menu():
+    '''
+    Delete menu choice passed to this if else statement which activates 
+    one of the relevant functions
+    '''
+    delete_menu_choice = delete_bkg_menu()
+    while True:
+        #to check and complete terminal clear
+        # os.system('cls' if os.name == 'nt' else "printf 
+        # '\033c'")
+        if delete_menu_choice == 1:
+            print("Enter a booking number to delete\n")
+            break
+        elif delete_menu_choice == 2:
+            print("Search bookings by date - to delete\n")
+            break
+        elif delete_menu_choice == 3:
+            print("Search bookings by dog's name - to delete\n")
+            break
+        elif delete_menu_choice == 4:
+            print("Return to main menu\n")    
+        else:
+            print("Invalid choice, please choose between 1 and 4")
+
 
 def choose_main_menu():
     '''
@@ -176,6 +201,7 @@ def choose_main_menu():
             break 
         elif main_menu_choice == 3:
             print("Delete a booking\n")
+            choose_delete_menu()
             break
         elif main_menu_choice == 4:
             print("View bookings\n")
