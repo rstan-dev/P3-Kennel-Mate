@@ -116,20 +116,21 @@ def view_bkg_menu():
     print("View a Booking Menu\n")
     print('*' * 22)
     menu_choice = 'x'
-    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 6):
+    while True:
         print('Please choose an option from the following:\n')
-        print('[1] - View All Bookings')
-        print('[2] - Search by Booking No.')
-        print('[3] - Or, Search bookings by Date')
-        print("[4] - Or, Search bookings by Dog's Name")
+        print('[1] - View all bookings')
+        print('[2] - View by booking No.')
+        print('[3] - View by booking Date')
+        print("[4] - View by booking Name")
         print('[5] - Return to Main menu')
         try:
-            delete_menu_choice = int(input())
-            if delete_menu_choice not in range(1, 6):
+            view_menu_choice = int(input())
+            if view_menu_choice not in range(1, 6):
                 raise ValueError
+            break
         except ValueError:
-            print('Invalid input.  Please enter a number between 1 and 6')
-    return delete_menu_choice
+            print('Invalid input.  Please enter a number between 1 and 5')
+    return view_menu_choice
 
 
 def choose_update_menu():
@@ -182,6 +183,34 @@ def choose_delete_menu():
             print("Invalid choice, please choose between 1 and 4")
 
 
+def choose_view_menu():
+    '''
+    View menu choice passed to this if else statement which activates 
+    one of the relevant functions
+    '''
+    view_menu_choice = view_bkg_menu()
+    while True:
+        #to check and complete terminal clear
+        # os.system('cls' if os.name == 'nt' else "printf 
+        # '\033c'")
+        if view_menu_choice == 1:
+            print("View all bookings\n")
+            break
+        elif view_menu_choice == 2:
+            print("View by booking number\n")
+            break
+        elif view_menu_choice == 3:
+            print("View by booking date\n")
+            break
+        elif view_menu_choice == 4:
+            print("View by dog's name\n")
+            break
+        elif view_menu_choice == 5:
+            print("View by dog's name\n")
+            break    
+        else:
+            print("Invalid choice, please choose between 1 and 5")
+
 def choose_main_menu():
     '''
     Main menu choice passed to this if else statement which activates 
@@ -205,6 +234,7 @@ def choose_main_menu():
             break
         elif main_menu_choice == 4:
             print("View bookings\n")
+            choose_view_menu()
             break       
         elif main_menu_choice == 5:
             print("Exit\n")
