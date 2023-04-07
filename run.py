@@ -1,4 +1,5 @@
 import gspread
+import os
 
 from google.oauth2.service_account import Credentials
 
@@ -25,8 +26,7 @@ def start():
     print("** Welcome to the Doggy Daycare Admin System. **\n")
     print("Press any key + Enter to start the program...")
     input()
-    main_menu_choice = display_main_menu()
-    choose_main_menu(main_menu_choice)
+    choose_main_menu()
 
 
 
@@ -55,30 +55,6 @@ def display_main_menu():
     return menu_choice
 
 
-def choose_main_menu(main_menu_choice):
-    '''
-    Main menu choice passed to this if else statement which activates 
-    one of the relevant functions
-    '''
-    while True:
-        if main_menu_choice == 1:
-            print("Create a new booking\n")
-        elif main_menu_choice == 2:
-            print("Update a booking\n")
-        elif main_menu_choice == 3:
-            print("Delete a booking\n")
-        elif main_menu_choice == 4:
-            print("View bookings\n")       
-        elif main_menu_choice == 5:
-            print("Exit\n")
-            start()      
-        else:
-            print("Invalid choice, please choose between 1 and 5")
-        main_menu_choice = display_main_menu()
-
-
-
-
 def update_bkg_menu():
     '''
     Displays Update booking menu options. Try statement validates user input for 
@@ -89,7 +65,7 @@ def update_bkg_menu():
     print('*' * 22)
     print("To update a booking, you will need the Booking Number\n")
     menu_choice = 'x'
-    while not menu_choice.isnumeric() or int(menu_choice) not in range(1, 5):
+    while True:
         print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search bookings by Date')
@@ -99,9 +75,11 @@ def update_bkg_menu():
             update_menu_choice = int(input())
             if update_menu_choice not in range(1, 5):
                 raise ValueError
+            break
         except ValueError:
-            print('Invalid input.  Please enter a number between 1 and 4')
+            print('Invalid input. Please enter a number between 1 and 4')
     return update_menu_choice
+
 
 
 def delete_bkg_menu():
@@ -153,9 +131,65 @@ def view_bkg_menu():
     return delete_menu_choice
 
 
+def choose_update_menu():
+    '''
+    Main menu choice passed to this if else statement which activates 
+    one of the relevant functions
+    '''
+    update_menu_choice = update_bkg_menu()
+    while True:
+        #to check and complete terminal clear
+        # os.system('cls' if os.name == 'nt' else "printf 
+        # '\033c'")
+        if update_menu_choice == 1:
+            print("Enter a booking number\n")
+            break
+        elif update_menu_choice == 2:
+            print("Search bookings by date\n")
+            break
+        elif update_menu_choice == 3:
+            print("Search bookings by dog's name\n")
+            break
+        elif update_menu_choice == 4:
+            print("Return to main menu\n")    
+        else:
+            print("Invalid choice, please choose between 1 and 4")
+        
+
+
+def choose_main_menu():
+    '''
+    Main menu choice passed to this if else statement which activates 
+    one of the relevant functions
+    '''
+    main_menu_choice = display_main_menu()
+    while True:
+        #to check and complete terminal clear
+        # os.system('cls' if os.name == 'nt' else "printf 
+        # '\033c'")
+        if main_menu_choice == 1:
+            print("Create a new booking\n")
+            break
+        elif main_menu_choice == 2:
+            print("Update a booking\n")
+            choose_update_menu()
+            break 
+        elif main_menu_choice == 3:
+            print("Delete a booking\n")
+            break
+        elif main_menu_choice == 4:
+            print("View bookings\n")
+            break       
+        elif main_menu_choice == 5:
+            print("Exit\n")
+            start()      
+        else:
+            print("Invalid choice, please choose between 1 and 5")
+        main_menu_choice = display_main_menu()
 
 
 
+print("______________Test Area (to be deleted)___________________")
 def test_function_calls():
     '''
     A place to keep all test function calls during the build process.
