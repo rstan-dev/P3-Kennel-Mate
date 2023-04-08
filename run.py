@@ -1,6 +1,7 @@
-import gspread
 import os
+import gspread
 import datetime
+import re
 
 from google.oauth2.service_account import Credentials
 
@@ -21,16 +22,45 @@ all_bookings = bookings.get_all_values()
 # UTILITY FUNCTIONS
 def todays_date():
     '''
-    Returns todays date formatted as dd-mm-yyyy, which is used to display the current days data for the benefit of the user.
+    Returns todays date formatted as dd-mm-yyyy, which is used to display 
+    the current days data for the benefit of the user.
     '''
     today = datetime.date.today()
     today_formatted = today.strftime('%d-%m-%Y')
     return today_formatted
 
-# def get_booking_date()
-'''
-Requests a date input in a specific format, to be used for creating, and retrieving bookings
-'''
+
+def get_booking_date():
+    '''
+    Requests a date input in a specific format, to be used for creating, 
+    and retrieving bookings
+    '''
+    date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
+
+    while True:
+        print("Please enter the booking date as: (DD-MM-YYYY)")
+        booking_date = input()
+        if not date_pattern.match(booking_date):
+            print("Invalid date format, please try again.\n The day must be between 1 and 31,\n "
+                                 "The month must be between 1 and 12,"
+                                 "\nAnd the year must be a four-digit number")
+            continue
+        try:
+            day, month, year = map(int, booking_date.split("-"))
+            date = datetime.date(year, month, day)
+            if date.month != month or date.day != day:
+                raise ValueError("Invalid date, please reenter the correct "
+                                 "date.\n The day must be between 1 and 31,\n "
+                                 "The month must be between 1 and 12,"
+                                 "\nAnd the year must be a four-digit number")
+            else:
+                return booking_date
+            break
+
+        except ValueError as e:
+            print(f"Invalid date input: {e}")
+
+
 # def increment_booking_number()
 '''
 Automatically generates a sequential booking number starting with B1000
@@ -317,6 +347,7 @@ def test_function_calls():
     # delete_bkg_menu()
     # view_bkg_menu()
     #print(todays_date())
+    get_booking_date()
     start()
     
 
