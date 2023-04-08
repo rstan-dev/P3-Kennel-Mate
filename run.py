@@ -17,6 +17,52 @@ SHEET = GSPREAD_CLIENT.open('p3-kennel-mate-data')
 bookings = SHEET.worksheet('bookings-data')
 all_bookings = bookings.get_all_values()
 
+# UTILITY FUNCTIONS
+# def todays_date()
+'''
+Returns todays date formatted as dd-mm-yyyy, which is used to display the current days data for the benefit of the user.
+'''
+# def get_booking_date()
+'''
+Requests a date input in a specific format, to be used for creating, and retrieving bookings
+'''
+# def increment_booking_number()
+'''
+Automatically generates a sequential booking number starting with B1000
+'''
+# def count_bookings()
+'''
+Displays a sum total of the number of displayed bookings
+'''
+# def revenue_total()
+'''
+Displays a sum total of the revenue for the diaplayed bookings
+'''
+
+#CRUD FUNCTIONS
+# def create_booking()
+'''
+'''
+# def update_booking()
+'''
+'''
+# def delete_booking()
+'''
+'''
+# def view_all_bookings()
+'''
+'''
+# def view_booking_no()
+'''
+'''
+# def view_booking_date()
+'''
+'''
+# def view_dog_bookings()
+'''
+'''
+
+
 
 def start():
     '''
@@ -29,7 +75,7 @@ def start():
     choose_main_menu()
 
 
-
+# MENU FUNCTIONS
 def display_main_menu():
     '''
     Displays Main menu of options. Try statement validates user input for 
@@ -79,7 +125,6 @@ def update_bkg_menu():
         except ValueError:
             print('Invalid input. Please enter a number between 1 and 4')
     return update_menu_choice
-
 
 
 def delete_bkg_menu():
@@ -133,6 +178,7 @@ def view_bkg_menu():
     return view_menu_choice
 
 
+# SUBMENU CHOICE FUNCTIONS
 def choose_update_menu():
     '''
     Update menu choice passed to this if else statement which activates 
