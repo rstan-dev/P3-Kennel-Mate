@@ -18,6 +18,7 @@ SHEET = GSPREAD_CLIENT.open('p3-kennel-mate-data')
 
 bookings = SHEET.worksheet('bookings-data')
 all_bookings = bookings.get_all_values()
+booking_num_column = bookings.col_values(1)
 
 # UTILITY FUNCTIONS
 def todays_date():
@@ -61,10 +62,25 @@ def get_booking_date():
             print(f"Invalid date input: {e}")
 
 
-# def increment_booking_number()
-'''
-Automatically generates a sequential booking number starting with B1000
-'''
+def increment_booking_number():
+    '''
+    Automatically generates and increments a sequential booking number starting with B1000
+    '''
+    highest_num = 1000
+
+    booking_num_column = bookings.col_values(1)
+
+    for booking_num in booking_num_column:
+        match = re.match(r'^B(\d+)$', booking_num)
+        if match:
+            num = int(match.group(1))
+            if num > highest_num:
+                highest_num = num
+
+    next_num = highest_num + 1
+    return f'B{next_num}' if highest_num != 1000 else 'B1001'
+
+
 # def count_bookings()
 '''
 Displays a sum total of the number of displayed bookings
@@ -347,7 +363,8 @@ def test_function_calls():
     # delete_bkg_menu()
     # view_bkg_menu()
     #print(todays_date())
-    get_booking_date()
+    #get_booking_date()
+    print(increment_booking_number())
     start()
     
 
