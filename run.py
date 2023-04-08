@@ -1,5 +1,6 @@
 import gspread
 import os
+import datetime
 
 from google.oauth2.service_account import Credentials
 
@@ -18,10 +19,14 @@ bookings = SHEET.worksheet('bookings-data')
 all_bookings = bookings.get_all_values()
 
 # UTILITY FUNCTIONS
-# def todays_date()
-'''
-Returns todays date formatted as dd-mm-yyyy, which is used to display the current days data for the benefit of the user.
-'''
+def todays_date():
+    '''
+    Returns todays date formatted as dd-mm-yyyy, which is used to display the current days data for the benefit of the user.
+    '''
+    today = datetime.date.today()
+    today_formatted = today.strftime('%d-%m-%Y')
+    return today_formatted
+
 # def get_booking_date()
 '''
 Requests a date input in a specific format, to be used for creating, and retrieving bookings
@@ -311,6 +316,7 @@ def test_function_calls():
     # update_bkg_menu()
     # delete_bkg_menu()
     # view_bkg_menu()
+    #print(todays_date())
     start()
     
 
