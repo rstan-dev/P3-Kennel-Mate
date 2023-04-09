@@ -24,7 +24,7 @@ booking_num_column = bookings.col_values(1)
 # UTILITY FUNCTIONS
 def todays_date():
     '''
-    Returns todays date formatted as dd-mm-yyyy, which is used to display 
+    Returns todays date formatted as dd-mm-yyyy, which is used to display
     the current days data for the benefit of the user.
     '''
     today = datetime.date.today()
@@ -34,7 +34,7 @@ def todays_date():
 
 def get_booking_date():
     '''
-    Requests a date input in a specific format, to be used for creating, 
+    Requests a date input in a specific format, to be used for creating,
     and retrieving bookings
     '''
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
@@ -82,14 +82,23 @@ def increment_booking_number():
     return f'B{next_num}' if highest_num != 1000 else 'B1001'
 
 
-# def count_bookings()
-'''
-Displays a sum total of the number of displayed bookings
-'''
-# def revenue_total()
-'''
-Displays a sum total of the revenue for the displayed bookings
-'''
+def revenue_total(values):
+    '''
+    Displays a sum total of the revenue for the displayed bookings
+    '''
+    pattern = re.compile(r"\d+.\d{2}")
+    revenue_list = []
+    total = 0
+
+    for value in values:
+        match = pattern.findall(value[3])
+        if match:
+            revenue = float(match[0])
+            revenue_list.append(revenue)
+            total += revenue
+
+    print(f"Total Revenue: £{total:.2f}")
+
 
 def bookings_counter(values):
     '''
@@ -108,16 +117,21 @@ def bookings_counter(values):
 # def delete_booking()
 '''
 '''
+
+
 def view_all_bookings():
     '''
-    Displays all bookings in the system, 
+    Displays all bookings in the system,
     '''
     all_bookings = bookings.get_all_values()
 
-    print(tabulate(all_bookings[1:], headers=['Booking No.', 'Date', 'Dogs Name',
-                                   'Amount Paid']))
+    print(tabulate(
+        all_bookings[1:],
+        headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
     bookings_counter(all_bookings)
-    
+    revenue_total(all_bookings)
+
+
 # def view_booking_no()
 '''
 '''
@@ -144,7 +158,7 @@ def start():
 # MENU FUNCTIONS
 def display_main_menu():
     '''
-    Displays Main menu of options. Try statement validates user input for 
+    Displays Main menu of options. Try statement validates user input for
     number between 1 and 5 only
     '''
     print('*' * 50)
@@ -169,7 +183,7 @@ def display_main_menu():
 
 def update_bkg_menu():
     '''
-    Displays Update booking menu options. Try statement validates user input for 
+    Displays Update booking menu options. Try statement validates user input for
     number between 1 and 4 only
     '''
     print('*' * 22)
@@ -195,7 +209,7 @@ def update_bkg_menu():
 
 def delete_bkg_menu():
     '''
-    Displays Delete menu options. Try statement validates user input for 
+    Displays Delete menu options. Try statement validates user input for
     number between 1 and 4 only
     '''
     print('*' * 22)
@@ -220,7 +234,7 @@ def delete_bkg_menu():
 
 def view_bkg_menu():
     '''
-    Displays View bookings menu of options. Try statement validates user input for 
+    Displays View bookings menu of options. Try statement validates user input for
     number between 1 and 4 only
     '''
     print('*' * 22)
@@ -247,13 +261,13 @@ def view_bkg_menu():
 # SUBMENU CHOICE FUNCTIONS
 def choose_update_menu():
     '''
-    Update menu choice passed to this if else statement which activates 
+    Update menu choice passed to this if else statement which activates
     one of the relevant functions
     '''
     update_menu_choice = update_bkg_menu()
     while True:
         #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf 
+        # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if update_menu_choice == 1:
             print("Enter a booking number\n")
@@ -265,20 +279,20 @@ def choose_update_menu():
             print("Search bookings by dog's name\n")
             break
         elif update_menu_choice == 4:
-            print("Return to main menu\n")    
+            print("Return to main menu\n")
         else:
             print("Invalid choice, please choose between 1 and 4")
-        
+
 
 def choose_delete_menu():
     '''
-    Delete menu choice passed to this if else statement which activates 
+    Delete menu choice passed to this if else statement which activates
     one of the relevant functions
     '''
     delete_menu_choice = delete_bkg_menu()
     while True:
         #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf 
+        # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if delete_menu_choice == 1:
             print("Enter a booking number to delete\n")
@@ -290,20 +304,20 @@ def choose_delete_menu():
             print("Search bookings by dog's name - to delete\n")
             break
         elif delete_menu_choice == 4:
-            print("Return to main menu\n")    
+            print("Return to main menu\n")
         else:
             print("Invalid choice, please choose between 1 and 4")
 
 
 def choose_view_menu():
     '''
-    View menu choice passed to this if else statement which activates 
+    View menu choice passed to this if else statement which activates
     one of the relevant functions
     '''
     view_menu_choice = view_bkg_menu()
     while True:
         #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf 
+        # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if view_menu_choice == 1:
             print("View all bookings\n")
@@ -319,19 +333,19 @@ def choose_view_menu():
             break
         elif view_menu_choice == 5:
             print("View by dog's name\n")
-            break    
+            break
         else:
             print("Invalid choice, please choose between 1 and 5")
 
 def choose_main_menu():
     '''
-    Main menu choice passed to this if else statement which activates 
+    Main menu choice passed to this if else statement which activates
     one of the relevant functions
     '''
     main_menu_choice = display_main_menu()
     while True:
         #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf 
+        # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if main_menu_choice == 1:
             print("Create a new booking\n")
@@ -339,7 +353,7 @@ def choose_main_menu():
         elif main_menu_choice == 2:
             print("Update a booking\n")
             choose_update_menu()
-            break 
+            break
         elif main_menu_choice == 3:
             print("Delete a booking\n")
             choose_delete_menu()
@@ -347,10 +361,10 @@ def choose_main_menu():
         elif main_menu_choice == 4:
             print("View bookings\n")
             choose_view_menu()
-            break       
+            break
         elif main_menu_choice == 5:
             print("Exit\n")
-            start()      
+            start()
         else:
             print("Invalid choice, please choose between 1 and 5")
         main_menu_choice = display_main_menu()
@@ -382,7 +396,7 @@ def test_function_calls():
     #print(increment_booking_number())
     view_all_bookings()
     start()
-    
+
 
 test_function_calls()
 
