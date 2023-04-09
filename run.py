@@ -2,6 +2,7 @@ import os
 import gspread
 import datetime
 import re
+from tabulate import tabulate
 
 from google.oauth2.service_account import Credentials
 
@@ -64,7 +65,7 @@ def get_booking_date():
 
 def increment_booking_number():
     '''
-    Automatically generates and increments a sequential booking number starting with B1000
+    Automatically generates and increments a sequential booking number starting with B1001
     '''
     highest_num = 1000
 
@@ -87,8 +88,15 @@ Displays a sum total of the number of displayed bookings
 '''
 # def revenue_total()
 '''
-Displays a sum total of the revenue for the diaplayed bookings
+Displays a sum total of the revenue for the displayed bookings
 '''
+
+def bookings_counter(values):
+    '''
+    Displays a total count of displayed bookings
+    '''
+    count_bookings = sum(isinstance(elem, list) for elem in values)
+    print(f'Total Bookings: {count_bookings -1}')
 
 #CRUD FUNCTIONS
 # def create_booking()
@@ -100,9 +108,16 @@ Displays a sum total of the revenue for the diaplayed bookings
 # def delete_booking()
 '''
 '''
-# def view_all_bookings()
-'''
-'''
+def view_all_bookings():
+    '''
+    Displays all bookings in the system, 
+    '''
+    all_bookings = bookings.get_all_values()
+
+    print(tabulate(all_bookings[1:], headers=['Booking No.', 'Date', 'Dogs Name',
+                                   'Amount Paid']))
+    bookings_counter(all_bookings)
+    
 # def view_booking_no()
 '''
 '''
@@ -364,7 +379,8 @@ def test_function_calls():
     # view_bkg_menu()
     #print(todays_date())
     #get_booking_date()
-    print(increment_booking_number())
+    #print(increment_booking_number())
+    view_all_bookings()
     start()
     
 
