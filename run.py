@@ -105,7 +105,7 @@ def bookings_counter(values):
     Displays a total count of displayed bookings
     '''
     count_bookings = sum(isinstance(elem, list) for elem in values)
-    print(f'Total Bookings: {count_bookings -1}')
+    print(f'Total Bookings: {count_bookings}')
 
 #CRUD FUNCTIONS
 # def create_booking()
@@ -128,13 +128,36 @@ def view_all_bookings():
     print(tabulate(
         all_bookings[1:],
         headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
-    bookings_counter(all_bookings)
+    bookings_counter(all_bookings[1:])
     revenue_total(all_bookings)
 
 
-# def view_booking_no()
-'''
-'''
+def view_booking_no():
+    '''
+    Displays all bookings in the system by Booking No., with a count of total
+        bookings and a sum of total revenue
+    '''
+    all_bookings = bookings.get_all_values()
+
+    print("Enter Booking Number digits only...\n")
+    booking_num = int(input())
+    print(f"collecting booking data...\n")
+
+    rows_containing_booking_num = []
+
+    for row in all_bookings:
+        if ('B' + str(booking_num)) in row:
+            rows_containing_booking_num.append(row)
+
+    print(tabulate(
+        rows_containing_booking_num,
+        headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+
+    bookings_counter(rows_containing_booking_num)
+    revenue_total(rows_containing_booking_num)
+
+
+
 # def view_booking_date()
 '''
 '''
@@ -321,6 +344,8 @@ def choose_view_menu():
         # '\033c'")
         if view_menu_choice == 1:
             print("View all bookings\n")
+            view_all_bookings()
+            choose_view_menu()
             break
         elif view_menu_choice == 2:
             print("View by booking number\n")
@@ -332,7 +357,7 @@ def choose_view_menu():
             print("View by dog's name\n")
             break
         elif view_menu_choice == 5:
-            print("View by dog's name\n")
+            print("Return to Main menu\n")
             break
         else:
             print("Invalid choice, please choose between 1 and 5")
@@ -394,7 +419,8 @@ def test_function_calls():
     #print(todays_date())
     #get_booking_date()
     #print(increment_booking_number())
-    view_all_bookings()
+    #view_all_bookings()
+    view_booking_no()
     start()
 
 
