@@ -134,10 +134,102 @@ def create_booking():
     print("Booking entered successfully\n")
 
 
+def update_booking():
+    '''
+    Allows user to overwrite the booking_data in the worksheet with new data
+    User needs to know the booking number, found through searching the bookings.
+    '''
+    all_bookings = bookings.get_all_values()
 
-# def update_booking()
-'''
-'''
+    print("Enter Booking Number digits only...\n")
+    while True:
+        booking_num = input()
+        if len(booking_num) == 4 and booking_num.isdigit():
+            booking_num = int(booking_num)
+            break
+        else:
+            print("Please enter a 4-digit number.\n")
+
+    print(f"collecting booking data...\n")
+
+    rows_containing_booking_num = []
+
+    for row in all_bookings:
+        if ('B' + str(booking_num)) in row:
+            rows_containing_booking_num.append(row)
+
+    print(
+        tabulate(
+            rows_containing_booking_num,
+            headers=['Booking No.', 'Date', 'Dogs Name',
+                     'Amount Paid']
+            )
+        )
+    count_bookings = sum(
+        isinstance(elem, list) for elem in
+        rows_containing_booking_num
+        )
+    print("\n")
+    print(f'Total Bookings: {count_bookings}')
+    revenue_total(rows_containing_booking_num)
+    print("\n")
+
+
+    row_index = None
+    for i, row in enumerate(all_bookings):
+        if row[0] == ('B' + str(booking_num)):
+            row_index = i + 1
+            break
+
+    if row_index is not None:
+
+        print("*" * 25)
+        print("Would you like to update the date? Enter Y/N\n")
+        update_date_choice = input().upper()
+        if update_date_choice == "Y":
+            print("Please update the date\n")
+            new_date = get_booking_date()
+            print(f"Updating B-{booking_num} in progress...\n")
+            bookings.update_cell(row_index, 2, new_date)
+            print(f"Booking B-{booking_num} updated successfully.\n")
+        else:
+            pass
+        print("Would you like to update the dog's name? Enter Y/N\n")
+        update_dog_choice = input().upper()
+        if update_dog_choice == "Y":
+            print("Please update the dog's name\n")
+            new_dogs_name = input().title()
+            print(f"Updating B-{booking_num} in progress...\n")
+            bookings.update_cell(row_index, 3, new_dogs_name)
+            print(f"Booking B-{booking_num} updated successfully.\n")
+        else:
+            pass
+        print("Would you like to update the dog's family name? Enter Y/N\n")
+        update_dog_choice = input().upper()
+        if update_dog_choice == "Y":
+            print("Please update the family name\n")
+            new_family_name = input().title()
+            print(f"Updating B-{booking_num} in progress...\n")
+            bookings.update_cell(row_index, 4, new_family_name)
+            print(f"Booking B-{booking_num} updated successfully.\n")
+        else:
+            pass
+        print("Would you like to update the amount paid? Enter Y/N\n")
+        update_amount_choice = input().upper()
+        if update_amount_choice == "Y":
+            print("Please update the amount paid\n")
+            new_amount_paid = float(input())
+            print(f"Updating B-{booking_num} in progress...\n")
+            bookings.update_cell(
+                row_index, 5, "{:.2f}".format(new_amount_paid)
+                )
+            print(f"Booking B-{booking_num} updated successfully.\n")
+        else:
+            pass
+
+
+
+
 # def delete_booking()
 '''
 '''
@@ -384,16 +476,29 @@ def choose_update_menu():
         # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if update_menu_choice == 1:
-            print("Enter a booking number\n")
+            update_booking()
+            choose_update_menu()
             break
         elif update_menu_choice == 2:
-            print("Search bookings by date\n")
+            print("View by booking date\n")
+            print("Enter date DD-MM-YYYY")
+            input_date = input()
+            print(f"collecting booking data...\n")
+            view_booking_date(input_date)
+            choose_update_menu()
             break
         elif update_menu_choice == 3:
-            print("Search bookings by dog's name\n")
+            print("View by dog's name\n")
+            print("Enter the Dog's name")
+            dogs_name = input().title()
+            print(f"collecting booking data...\n")
+            view_dog_bookings(dogs_name)
+            choose_update_menu()
             break
         elif update_menu_choice == 4:
             print("Return to main menu\n")
+            choose_main_menu()
+            break
         else:
             print("Invalid choice, please choose between 1 and 4")
 
