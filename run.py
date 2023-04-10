@@ -127,7 +127,7 @@ def view_all_bookings():
 
     print(tabulate(
         all_bookings[1:],
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
     bookings_counter(all_bookings[1:])
     revenue_total(all_bookings)
 
@@ -147,7 +147,7 @@ def view_booking_no(booking_num):
 
     print(tabulate(
         rows_containing_booking_num,
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
 
     bookings_counter(rows_containing_booking_num)
     revenue_total(rows_containing_booking_num)
@@ -171,12 +171,12 @@ def view_booking_date(booking_date):
     if no_booking_data:
         print(tabulate(
             rows_containing_booking_date,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
         print("No booking data to display for this date")
     else:
         print(tabulate(
             rows_containing_booking_date,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
 
         bookings_counter(rows_containing_booking_date)
         revenue_total(rows_containing_booking_date)
