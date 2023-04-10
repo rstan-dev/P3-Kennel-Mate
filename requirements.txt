@@ -1,1 +1,6 @@
 # Your requirements go here
+google-auth==2.6.2
+google-auth-oauthlib==0.5.1
+gspread==5.3.0
+oauthlib==3.2.0
+tabulate==0.8.9
