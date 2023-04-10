@@ -183,10 +183,24 @@ def view_booking_date(booking_date):
 
 
 
-# def view_dog_bookings()
-'''
-'''
+def view_dog_bookings(dogs_name):
+    '''
+    Displays all bookings in the system by Dogs name, either by first name or last name,
+    with a count of total bookings and a sum of total revenue
+    '''
+    all_bookings = bookings.get_all_values()
 
+    rows_containing_dog = []
+
+    for row in all_bookings:
+        if dogs_name in row:
+            rows_containing_dog.append(row)
+
+    print(tabulate(
+        rows_containing_dog,
+        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+    bookings_counter(rows_containing_dog)
+    revenue_total(rows_containing_dog)
 
 
 def start():
@@ -386,6 +400,10 @@ def choose_view_menu():
             break
         elif view_menu_choice == 4:
             print("View by dog's name\n")
+            print("Enter the Dog's name")
+            dogs_name = input().title()
+            view_dog_bookings(dogs_name)
+            choose_view_menu()
             break
         elif view_menu_choice == 5:
             print("Return to Main menu\n")
@@ -455,6 +473,9 @@ def test_function_calls():
     # print("Enter date DD-MM-YYYY")
     # input_date = input()
     # view_booking_date(input_date)
+    print("Enter the Dog's name")
+    dogs_name = input().title()
+    view_dog_bookings(dogs_name)
     start()
 
 
