@@ -234,11 +234,56 @@ def update_booking():
             pass
 
 
+def delete_booking():
+    '''
+    Allows user to delete the booking_data in the worksheet with new data
+    '''
+    all_bookings = bookings.get_all_values()
 
+    print("Enter Booking Number digits only...\n")
+    # validates the entry is a 4 digit number only
+    while True:
+        booking_num = input()
+        if len(booking_num) == 4 and booking_num.isdigit():
+            booking_num = int(booking_num)
+            break
+        else:
+            print("Please enter a 4-digit number.\n")
 
-# def delete_booking()
-'''
-'''
+    print(f"collecting booking data...\n")
+
+    rows_containing_booking_num = []
+
+    for row in all_bookings:
+        if ('B' + str(booking_num)) in row:
+            rows_containing_booking_num.append(row)
+    print(tabulate(
+        rows_containing_booking_num,
+        headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid'])
+        )
+    bookings_counter(rows_containing_booking_num)
+    revenue_total(rows_containing_booking_num)
+
+    # The following code locates the index of the row in the worksheet that contains
+    # the booking number entered by the user, and stores the index
+    # in the row_index variable.
+    row_index = None
+    for i, row in enumerate(all_bookings):
+        if row[0] == ('B' + str(booking_num)):
+            row_index = i + 1
+            break
+
+    # The code then prompts the user to confirm if they wish to delete the booking,
+    # before using the delete_rows method from the gspread library.
+    if row_index is not None:
+        print("Are you sure you want to delete this booking? Enter Y/N")
+        delete_choice = input().upper()
+        if delete_choice == 'Y':
+            bookings.delete_rows(row_index)
+            print(f"Deleting {booking_num} in progress...\n")
+            print(f"{booking_num} deleted successfully.\n")
+        else:
+            pass
 
 
 def view_all_bookings():
@@ -520,16 +565,28 @@ def choose_delete_menu():
         # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if delete_menu_choice == 1:
-            print("Enter a booking number to delete\n")
+            delete_booking()
+            choose_delete_menu()
             break
         elif delete_menu_choice == 2:
             print("Search bookings by date - to delete\n")
+            print("Enter date DD-MM-YYYY")
+            input_date = input()
+            print(f"collecting booking data...\n")
+            view_booking_date(input_date)
+            choose_delete_menu()
             break
         elif delete_menu_choice == 3:
             print("Search bookings by dog's name - to delete\n")
+            print("Enter the Dog's name")
+            dogs_name = input().title()
+            print(f"collecting booking data...\n")
+            view_dog_bookings(dogs_name)
+            choose_delete_menu()
             break
         elif delete_menu_choice == 4:
             print("Return to main menu\n")
+            choose_main_menu()
         else:
             print("Invalid choice, please choose between 1 and 4")
 
