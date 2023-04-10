@@ -164,12 +164,20 @@ def view_booking_no(booking_num):
         if ('B' + str(booking_num)) in row:
             rows_containing_booking_num.append(row)
 
-    print(tabulate(
-        rows_containing_booking_num,
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+    if not rows_containing_booking_num:
+        print(tabulate(
+            rows_containing_booking_num,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid'])
+            )
+        print("No booking data to display")
 
-    bookings_counter(rows_containing_booking_num)
-    revenue_total(rows_containing_booking_num)
+    else:
+        print(tabulate(
+            rows_containing_booking_num,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+
+        bookings_counter(rows_containing_booking_num)
+        revenue_total(rows_containing_booking_num)
 
 
 def view_booking_date(booking_date):
