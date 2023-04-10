@@ -168,7 +168,7 @@ def update_booking():
             )
         )
     print("\n")
-    count_bookings(rows_containing_booking_num)
+    bookings_counter(rows_containing_booking_num)
     revenue_total(rows_containing_booking_num)
     print("\n")
 
