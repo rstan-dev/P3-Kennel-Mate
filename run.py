@@ -97,7 +97,7 @@ def revenue_total(values):
             revenue_list.append(revenue)
             total += revenue
 
-    print(f"Total Revenue: £{total:.2f}")
+    print(f"Total Revenue: £{total:.2f}\n")
 
 
 def bookings_counter(values):
@@ -105,6 +105,7 @@ def bookings_counter(values):
     Displays a total count of displayed bookings
     '''
     count_bookings = sum(isinstance(elem, list) for elem in values)
+    print("\n")
     print(f'Total Bookings: {count_bookings}')
 
 
