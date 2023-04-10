@@ -168,10 +168,8 @@ def update_booking():
                      'Amount Paid']
             )
         )
-    print("\n")
     bookings_counter(rows_containing_booking_num)
     revenue_total(rows_containing_booking_num)
-    print("\n")
 
     # The following code locates the index of the row in the worksheet that contains
     # the booking number entered by the user, and stores the index
