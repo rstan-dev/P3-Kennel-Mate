@@ -157,10 +157,36 @@ def view_booking_no():
     revenue_total(rows_containing_booking_num)
 
 
+def view_booking_date(booking_date):
+    '''
+    Displays all bookings in the system by Date, with a count of total
+        bookings and a sum of total revenue
+    '''
+    all_bookings = bookings.get_all_values()
 
-# def view_booking_date()
-'''
-'''
+    rows_containing_booking_date = []
+    no_booking_data = True
+
+    for row in all_bookings:
+        if booking_date in row:
+            rows_containing_booking_date.append(row)
+            no_booking_data = False
+
+    if no_booking_data:
+        print(tabulate(
+            rows_containing_booking_date,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+        print("No booking data to display for this date")
+    else:
+        print(tabulate(
+            rows_containing_booking_date,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid']))
+
+        bookings_counter(rows_containing_booking_date)
+        revenue_total(rows_containing_booking_date)
+
+
+
 # def view_dog_bookings()
 '''
 '''
@@ -349,9 +375,15 @@ def choose_view_menu():
             break
         elif view_menu_choice == 2:
             print("View by booking number\n")
+            view_booking_no()
+            choose_view_menu()
             break
         elif view_menu_choice == 3:
             print("View by booking date\n")
+            print("Enter date DD-MM-YYYY")
+            input_date = input()
+            view_booking_date(input_date)
+            choose_view_menu()
             break
         elif view_menu_choice == 4:
             print("View by dog's name\n")
@@ -420,7 +452,10 @@ def test_function_calls():
     #get_booking_date()
     #print(increment_booking_number())
     #view_all_bookings()
-    view_booking_no()
+    #view_booking_no()
+    # print("Enter date DD-MM-YYYY")
+    # input_date = input()
+    # view_booking_date(input_date)
     start()
 
 
