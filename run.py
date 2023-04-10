@@ -132,16 +132,12 @@ def view_all_bookings():
     revenue_total(all_bookings)
 
 
-def view_booking_no():
+def view_booking_no(booking_num):
     '''
     Displays all bookings in the system by Booking No., with a count of total
         bookings and a sum of total revenue
     '''
     all_bookings = bookings.get_all_values()
-
-    print("Enter Booking Number digits only...\n")
-    booking_num = int(input())
-    print(f"collecting booking data...\n")
 
     rows_containing_booking_num = []
 
@@ -375,7 +371,10 @@ def choose_view_menu():
             break
         elif view_menu_choice == 2:
             print("View by booking number\n")
-            view_booking_no()
+            print("Enter Booking Number digits only...\n")
+            booking_num = int(input())
+            print(f"collecting booking data...\n")
+            view_booking_no(booking_num)
             choose_view_menu()
             break
         elif view_menu_choice == 3:
