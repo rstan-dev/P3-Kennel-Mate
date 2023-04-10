@@ -142,6 +142,7 @@ def update_booking():
     all_bookings = bookings.get_all_values()
 
     print("Enter Booking Number digits only...\n")
+    # validates the entry is a 4 digit number only
     while True:
         booking_num = input()
         if len(booking_num) == 4 and booking_num.isdigit():
@@ -154,6 +155,7 @@ def update_booking():
 
     rows_containing_booking_num = []
 
+    # adds matching booking data to list
     for row in all_bookings:
         if ('B' + str(booking_num)) in row:
             rows_containing_booking_num.append(row)
@@ -165,22 +167,25 @@ def update_booking():
                      'Amount Paid']
             )
         )
-    count_bookings = sum(
-        isinstance(elem, list) for elem in
-        rows_containing_booking_num
-        )
     print("\n")
-    print(f'Total Bookings: {count_bookings}')
+    count_bookings(rows_containing_booking_num)
     revenue_total(rows_containing_booking_num)
     print("\n")
 
-
+    # The following code locates the index of the row in the worksheet that contains
+    # the booking number entered by the user, and stores the index
+    # in the row_index variable.
     row_index = None
     for i, row in enumerate(all_bookings):
         if row[0] == ('B' + str(booking_num)):
             row_index = i + 1
             break
 
+    # The code then prompts the user to update various details of the booking,
+    # such as the date, dog's name, family name, and amount paid.
+    # If the user chooses to update a particular detail, the new value is entered
+    # by the user and stored in a variable.
+    # The value in the worksheet is then updated using the update_cell() method from the gspread library.
     if row_index is not None:
 
         print("*" * 25)
