@@ -121,15 +121,34 @@ def bookings_counter(values):
 
 def view_all_bookings():
     '''
-    Displays all bookings in the system,
+    Displays all bookings in the system, with a count of total booking sand sum of revenue, and displays a message if there is no booking data - based on if a booking number is present
     '''
     all_bookings = bookings.get_all_values()
+    bookings_B1000_or_higher = []
 
-    print(tabulate(
-        all_bookings[1:],
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
-    bookings_counter(all_bookings[1:])
-    revenue_total(all_bookings)
+    for row in all_bookings:
+        if any('B' + str(i).zfill(4) in value for i, value in enumerate(row)):
+            bookings_B1000_or_higher.append(row)
+
+    if not bookings_B1000_or_higher:
+        print(
+            tabulate(
+                bookings_B1000_or_higher,
+                headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                         'Amount Paid']
+                )
+            )
+        print("No booking data to display")
+    else:
+        print(
+            tabulate(
+                bookings_B1000_or_higher,
+                headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                         'Amount Paid']
+                )
+            )
+        bookings_counter(bookings_B1000_or_higher)
+        revenue_total(bookings_B1000_or_higher)
 
 
 def view_booking_no(booking_num):
