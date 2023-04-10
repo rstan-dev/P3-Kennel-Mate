@@ -91,7 +91,7 @@ def revenue_total(values):
     total = 0
 
     for value in values:
-        match = pattern.findall(value[3])
+        match = pattern.findall(value[4])
         if match:
             revenue = float(match[0])
             revenue_list.append(revenue)
