@@ -225,13 +225,13 @@ def view_dog_bookings(dogs_name):
 
     if not rows_containing_dog:
         print(tabulate(
-        rows_containing_dog,
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            rows_containing_dog,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
         print("No booking data to display")
     else:
         print(tabulate(
-        rows_containing_dog,
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            rows_containing_dog,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
 
         bookings_counter(rows_containing_dog)
         revenue_total(rows_containing_dog)
