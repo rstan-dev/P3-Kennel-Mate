@@ -121,19 +121,15 @@ def bookings_counter(values):
 
 def view_all_bookings():
     '''
-    Displays all bookings in the system, with a count of total booking sand sum of revenue, and displays a message if there is no booking data - based on if a booking number is present
+    Displays all bookings in the system, with a count of total bookings and sum of revenue, and displays a message if there is no booking data - based on if any data is present after the header
     '''
     all_bookings = bookings.get_all_values()
-    bookings_B1000_or_higher = []
+    bookings_data = all_bookings[1:]
 
-    for row in all_bookings:
-        if any('B' + str(i).zfill(4) in value for i, value in enumerate(row)):
-            bookings_B1000_or_higher.append(row)
-
-    if not bookings_B1000_or_higher:
+    if not bookings_data:
         print(
             tabulate(
-                bookings_B1000_or_higher,
+                bookings_data,
                 headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                          'Amount Paid']
                 )
@@ -142,13 +138,14 @@ def view_all_bookings():
     else:
         print(
             tabulate(
-                bookings_B1000_or_higher,
+                bookings_data,
                 headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                          'Amount Paid']
                 )
             )
-        bookings_counter(bookings_B1000_or_higher)
-        revenue_total(bookings_B1000_or_higher)
+
+        bookings_counter(bookings_data)
+        revenue_total(bookings_data)
 
 
 def view_booking_no(booking_num):
@@ -429,6 +426,7 @@ def choose_view_menu():
             print("View by booking date\n")
             print("Enter date DD-MM-YYYY")
             input_date = input()
+            print(f"collecting booking data...\n")
             view_booking_date(input_date)
             choose_view_menu()
             break
@@ -436,6 +434,7 @@ def choose_view_menu():
             print("View by dog's name\n")
             print("Enter the Dog's name")
             dogs_name = input().title()
+            print(f"collecting booking data...\n")
             view_dog_bookings(dogs_name)
             choose_view_menu()
             break
@@ -457,6 +456,7 @@ def choose_main_menu():
         # '\033c'")
         if main_menu_choice == 1:
             print("Create a new booking\n")
+            choose_main_menu()
             break
         elif main_menu_choice == 2:
             print("Update a booking\n")
@@ -507,9 +507,9 @@ def test_function_calls():
     # print("Enter date DD-MM-YYYY")
     # input_date = input()
     # view_booking_date(input_date)
-    print("Enter the Dog's name")
-    dogs_name = input().title()
-    view_dog_bookings(dogs_name)
+    # print("Enter the Dog's name")
+    # dogs_name = input().title()
+    # view_dog_bookings(dogs_name)
     start()
 
 
