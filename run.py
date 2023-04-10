@@ -43,9 +43,10 @@ def get_booking_date():
         print("Please enter the booking date as: (DD-MM-YYYY)")
         booking_date = input()
         if not date_pattern.match(booking_date):
-            print("Invalid date format, please try again.\n The day must be between 1 and 31,\n "
-                                 "The month must be between 1 and 12,"
-                                 "\nAnd the year must be a four-digit number")
+            print("Invalid date format, please try again.\n"
+                  "The day must be between 1 and 31,\n"
+                  "The month must be between 1 and 12,\n"
+                  "And the year must be a four-digit number")
             continue
         try:
             day, month, year = map(int, booking_date.split("-"))
@@ -65,7 +66,8 @@ def get_booking_date():
 
 def increment_booking_number():
     '''
-    Automatically generates and increments a sequential booking number starting with B1001
+    Automatically generates and increments a sequential booking
+    number starting with B1001
     '''
     highest_num = 1000
 
@@ -137,8 +139,10 @@ def create_booking():
 
 def update_booking():
     '''
-    Allows user to overwrite the booking_data in the worksheet with new data
-    User needs to know the booking number, found through searching the bookings.
+    Allows user to overwrite the booking_data in the worksheet with
+    new data.
+    User needs to know the booking number, found through searching
+    the bookings.
     '''
     all_bookings = bookings.get_all_values()
 
@@ -171,8 +175,8 @@ def update_booking():
     bookings_counter(rows_containing_booking_num)
     revenue_total(rows_containing_booking_num)
 
-    # The following code locates the index of the row in the worksheet that contains
-    # the booking number entered by the user, and stores the index
+    # The following code locates the index of the row in the worksheet that
+    # contains the booking number entered by the user, and stores the index
     # in the row_index variable.
     row_index = None
     for i, row in enumerate(all_bookings):
@@ -182,9 +186,10 @@ def update_booking():
 
     # The code then prompts the user to update various details of the booking,
     # such as the date, dog's name, family name, and amount paid.
-    # If the user chooses to update a particular detail, the new value is entered
-    # by the user and stored in a variable.
-    # The value in the worksheet is then updated using the update_cell() method from the gspread library.
+    # If the user chooses to update a particular detail, the new value is
+    # entered by the user and stored in a variable.
+    # The value in the worksheet is then updated using the update_cell()
+    # method from the gspread library.
     if row_index is not None:
 
         print("*" * 25)
@@ -248,7 +253,7 @@ def delete_booking():
         else:
             print("Please enter a 4-digit number.\n")
 
-    print(f"collecting booking data...\n")
+    print("collecting booking data...\n")
 
     rows_containing_booking_num = []
 
@@ -262,17 +267,18 @@ def delete_booking():
     bookings_counter(rows_containing_booking_num)
     revenue_total(rows_containing_booking_num)
 
-    # The following code locates the index of the row in the worksheet that contains
-    # the booking number entered by the user, and stores the index
-    # in the row_index variable.
+    # The following code locates the index of the row in the worksheet
+    # that comntains the booking number entered by the user, and stores
+    # the index in the row_index variable.
     row_index = None
     for i, row in enumerate(all_bookings):
         if row[0] == ('B' + str(booking_num)):
             row_index = i + 1
             break
 
-    # The code then prompts the user to confirm if they wish to delete the booking,
-    # before using the delete_rows method from the gspread library.
+    # The code then prompts the user to confirm if they wish to
+    # delete the booking before using the delete_rows method from
+    # the gspread library.
     if row_index is not None:
         print("Are you sure you want to delete this booking? Enter Y/N")
         delete_choice = input().upper()
@@ -323,7 +329,7 @@ def view_booking_no(booking_num):
     rows_containing_booking_num = []
 
     for row in all_bookings:
-        if ('B' + str(booking_num)) in row:
+        if 'B' + str(booking_num) in row:
             rows_containing_booking_num.append(row)
 
     if not rows_containing_booking_num:
@@ -369,7 +375,6 @@ def view_booking_date(booking_date):
 
         bookings_counter(rows_containing_booking_date)
         revenue_total(rows_containing_booking_date)
-
 
 
 def view_dog_bookings(dogs_name):
@@ -445,7 +450,6 @@ def update_bkg_menu():
     print("Update a Booking Menu\n")
     print('*' * 22)
     print("To update a booking, you will need the Booking Number\n")
-    menu_choice = 'x'
     while True:
         print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
@@ -470,7 +474,6 @@ def delete_bkg_menu():
     print('*' * 22)
     print("Delete a Booking Menu\n")
     print('*' * 22)
-    menu_choice = 'x'
     while True:
         print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
@@ -495,7 +498,6 @@ def view_bkg_menu():
     print('*' * 22)
     print("View a Booking Menu\n")
     print('*' * 22)
-    menu_choice = 'x'
     while True:
         print('Please choose an option from the following:\n')
         print('[1] - View all bookings')
@@ -532,7 +534,7 @@ def choose_update_menu():
             print("View by booking date\n")
             print("Enter date DD-MM-YYYY")
             input_date = input()
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_booking_date(input_date)
             choose_update_menu()
             break
@@ -540,7 +542,7 @@ def choose_update_menu():
             print("View by dog's name\n")
             print("Enter the Dog's name")
             dogs_name = input().title()
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_dog_bookings(dogs_name)
             choose_update_menu()
             break
@@ -570,7 +572,7 @@ def choose_delete_menu():
             print("Search bookings by date - to delete\n")
             print("Enter date DD-MM-YYYY")
             input_date = input()
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_booking_date(input_date)
             choose_delete_menu()
             break
@@ -578,7 +580,7 @@ def choose_delete_menu():
             print("Search bookings by dog's name - to delete\n")
             print("Enter the Dog's name")
             dogs_name = input().title()
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_dog_bookings(dogs_name)
             choose_delete_menu()
             break
@@ -608,7 +610,7 @@ def choose_view_menu():
             print("View by booking number\n")
             print("Enter Booking Number digits only...\n")
             booking_num = int(input())
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_booking_no(booking_num)
             choose_view_menu()
             break
@@ -616,7 +618,7 @@ def choose_view_menu():
             print("View by booking date\n")
             print("Enter date DD-MM-YYYY")
             input_date = input()
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_booking_date(input_date)
             choose_view_menu()
             break
@@ -624,7 +626,7 @@ def choose_view_menu():
             print("View by dog's name\n")
             print("Enter the Dog's name")
             dogs_name = input().title()
-            print(f"collecting booking data...\n")
+            print("collecting booking data...\n")
             view_dog_bookings(dogs_name)
             choose_view_menu()
             break
