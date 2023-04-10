@@ -107,10 +107,34 @@ def bookings_counter(values):
     count_bookings = sum(isinstance(elem, list) for elem in values)
     print(f'Total Bookings: {count_bookings}')
 
+
 #CRUD FUNCTIONS
-# def create_booking()
-'''
-'''
+def create_booking():
+    '''
+    Get booking input data from the user.
+    Get last known booking number from sheet and add 1. If no number,
+    start the booking number sequence from B-1001.
+    Run a while loop to collect a valid string of data from the user
+    via the terminal.
+    The loop will repeatedly request data until it is valid.
+    '''
+    next_booking_num = increment_booking_number()
+    booking_date = get_booking_date()
+    print("Please enter the Dog's name")
+    dogs_name = input().title()
+    print("Please enter the Family name")
+    family_name = input().title()
+    print("Please enter amount charged")
+    amount_charged = input()
+    float_amount = float(amount_charged)
+    data_list = [next_booking_num, booking_date, dogs_name, family_name, "{:.2f}".format(
+        float_amount)]
+    bookings.append_row(data_list)
+    print("\n")
+    print("Booking entered successfully\n")
+
+
+
 # def update_booking()
 '''
 '''
@@ -456,6 +480,7 @@ def choose_main_menu():
         # '\033c'")
         if main_menu_choice == 1:
             print("Create a new booking\n")
+            create_booking()
             choose_main_menu()
             break
         elif main_menu_choice == 2:
