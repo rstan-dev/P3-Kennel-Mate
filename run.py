@@ -42,10 +42,10 @@ def get_booking_date():
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
 
     while True:
-        print(colored("Please enter the booking date as: (DD-MM-YYYY)", 'yellow'))
+        print(colored("\nPlease enter the booking date as: (DD-MM-YYYY)", 'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
-            print(colored("Invalid date format, please try again.\n"
+            print(colored("\nInvalid date format, please try again.\n"
                   "The day must be between 1 and 31,\n"
                   "The month must be between 1 and 12,\n"
                   "And the year must be a four-digit number", 'red'))
@@ -54,7 +54,7 @@ def get_booking_date():
             day, month, year = map(int, booking_date.split("-"))
             date = datetime.date(year, month, day)
             if date.month != month or date.day != day:
-                raise ValueError(colored("Invalid date, please reenter the correct "
+                raise ValueError(colored("\nInvalid date, please reenter the correct "
                                  "date.\n The day must be between 1 and 31,\n "
                                  "The month must be between 1 and 12,"
                                  "\nAnd the year must be a four-digit number", 'red'))
@@ -63,7 +63,7 @@ def get_booking_date():
             break
 
         except ValueError as e:
-            print(colored(f"Invalid date input: {e}", 'red'))
+            print(colored(f"\nInvalid date input: {e}", 'red'))
 
 
 def increment_booking_number():
@@ -210,47 +210,48 @@ def update_booking():
     if row_index is not None:
 
         print("*" * 25)
-        print("Would you like to update the date? Enter Y/N\n")
+        print(colored("\nWould you like to update the date? Enter Y/N\n", 'yellow'))
         update_date_choice = input().upper()
         if update_date_choice == "Y":
-            print("Please update the date\n")
             new_date = get_booking_date()
-            print(f"Updating B-{booking_num} in progress...\n")
+            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
             bookings.update_cell(row_index, 2, new_date)
-            print(f"Booking B-{booking_num} updated successfully.\n")
+            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
         else:
             pass
-        print("Would you like to update the dog's name? Enter Y/N\n")
+        print(colored("\nWould you like to update the dog's name? Enter Y/N\n", 'yellow'))
         update_dog_choice = input().upper()
         if update_dog_choice == "Y":
-            print("Please update the dog's name\n")
+            print(colored("\nPlease update the dog's name\n", 'yellow'))
             new_dogs_name = input().title()
-            print(f"Updating B-{booking_num} in progress...\n")
+            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
             bookings.update_cell(row_index, 3, new_dogs_name)
-            print(f"Booking B-{booking_num} updated successfully.\n")
+            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
         else:
             pass
-        print("Would you like to update the dog's family name? Enter Y/N\n")
+        print(colored("\nWould you like to update the dog's family name? Enter Y/N\n", 'yellow'))
         update_dog_choice = input().upper()
         if update_dog_choice == "Y":
-            print("Please update the family name\n")
+            print(colored("Please update the family name\n", 'yellow'))
             new_family_name = input().title()
-            print(f"Updating B-{booking_num} in progress...\n")
+            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
             bookings.update_cell(row_index, 4, new_family_name)
-            print(f"Booking B-{booking_num} updated successfully.\n")
+            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
         else:
             pass
-        print("Would you like to update the amount paid? Enter Y/N\n")
+        print(colored("\nWould you like to update the amount paid? Enter Y/N\n", 'yellow'))
         update_amount_choice = input().upper()
         if update_amount_choice == "Y":
-            print("Please update the amount paid\n")
+            print(colored("\nPlease update the amount paid\n", 'yellow'))
             new_amount_paid = float(input())
-            print(f"Updating B-{booking_num} in progress...\n")
+            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
             bookings.update_cell(
                 row_index, 5, "{:.2f}".format(new_amount_paid)
                 )
-            print(f"Booking B-{booking_num} updated successfully.\n")
+            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
         else:
+            print(colored("\nBooking updates completed, returning to Upate Booking Menu...", 'green'))
+            time.sleep(1)
             pass
 
 
