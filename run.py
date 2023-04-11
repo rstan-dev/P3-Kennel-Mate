@@ -3,6 +3,7 @@ import gspread
 import datetime
 import re
 from tabulate import tabulate
+from termcolor import colored
 
 from google.oauth2.service_account import Credentials
 
@@ -417,9 +418,10 @@ def start():
     Starts the program - generates a welcome screen to the user
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
-    print('*' * 50)
-    print("** Welcome to the Doggy Daycare Admin System. **\n")
-    print("Press any key + Enter to start the program...")
+    print('*' * 46)
+    print("*** Welcome to Kennel-Mate Admin System. ***\n")
+    print("** book, update, delete and view bookings **\n")
+    print(colored("Press ENTER to start the program...", "yellow"))
     input()
     choose_main_menu()
 
@@ -433,7 +435,7 @@ def display_main_menu():
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
     print('*' * 50)
-    print("Main Menu\n")
+    print("*** MAIN m\n")
     menu_choice = 'x'
     while True:
         print('Please choose an option from the following:\n')
