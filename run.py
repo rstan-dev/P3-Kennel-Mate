@@ -135,7 +135,7 @@ def create_booking():
 
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
-    print(colored("Please enter the Dog's name:", 'yellow'))
+    print(colored("\nPlease enter the Dog's name:", 'yellow'))
     dogs_name = input().title()
     print(colored("\nPlease enter the Family name:", 'yellow'))
     family_name = input().title()
@@ -161,7 +161,9 @@ def update_booking():
 
     all_bookings = bookings.get_all_values()
 
-    print("Enter Booking Number digits only...\n")
+    print('*' * 23)
+    print("*** UPDATE BOOKING ***\n")
+    print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
     # validates the entry is a 4 digit number only
     while True:
         booking_num = input()
@@ -169,9 +171,9 @@ def update_booking():
             booking_num = int(booking_num)
             break
         else:
-            print("Please enter a 4-digit number.\n")
+            print(colored("Invalid entry. Please enter a 4-digit number.\n", 'red'))
 
-    print(f"collecting booking data...\n")
+    print(colored(f"collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
 
@@ -470,23 +472,24 @@ def update_bkg_menu():
     Displays Update booking menu options. Try statement validates user input for
     number between 1 and 4 only
     '''
-    print('*' * 22)
-    print("Update a Booking Menu\n")
-    print('*' * 22)
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+    print('*' * 27)
+    print("*** UPDATE BOOKING MENU ***\n")
+    print("** OPTIONS:\n")
     print("To update a booking, you will need the Booking Number\n")
     while True:
-        print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search bookings by Date')
         print("[3] - Or, Search bookings by Dog's Name")
         print('[4] - Return to Main menu')
+        print(colored('\nPlease choose a Menu option between [1] and [4]:', 'yellow'))
         try:
             update_menu_choice = int(input())
             if update_menu_choice not in range(1, 5):
                 raise ValueError
             break
         except ValueError:
-            print('Invalid input. Please enter a number between 1 and 4')
+            print(colored('\nInvalid input.  Please enter a number between [1] and [4]', 'red'))
     return update_menu_choice
 
 
