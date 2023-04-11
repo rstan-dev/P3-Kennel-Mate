@@ -129,6 +129,10 @@ def create_booking():
     print('*' * 23)
     print("*** CREATE BOOKING ***\n")
 
+    print(colored("Bookings Today:\n", 'magenta'))
+    view_booking_date(todays_date())
+    print("\n")
+
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
     print(colored("Please enter the Dog's name:", 'yellow'))
@@ -667,7 +671,6 @@ def choose_main_menu():
         # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if main_menu_choice == 1:
-            print("Create a new booking\n")
             create_booking()
             choose_main_menu()
             break
