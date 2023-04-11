@@ -1,6 +1,7 @@
 import os
 import gspread
 import datetime
+import time
 import re
 from tabulate import tabulate
 from termcolor import colored
@@ -124,20 +125,25 @@ def create_booking():
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
+    print("\n")
+    print('*' * 23)
+    print("*** CREATE BOOKING ***\n")
+
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
-    print("Please enter the Dog's name")
+    print(colored("Please enter the Dog's name:", 'yellow'))
     dogs_name = input().title()
-    print("Please enter the Family name")
+    print(colored("\nPlease enter the Family name:", 'yellow'))
     family_name = input().title()
-    print("Please enter amount charged")
+    print(colored("\nPlease enter amount charged", 'yellow'))
     amount_charged = input()
     float_amount = float(amount_charged)
     data_list = [next_booking_num, booking_date, dogs_name, family_name, "{:.2f}".format(
         float_amount)]
     bookings.append_row(data_list)
     print("\n")
-    print("Booking entered successfully\n")
+    print(colored("\nBooking entered successfully\n", 'green'))
+    time.sleep(1)
 
 
 def update_booking():
