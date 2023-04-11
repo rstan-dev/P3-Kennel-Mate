@@ -434,23 +434,24 @@ def display_main_menu():
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
-    print('*' * 50)
-    print("*** MAIN m\n")
+    print('*' * 17)
+    print("*** MAIN MENU ***\n")
+    print("** OPTIONS:\n")
     menu_choice = 'x'
     while True:
-        print('Please choose an option from the following:\n')
         print('[1] - Create A Booking')
         print('[2] - Update A Booking')
         print('[3] - Delete A Booking')
         print('[4] - View Bookings')
         print('[5] - Exit')
+        print(colored('\nPlease choose a Menu option between [1] and [5]:', 'yellow'))
         try:
             menu_choice = int(input())
             if menu_choice not in range(1, 6):
                 raise ValueError
             break
         except ValueError:
-            print('Invalid input.  Please enter a number between 1 and 5')
+            print(colored('\nInvalid input.  Please enter a number between [1] and [5]', 'red'))
     return menu_choice
 
 
