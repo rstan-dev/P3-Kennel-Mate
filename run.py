@@ -121,6 +121,8 @@ def create_booking():
     via the terminal.
     The loop will repeatedly request data until it is valid.
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
     print("Please enter the Dog's name")
@@ -144,6 +146,8 @@ def update_booking():
     User needs to know the booking number, found through searching
     the bookings.
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+
     all_bookings = bookings.get_all_values()
 
     print("Enter Booking Number digits only...\n")
@@ -241,6 +245,8 @@ def delete_booking():
     '''
     Allows user to delete the booking_data in the worksheet with new data
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+
     all_bookings = bookings.get_all_values()
 
     print("Enter Booking Number digits only...\n")
@@ -294,6 +300,8 @@ def view_all_bookings():
     '''
     Displays all bookings in the system, with a count of total bookings and sum of revenue, and displays a message if there is no booking data - based on if any data is present after the header
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+
     all_bookings = bookings.get_all_values()
     bookings_data = all_bookings[1:]
 
@@ -408,6 +416,7 @@ def start():
     '''
     Starts the program - generates a welcome screen to the user
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
     print('*' * 50)
     print("** Welcome to the Doggy Daycare Admin System. **\n")
     print("Press any key + Enter to start the program...")
@@ -421,6 +430,8 @@ def display_main_menu():
     Displays Main menu of options. Try statement validates user input for
     number between 1 and 5 only
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+
     print('*' * 50)
     print("Main Menu\n")
     menu_choice = 'x'
