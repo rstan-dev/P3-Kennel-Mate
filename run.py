@@ -473,7 +473,6 @@ def update_bkg_menu():
     Displays Update booking menu options. Try statement validates user input for
     number between 1 and 4 only
     '''
-    os.system('cls' if os.name == 'nt' else "printf '\033c'")
     print('*' * 27)
     print("*** UPDATE BOOKING MENU ***\n")
     print("** OPTIONS:\n")
@@ -555,14 +554,16 @@ def choose_update_menu():
         # os.system('cls' if os.name == 'nt' else "printf
         # '\033c'")
         if update_menu_choice == 1:
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             update_booking()
             choose_update_menu()
             break
         elif update_menu_choice == 2:
-            print("View by booking date\n")
-            print("Enter date DD-MM-YYYY")
-            input_date = input()
-            print("collecting booking data...\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
+            print('*' * 22)
+            print("*** SEARCH BY DATE ***\n")
+            input_date = get_booking_date()
+            print(colored("collecting booking data...\n", 'magenta'))
             view_booking_date(input_date)
             choose_update_menu()
             break
@@ -679,7 +680,7 @@ def choose_main_menu():
             choose_main_menu()
             break
         elif main_menu_choice == 2:
-            print("Update a booking\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             choose_update_menu()
             break
         elif main_menu_choice == 3:
