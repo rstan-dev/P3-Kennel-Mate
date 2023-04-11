@@ -101,7 +101,7 @@ def revenue_total(values):
             revenue_list.append(revenue)
             total += revenue
 
-    print(f"Total Revenue: £{total:.2f}\n")
+    print(colored(f"Total Revenue: £{total:.2f}\n", 'magenta'))
 
 
 def bookings_counter(values):
@@ -110,7 +110,7 @@ def bookings_counter(values):
     '''
     count_bookings = sum(isinstance(elem, list) for elem in values)
     print("\n")
-    print(f'Total Bookings: {count_bookings}')
+    print(colored(f'Total Bookings: {count_bookings}', 'magenta'))
 
 
 #CRUD FUNCTIONS
@@ -370,7 +370,7 @@ def view_booking_no(booking_num):
 def view_booking_date(booking_date):
     '''
     Displays all bookings in the system by Date, with a count of total
-        bookings and a sum of total revenue
+    bookings and a sum of total revenue
     '''
     all_bookings = bookings.get_all_values()
 
@@ -386,7 +386,7 @@ def view_booking_date(booking_date):
         print(tabulate(
             rows_containing_booking_date,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
-        print("No booking data to display for this date")
+        print(colored("\nNo booking data to display for this date", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_date,
