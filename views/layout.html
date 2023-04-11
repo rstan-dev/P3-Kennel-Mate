@@ -8,6 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
     <title>Kennel-Mate</title>
     <style>
         body {
@@ -25,6 +28,12 @@
             height: 100vh;
             background-image: url(https://raw.githubusercontent.com/rstan-dev/P3-Kennel-Mate/main/assets/images/kennel_mate_bg.jpg);
             background-size: cover;
+        }
+
+        #bg_container h1,
+        #bg_container h3 {
+            font-family: 'Geo', sans-serif;
+            ;
         }
 
         /**
@@ -187,6 +196,8 @@
 
 <body>
     <main id="bg_container">
+        <h1>KENNEL-MATE</h1>
+        <h3>BOOKING PORTAL</h3>
         @{body}
     </main>
 </body>
