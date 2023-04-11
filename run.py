@@ -42,28 +42,28 @@ def get_booking_date():
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
 
     while True:
-        print("Please enter the booking date as: (DD-MM-YYYY)")
+        print(colored("Please enter the booking date as: (DD-MM-YYYY)", 'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
-            print("Invalid date format, please try again.\n"
+            print(colored("Invalid date format, please try again.\n"
                   "The day must be between 1 and 31,\n"
                   "The month must be between 1 and 12,\n"
-                  "And the year must be a four-digit number")
+                  "And the year must be a four-digit number", 'red'))
             continue
         try:
             day, month, year = map(int, booking_date.split("-"))
             date = datetime.date(year, month, day)
             if date.month != month or date.day != day:
-                raise ValueError("Invalid date, please reenter the correct "
+                raise ValueError(colored("Invalid date, please reenter the correct "
                                  "date.\n The day must be between 1 and 31,\n "
                                  "The month must be between 1 and 12,"
-                                 "\nAnd the year must be a four-digit number")
+                                 "\nAnd the year must be a four-digit number", 'red'))
             else:
                 return booking_date
             break
 
         except ValueError as e:
-            print(f"Invalid date input: {e}")
+            print(colored(f"Invalid date input: {e}", 'red'))
 
 
 def increment_booking_number():
