@@ -263,7 +263,9 @@ def delete_booking():
 
     all_bookings = bookings.get_all_values()
 
-    print("Enter Booking Number digits only...\n")
+    print('*' * 23)
+    print("*** DELETE BOOKING ***\n")
+    print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
     # validates the entry is a 4 digit number only
     while True:
         booking_num = input()
@@ -271,21 +273,31 @@ def delete_booking():
             booking_num = int(booking_num)
             break
         else:
-            print("Please enter a 4-digit number.\n")
+            print(colored("Invalid entry. Please enter a 4-digit number.\n", 'red'))
 
-    print("collecting booking data...\n")
+    print(colored(f"collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
+    no_booking_data = True
 
+    # adds matching booking data to list
     for row in all_bookings:
         if ('B' + str(booking_num)) in row:
             rows_containing_booking_num.append(row)
-    print(tabulate(
-        rows_containing_booking_num,
-        headers=['Booking No.', 'Date', 'Dogs Name', 'Amount Paid'])
-        )
-    bookings_counter(rows_containing_booking_num)
-    revenue_total(rows_containing_booking_num)
+            no_booking_data = False
+
+    if no_booking_data:
+        print(tabulate(
+            rows_containing_booking_num,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+        print(colored("\nNo booking data to display for this date", 'red'))
+    else:
+        print(tabulate(
+            rows_containing_booking_num,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+
+        bookings_counter(rows_containing_booking_num)
+        revenue_total(rows_containing_booking_num)
 
     # The following code locates the index of the row in the worksheet
     # that comntains the booking number entered by the user, and stores
@@ -300,12 +312,12 @@ def delete_booking():
     # delete the booking before using the delete_rows method from
     # the gspread library.
     if row_index is not None:
-        print("Are you sure you want to delete this booking? Enter Y/N")
+        print(colored("Are you sure you want to delete this booking? Enter Y/N", 'yellow'))
         delete_choice = input().upper()
         if delete_choice == 'Y':
             bookings.delete_rows(row_index)
-            print(f"Deleting {booking_num} in progress...\n")
-            print(f"{booking_num} deleted successfully.\n")
+            print(colored(f"Deleting {booking_num} in progress...\n", 'magenta'))
+            print(colored(f"{booking_num} deleted successfully.\n", 'green'))
         else:
             pass
 
@@ -683,7 +695,7 @@ def choose_main_menu():
             choose_update_menu()
             break
         elif main_menu_choice == 3:
-            print("Delete a booking\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             choose_delete_menu()
             break
         elif main_menu_choice == 4:
