@@ -498,22 +498,23 @@ def delete_bkg_menu():
     Displays Delete menu options. Try statement validates user input for
     number between 1 and 4 only
     '''
-    print('*' * 22)
-    print("Delete a Booking Menu\n")
-    print('*' * 22)
+    print('*' * 27)
+    print("*** DELETE BOOKING MENU ***\n")
+    print("** OPTIONS:\n")
+    print("To delete a booking, you will need the Booking Number\n")
     while True:
-        print('Please choose an option from the following:\n')
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search bookings by Date')
         print("[3] - Or, Search bookings by Dog's Name")
         print('[4] - Return to Main menu')
+        print(colored('\nPlease choose a Menu option between [1] and [4]:', 'yellow'))
         try:
             delete_menu_choice = int(input())
             if delete_menu_choice not in range(1, 5):
                 raise ValueError
             break
         except ValueError:
-            print('Invalid input.  Please enter a number between 1 and 4')
+            print(colored('\nInvalid input.  Please enter a number between [1] and [4]', 'red'))
     return delete_menu_choice
 
 
@@ -590,10 +591,8 @@ def choose_delete_menu():
     '''
     delete_menu_choice = delete_bkg_menu()
     while True:
-        #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf
-        # '\033c'")
         if delete_menu_choice == 1:
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             delete_booking()
             choose_delete_menu()
             break
