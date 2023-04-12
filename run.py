@@ -655,11 +655,8 @@ def choose_view_menu():
     '''
     view_menu_choice = view_bkg_menu()
     while True:
-        #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf
-        # '\033c'")
         if view_menu_choice == 1:
-            print("View all bookings\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             view_all_bookings()
             choose_view_menu()
             break
@@ -672,26 +669,31 @@ def choose_view_menu():
             choose_view_menu()
             break
         elif view_menu_choice == 3:
-            print("View by booking date\n")
-            print("Enter date DD-MM-YYYY")
-            input_date = input()
-            print("collecting booking data...\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
+            print('*' * 20)
+            print("*** VIEW BY DATE ***\n")
+            input_date = get_booking_date()
+            print(colored("collecting booking data...\n", 'magenta'))
             view_booking_date(input_date)
             choose_view_menu()
             break
         elif view_menu_choice == 4:
-            print("View by dog's name\n")
-            print("Enter the Dog's name")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
+            print('*' * 24)
+            print("*** VIEW BY DOG'S NAME ***\n")
+            print(colored("Enter the Dog's name", 'yellow'))
             dogs_name = input().title()
-            print("collecting booking data...\n")
+            print(colored("collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_view_menu()
             break
         elif view_menu_choice == 5:
-            print("Return to Main menu\n")
+            print(colored("Returning to main menu\n", 'magenta'))
+            time.sleep(1)
+            choose_main_menu()
             break
         else:
-            print("Invalid choice, please choose between 1 and 5")
+            print(colored("Invalid choice, please choose between 1 and 5", 'red'))
 
 def choose_main_menu():
     '''
