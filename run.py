@@ -550,9 +550,6 @@ def choose_update_menu():
     '''
     update_menu_choice = update_bkg_menu()
     while True:
-        #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf
-        # '\033c'")
         if update_menu_choice == 1:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             update_booking()
@@ -578,7 +575,8 @@ def choose_update_menu():
             choose_update_menu()
             break
         elif update_menu_choice == 4:
-            print("Return to main menu\n")
+            print(colored("Returning to main menu\n", 'magenta'))
+            time.sleep(1)
             choose_main_menu()
             break
         else:
