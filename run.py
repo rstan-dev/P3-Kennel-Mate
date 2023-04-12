@@ -609,7 +609,7 @@ def choose_update_menu():
             choose_main_menu()
             break
         else:
-            print("Invalid choice, please choose between 1 and 4")
+            print(colored("Invalid choice, please choose between 1 and 4", 'red'))
 
 
 def choose_delete_menu():
@@ -648,7 +648,7 @@ def choose_delete_menu():
             time.sleep(1)
             choose_main_menu()
         else:
-            print("Invalid choice, please choose between 1 and 4")
+            print(colored("Invalid choice, please choose between 1 and 4", 'red'))
 
 
 def choose_view_menu():
