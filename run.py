@@ -368,20 +368,40 @@ def view_booking_no(booking_num):
     Displays all bookings in the system by Booking No., with a count of total
         bookings and a sum of total revenue
     '''
+    os.system('cls' if os.name == 'nt' else "printf '\033c'")
+
     all_bookings = bookings.get_all_values()
 
-    rows_containing_booking_num = []
+    print('*' * 30)
+    print("*** VIEW BY BOOKING NUMBER ***\n")
+    print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
+    # validates the entry is a 4 digit number only
+    while True:
+        booking_num = input()
+        if len(booking_num) == 4 and booking_num.isdigit():
+            booking_num = int(booking_num)
+            break
+        else:
+            print(colored("Invalid entry. Please enter a 4-digit number.\n", 'red'))
 
+    print(colored(f"collecting booking data...\n", 'magenta'))
+
+    rows_containing_booking_num = []
+    no_booking_data = True
+
+    # adds matching booking data to list, or displays a message if there is
+    # no data to display
     for row in all_bookings:
         if 'B' + str(booking_num) in row:
             rows_containing_booking_num.append(row)
+            no_booking_data = False
 
-    if not rows_containing_booking_num:
+    if no_booking_data:
         print(tabulate(
             rows_containing_booking_num,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid'])
             )
-        print("No booking data to display")
+        print(colored("\nNo booking data to display for this date\n", 'red'))
 
     else:
         print(tabulate(
@@ -664,11 +684,7 @@ def choose_view_menu():
             choose_view_menu()
             break
         elif view_menu_choice == 2:
-            print("View by booking number\n")
-            print("Enter Booking Number digits only...\n")
-            booking_num = int(input())
-            print("collecting booking data...\n")
-            view_booking_no(booking_num)
+            view_booking_no(1000)
             choose_view_menu()
             break
         elif view_menu_choice == 3:
