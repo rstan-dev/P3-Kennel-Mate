@@ -551,23 +551,23 @@ def view_bkg_menu():
     Displays View bookings menu of options. Try statement validates user input for
     number between 1 and 4 only
     '''
-    print('*' * 22)
-    print("View a Booking Menu\n")
-    print('*' * 22)
+    print('*' * 26)
+    print("*** VIEW BOOKINGS MENU ***\n")
+    print("** OPTIONS:\n")
     while True:
-        print('Please choose an option from the following:\n')
         print('[1] - View all bookings')
         print('[2] - View by booking No.')
         print('[3] - View by booking Date')
         print("[4] - View by booking Name")
         print('[5] - Return to Main menu')
+        print(colored('\nPlease choose a Menu option between [1] and [5]:', 'yellow'))
         try:
             view_menu_choice = int(input())
             if view_menu_choice not in range(1, 6):
                 raise ValueError
             break
         except ValueError:
-            print('Invalid input.  Please enter a number between 1 and 5')
+            print(colored('\nInvalid input.  Please enter a number between [1] and [4]', 'red'))
     return view_menu_choice
 
 
