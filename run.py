@@ -286,7 +286,8 @@ def delete_booking():
     rows_containing_booking_num = []
     no_booking_data = True
 
-    # adds matching booking data to list
+    # adds matching booking data to list, or displays a message if there is
+    # no data to display
     for row in all_bookings:
         if ('B' + str(booking_num)) in row:
             rows_containing_booking_num.append(row)
@@ -296,7 +297,7 @@ def delete_booking():
         print(tabulate(
             rows_containing_booking_num,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
-        print(colored("\nNo booking data to display for this date", 'red'))
+        print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_num,
@@ -398,6 +399,8 @@ def view_booking_date(booking_date):
     rows_containing_booking_date = []
     no_booking_data = True
 
+    # adds matching booking data to list, or displays a message if there is
+    # no data to display
     for row in all_bookings:
         if booking_date in row:
             rows_containing_booking_date.append(row)
@@ -407,7 +410,7 @@ def view_booking_date(booking_date):
         print(tabulate(
             rows_containing_booking_date,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
-        print(colored("\nNo booking data to display for this date", 'red'))
+        print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_date,
@@ -425,16 +428,20 @@ def view_dog_bookings(dogs_name):
     all_bookings = bookings.get_all_values()
 
     rows_containing_dog = []
+    no_booking_data = True
 
+    # adds matching booking data to list, or displays a message if there is
+    # no data to display
     for row in all_bookings:
         if dogs_name in row:
             rows_containing_dog.append(row)
+            no_booking_data = False
 
-    if not rows_containing_dog:
+    if no_booking_data:
         print(tabulate(
             rows_containing_dog,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
-        print("No booking data to display")
+        print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
             rows_containing_dog,
