@@ -176,21 +176,27 @@ def update_booking():
     print(colored(f"collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
+    no_booking_data = True
 
-    # adds matching booking data to list
+    # adds matching booking data to list, or displays a message if there is
+    # no data to display
     for row in all_bookings:
         if ('B' + str(booking_num)) in row:
             rows_containing_booking_num.append(row)
+            no_booking_data = False
 
-    print(
-        tabulate(
+    if no_booking_data:
+        print(tabulate(
             rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name',
-                     'Amount Paid']
-            )
-        )
-    bookings_counter(rows_containing_booking_num)
-    revenue_total(rows_containing_booking_num)
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+        print(colored("\nNo booking data to display for this date\n", 'red'))
+    else:
+        print(tabulate(
+            rows_containing_booking_num,
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+
+        bookings_counter(rows_containing_booking_num)
+        revenue_total(rows_containing_booking_num)
 
     # The following code locates the index of the row in the worksheet that
     # contains the booking number entered by the user, and stores the index
