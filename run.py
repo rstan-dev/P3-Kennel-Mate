@@ -48,7 +48,7 @@ def get_booking_date():
             print(colored("\nInvalid date format, please try again.\n"
                   "The day must be between 1 and 31,\n"
                   "The month must be between 1 and 12,\n"
-                  "And the year must be a four-digit number", 'red'))
+                  "And the year must be a four-digit number\n", 'red'))
             continue
         try:
             day, month, year = map(int, booking_date.split("-"))
@@ -57,13 +57,13 @@ def get_booking_date():
                 raise ValueError(colored("\nInvalid date, please reenter the correct "
                                  "date.\n The day must be between 1 and 31,\n "
                                  "The month must be between 1 and 12,"
-                                 "\nAnd the year must be a four-digit number", 'red'))
+                                 "\nAnd the year must be a four-digit number\n", 'red'))
             else:
                 return booking_date
             break
 
         except ValueError as e:
-            print(colored(f"\nInvalid date input: {e}", 'red'))
+            print(colored(f"\nInvalid date input: {e}\n", 'red'))
 
 
 def increment_booking_number():
@@ -512,7 +512,7 @@ def display_main_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [5]', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1] and [5]\n', 'red'))
     return menu_choice
 
 
@@ -537,7 +537,7 @@ def update_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [4]', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1] and [4]\n', 'red'))
     return update_menu_choice
 
 
@@ -562,7 +562,7 @@ def delete_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [4]', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1] and [4]\n', 'red'))
     return delete_menu_choice
 
 
@@ -587,7 +587,7 @@ def view_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [4]', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1] and [4]\n', 'red'))
     return view_menu_choice
 
 
@@ -629,7 +629,7 @@ def choose_update_menu():
             choose_main_menu()
             break
         else:
-            print(colored("Invalid choice, please choose between 1 and 4", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 4\n", 'red'))
 
 
 def choose_delete_menu():
@@ -668,7 +668,7 @@ def choose_delete_menu():
             time.sleep(1)
             choose_main_menu()
         else:
-            print(colored("Invalid choice, please choose between 1 and 4", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 4\n", 'red'))
 
 
 def choose_view_menu():
@@ -742,7 +742,7 @@ def choose_main_menu():
             time.sleep(1)
             start()
         else:
-            print(colored("Invalid choice, please choose between 1 and 5", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 5\n", 'red'))
         main_menu_choice = display_main_menu()
 
 
