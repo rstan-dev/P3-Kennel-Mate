@@ -568,10 +568,12 @@ def choose_update_menu():
             choose_update_menu()
             break
         elif update_menu_choice == 3:
-            print("View by dog's name\n")
-            print("Enter the Dog's name")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
+            print('*' * 24)
+            print("*** SEARCH BY DOG'S NAME ***\n")
+            print(colored("Enter the Dog's name", 'yellow'))
             dogs_name = input().title()
-            print("collecting booking data...\n")
+            print(colored("collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_update_menu()
             break
