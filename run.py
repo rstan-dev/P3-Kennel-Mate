@@ -705,9 +705,6 @@ def choose_main_menu():
     '''
     main_menu_choice = display_main_menu()
     while True:
-        #to check and complete terminal clear
-        # os.system('cls' if os.name == 'nt' else "printf
-        # '\033c'")
         if main_menu_choice == 1:
             create_booking()
             choose_main_menu()
@@ -721,14 +718,15 @@ def choose_main_menu():
             choose_delete_menu()
             break
         elif main_menu_choice == 4:
-            print("View bookings\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             choose_view_menu()
             break
         elif main_menu_choice == 5:
-            print("Exit\n")
+            print(colored("Ending program...\n", 'magenta'))
+            time.sleep(1)
             start()
         else:
-            print("Invalid choice, please choose between 1 and 5")
+            print(colored("Invalid choice, please choose between 1 and 5", 'red'))
         main_menu_choice = display_main_menu()
 
 
