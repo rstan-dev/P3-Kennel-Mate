@@ -335,6 +335,9 @@ def view_all_bookings():
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
+    print('*' * 25)
+    print("*** VIEW ALL BOOKINGS ***\n")
+
     all_bookings = bookings.get_all_values()
     bookings_data = all_bookings[1:]
 
@@ -346,7 +349,7 @@ def view_all_bookings():
                          'Amount Paid']
                 )
             )
-        print("No booking data to display")
+        print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(
             tabulate(
