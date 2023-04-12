@@ -622,23 +622,27 @@ def choose_delete_menu():
             choose_delete_menu()
             break
         elif delete_menu_choice == 2:
-            print("Search bookings by date - to delete\n")
-            print("Enter date DD-MM-YYYY")
-            input_date = input()
-            print("collecting booking data...\n")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
+            print('*' * 22)
+            print("*** SEARCH BY DATE ***\n")
+            input_date = get_booking_date()
+            print(colored("collecting booking data...\n", 'magenta'))
             view_booking_date(input_date)
             choose_delete_menu()
             break
         elif delete_menu_choice == 3:
-            print("Search bookings by dog's name - to delete\n")
-            print("Enter the Dog's name")
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
+            print('*' * 24)
+            print("*** SEARCH BY DOG'S NAME ***\n")
+            print(colored("Enter the Dog's name", 'yellow'))
             dogs_name = input().title()
-            print("collecting booking data...\n")
+            print(colored("collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_delete_menu()
             break
         elif delete_menu_choice == 4:
-            print("Return to main menu\n")
+            print(colored("Returning to main menu\n", 'magenta'))
+            time.sleep(1)
             choose_main_menu()
         else:
             print("Invalid choice, please choose between 1 and 4")
