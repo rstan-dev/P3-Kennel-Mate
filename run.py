@@ -45,7 +45,7 @@ def get_booking_date():
         print(colored("\nPlease enter the booking date as: (DD-MM-YYYY)", 'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
-            print(colored("\nInvalid date format, please try again.\n"
+            print(colored("\nInvalid date format, please try again as DD-MM-YYY.\n"
                   "The day must be between 1 and 31,\n"
                   "The month must be between 1 and 12,\n"
                   "And the year must be a four-digit number\n", 'red'))
@@ -54,8 +54,8 @@ def get_booking_date():
             day, month, year = map(int, booking_date.split("-"))
             date = datetime.date(year, month, day)
             if date.month != month or date.day != day:
-                raise ValueError(colored("\nInvalid date, please reenter the correct "
-                                 "date.\n The day must be between 1 and 31,\n "
+                raise ValueError(colored("\nInvalid date format, please try again as DD-MM-YYY.\n"
+                                 "The day must be between 1 and 31,\n "
                                  "The month must be between 1 and 12,"
                                  "\nAnd the year must be a four-digit number\n", 'red'))
             else:
