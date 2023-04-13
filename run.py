@@ -135,13 +135,36 @@ def create_booking():
 
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
-    print(colored("\nPlease enter the Dog's name:", 'yellow'))
-    dogs_name = input().title()
-    print(colored("\nPlease enter the Family name:", 'yellow'))
-    family_name = input().title()
-    print(colored("\nPlease enter amount charged", 'yellow'))
-    amount_charged = input()
-    float_amount = float(amount_charged)
+
+    # check if the input is empty or contains only white spaces
+    while True:
+        dogs_name = input(colored("\nPlease enter the Dog's name:", 'yellow')).strip().title()
+        if not dogs_name:
+            print(colored("Error: Dog's name cannot be empty or contain\n"
+                          "only white spaces. Please try again.", 'red'))
+        else:
+            break
+
+    while True:
+        family_name = input(colored("\nPlease enter the Family name:", 'yellow')).strip().title()
+        if not dogs_name:
+            print(colored("Error: Family name cannot be empty or contain\n"
+                        "only white spaces. Please try again.", 'red'))
+        else:
+            break
+
+    while True:
+        amount_charged = input(colored("\nPlease enter amount charged:", 'yellow'))
+        try:
+            float_amount = float(amount_charged)
+            if not float_amount.is_integer() and round(float_amount, 2) != float_amount:
+                raise ValueError
+        except ValueError:
+            print(colored("Invalid Input: Amount charged must be a whole number\n"
+                          "or a number with 2 decimal places. Please try again.", 'red'))
+        else:
+            break
+
     data_list = [next_booking_num, booking_date, dogs_name, family_name, "{:.2f}".format(
         float_amount)]
     bookings.append_row(data_list)
