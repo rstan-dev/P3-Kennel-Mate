@@ -28,25 +28,34 @@
             height: 100vh;
             background-image: url(https://raw.githubusercontent.com/rstan-dev/P3-Kennel-Mate/main/assets/images/kennel_mate_bg.jpg);
             background-size: cover;
+            font-family: 'Geo', sans-serif;
+            color: #FFF;
         }
 
         /**
         * Font and positioning for header
         */
-        #bg_container h1,
-        #bg_container h3 {
-            font-family: 'Geo', sans-serif;
-            ;
-            color: #FFF;
-            font-size: 400%;
-        }
-
         #bg_container h1 {
-            margin-bottom: 5px;
+            font-size: 400%;
+            margin-top: 5px;
+            margin-bottom: 0;
+            padding: 0;
+            text-align: center;
         }
 
         #bg_container h3 {
+            font-size: 250%;
             margin-top: 0;
+            margin-bottom: 5px;
+            padding: 0;
+            text-align: center;
+        }
+
+        #heading-bg {
+            background-color: #000;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 50px;
         }
 
         #terminal {
@@ -197,8 +206,7 @@
         button {
             width: 200px;
             height: 40px;
-            background-color: white;
-            border: 1px solid grey;
+            background-color: rgb(0, 0, 0);
             color: #EC4602;
             text-transform: uppercase;
             margin: 10px;
@@ -213,8 +221,10 @@
 
 <body>
     <main id="bg_container">
-        <h1>KENNEL-MATE</h1>
-        <h3>BOOKING PORTAL</h3>
+        <div id="heading-bg">
+            <h1>KENNEL-MATE</h1>
+            <h3>BOOKING PORTAL</h3>
+        </div>
         @{body}
     </main>
 </body>
