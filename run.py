@@ -274,7 +274,7 @@ def update_booking():
         else:
             pass
 
-        # validating Y/N for updating the dog's name
+        # validating Y/N for updating the dog's family name
         print(colored("\nWould you like to update the dog's family name? Enter Y/N\n", 'yellow'))
         while True:
             update_family_choice = input().upper()
@@ -292,20 +292,37 @@ def update_booking():
         else:
             pass
 
+        # validating Y/N for updating the amount paid
         print(colored("\nWould you like to update the amount paid? Enter Y/N\n", 'yellow'))
-        update_amount_choice = input().upper()
+        while True:
+            update_amount_choice = input().upper()
+            if update_amount_choice == "Y" or update_amount_choice == "N":
+                break
+            else:
+                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+
         if update_amount_choice == "Y":
-            print(colored("\nPlease update the amount paid\n", 'yellow'))
-            new_amount_paid = float(input())
-            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
-            bookings.update_cell(
-                row_index, 5, "{:.2f}".format(new_amount_paid)
-                )
-            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+            while True:
+                update_amount_paid = input(colored("\nPlease update the amount paid:", 'yellow'))
+                try:
+                    float_amount = float(update_amount_paid)
+                    if not float_amount.is_integer() and round(float_amount, 2) != float_amount:
+                        raise ValueError
+                except ValueError:
+                    print(colored("Invalid Input: Amount paid must be a whole number\n"
+                          "or a number with 2 decimal places. Please try again.", 'red'))
+                else:
+                    print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
+                    bookings.update_cell(row_index, 5, "{:.2f}".format(float_amount))
+                    print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+                    time.sleep(1)
+                    break
         else:
             print(colored("\nBooking updates completed, returning to Upate Booking Menu...", 'green'))
             time.sleep(1)
             pass
+
+
 
 
 def delete_booking():
