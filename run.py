@@ -238,9 +238,16 @@ def update_booking():
     # method from the gspread library.
     if row_index is not None:
 
+    # validating Y/N for updating the date
         print("*" * 25)
         print(colored("\nWould you like to update the date? Enter Y/N\n", 'yellow'))
-        update_date_choice = input().upper()
+        while True:
+            update_date_choice = input().upper()
+            if update_date_choice == "Y" or update_date_choice == "N":
+                break
+            else:
+                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+
         if update_date_choice == "Y":
             new_date = get_booking_date()
             print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
@@ -248,6 +255,7 @@ def update_booking():
             print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
         else:
             pass
+
         print(colored("\nWould you like to update the dog's name? Enter Y/N\n", 'yellow'))
         update_dog_choice = input().upper()
         if update_dog_choice == "Y":
