@@ -274,9 +274,16 @@ def update_booking():
         else:
             pass
 
+        # validating Y/N for updating the dog's name
         print(colored("\nWould you like to update the dog's family name? Enter Y/N\n", 'yellow'))
-        update_dog_choice = input().upper()
-        if update_dog_choice == "Y":
+        while True:
+            update_family_choice = input().upper()
+            if update_family_choice == "Y" or update_family_choice == "N":
+                break
+            else:
+                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+
+        if update_family_choice == "Y":
             print(colored("Please update the family name\n", 'yellow'))
             new_family_name = input().title()
             print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
@@ -284,6 +291,7 @@ def update_booking():
             print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
         else:
             pass
+
         print(colored("\nWould you like to update the amount paid? Enter Y/N\n", 'yellow'))
         update_amount_choice = input().upper()
         if update_amount_choice == "Y":
