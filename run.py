@@ -393,7 +393,7 @@ def update_booking():
                                   "again.", 'red'))
                 else:
                     print(colored(f"\nUpdating B-{booking_num} in "
-                                   "progress...\n", 'magenta'))
+                                  "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
                     print(colored(f"\nBooking B-{booking_num} updated"
                                   "successfully.\n", 'green'))
