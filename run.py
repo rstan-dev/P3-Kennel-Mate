@@ -695,7 +695,7 @@ def view_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [4]\n', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1] and [5]\n', 'red'))
     return view_menu_choice
 
 
