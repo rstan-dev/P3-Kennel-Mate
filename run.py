@@ -40,8 +40,13 @@ def todays_date():
 
 def get_booking_date():
     '''
-    Requests a date input in a specific format, to be used for creating,
-    and retrieving bookings
+    Prompts the user to enter a date in the format "DD-MM-YYYY", validates the input, and returns it.
+
+    Returns:
+    str: A string representing the booking date in the format "DD-MM-YYYY".
+
+    Raises:
+    ValueError: If the input is not a valid date in the format "DD-MM-YYYY".
     '''
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
 
