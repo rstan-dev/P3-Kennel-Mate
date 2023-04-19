@@ -279,8 +279,9 @@ def create_booking():
 def update_booking():
     '''
     Allows the user to update the booking data in the worksheet with new data.
-    Prompts the user for the booking number they wish to update, searches for the
-    corresponding row in the worksheet and updates the row with the new data.
+    Prompts the user for the booking number they wish to update, searches for
+    the corresponding row in the worksheet and updates the row with the new
+    data.
 
     Returns:
         None
@@ -301,9 +302,10 @@ def update_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number.\n", 'red'))
+            print(colored("Invalid entry. Please enter a 4-digit number.\n",
+                          'red'))
 
-    print(colored(f"collecting booking data...\n", 'magenta'))
+    print(colored("collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
@@ -316,14 +318,14 @@ def update_booking():
             no_booking_data = False
 
     if no_booking_data:
-        print(tabulate(
-            rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+        print(tabulate(rows_containing_booking_num,
+                       headers=['Booking No.', 'Date', 'Dogs Name',
+                                'Family Name', 'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
-        print(tabulate(
-            rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+        print(tabulate(rows_containing_booking_num,
+                       headers=['Booking No.', 'Date', 'Dogs Name',
+                                'Family Name', 'Amount Paid']))
 
         bookings_counter(rows_containing_booking_num)
         revenue_total(rows_containing_booking_num)
@@ -347,7 +349,8 @@ def update_booking():
 
         # Prompts user to update the booking date
         print("*" * 25)
-        print(colored("\nWould you like to update the date? Enter Y/N\n", 'yellow'))
+        print(colored("\nWould you like to update the date? Enter Y/N\n",
+                      'yellow'))
 
         # Validates Y/N for updating the date
         while True:
@@ -359,14 +362,17 @@ def update_booking():
 
         if update_date_choice == "Y":
             new_date = get_booking_date()
-            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
+            print(colored(f"\nUpdating B-{booking_num} in progress...\n",
+                          'magenta'))
             bookings.update_cell(row_index, 2, new_date)
-            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+            print(colored(f"\nBooking B-{booking_num} updated successfully.\n",
+                          'green'))
         else:
             pass
 
         # Prompts user to update the dog's name
-        print(colored("\nWould you like to update the Dog's name? Enter Y/N\n", 'yellow'))
+        print(colored("\nWould you like to update the Dog's name? Enter Y/N\n",
+                      'yellow'))
 
         # validates Y/N for updating the dog's name
         while True:
@@ -378,20 +384,25 @@ def update_booking():
 
         if update_dog_choice == "Y":
             while True:
-                new_dogs_name = input(colored("\nPlease update the Dog's name:", 'yellow')).strip().title()
+                new_dogs_name = input(colored("\nPlease update the Dog's name:",
+                                              'yellow')).strip().title()
                 if not new_dogs_name:
-                    print(colored("Error: Dog's name cannot be empty or contain\n"
-                          "only white spaces. Please try again.", 'red'))
+                    print(colored("Error: Dog's name cannot be empty or"
+                                  "contain\n only white spaces. Please try"
+                                  "again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
+                    print(colored(f"\nUpdating B-{booking_num} in progress...\n",
+                                  'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
-                    print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+                    print(colored(f"\nBooking B-{booking_num} updated"
+                                  "successfully.\n", 'green'))
                     break
         else:
             pass
 
         # Prompts user to update the dog's family name
-        print(colored("\nWould you like to update the Dog's Family name? Enter Y/N\n", 'yellow'))
+        print(colored("\nWould you like to update the Dog's Family name?"
+                      "Enter Y/N\n", 'yellow'))
 
         # Validates Y/N for updating the dog's family name
         while True:
@@ -403,20 +414,26 @@ def update_booking():
 
         if update_family_choice == "Y":
             while True:
-                new_family_name = input(colored("\nPlease update the Dog's Family name:", 'yellow')).strip().title()
+                new_family_name = input(colored("\nPlease update the Dog's "
+                                                "Family name:",
+                                                'yellow')).strip().title()
                 if not new_family_name:
-                    print(colored("Error: Family name cannot be empty or contain\n"
-                          "only white spaces. Please try again.", 'red'))
+                    print(colored("Error: Family name cannot be empty or "
+                                  "contain\nonly white spaces."
+                                  "Please try again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
+                    print(colored(f"\nUpdating B-{booking_num} in "
+                                  "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 4, new_family_name)
-                    print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+                    print(colored(f"\nBooking B-{booking_num} updated "
+                                  "successfully.\n", 'green'))
                     break
         else:
             pass
 
         # Prompts user to update the amount paid
-        print(colored("\nWould you like to update the amount paid? Enter Y/N\n", 'yellow'))
+        print(colored("\nWould you like to update the amount paid? "
+                      "Enter Y/N\n", 'yellow'))
 
         # Validates Y/N for updating the amount paid
         while True:
@@ -428,22 +445,30 @@ def update_booking():
 
         if update_amount_choice == "Y":
             while True:
-                update_amount_paid = input(colored("\nPlease update the amount paid:", 'yellow'))
+                update_amount_paid = input(colored("\nPlease update the "
+                                                   "amount paid:", 'yellow'))
                 try:
                     float_amount = float(update_amount_paid)
-                    if not float_amount.is_integer() and round(float_amount, 2) != float_amount:
+                    if not float_amount.is_integer() and \
+                            round(float_amount, 2) != float_amount:
                         raise ValueError
                 except ValueError:
-                    print(colored("Invalid Input: Amount paid must be a whole number\n"
-                          "or a number with 2 decimal places. Please try again.", 'red'))
+                    print(colored("Invalid Input: Amount paid must be a "
+                                  "whole number\n"
+                                  "or a number with 2 decimal places. "
+                                  "Please try again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
-                    bookings.update_cell(row_index, 5, "{:.2f}".format(float_amount))
-                    print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+                    print(colored(f"\nUpdating B-{booking_num} in "
+                                  "progress...\n", 'magenta'))
+                    bookings.update_cell(row_index, 5,
+                                         "{:.2f}".format(float_amount))
+                    print(colored(f"\nBooking B-{booking_num} updated "
+                                  "successfully.\n", 'green'))
                     time.sleep(1)
                     break
         else:
-            print(colored("\nBooking updates completed, returning to Upate Booking Menu...", 'green'))
+            print(colored("\nBooking updates completed, returning to Upate "
+                          "Booking Menu...", 'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             pass
