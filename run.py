@@ -764,7 +764,6 @@ def choose_delete_menu():
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             print('*' * 24)
             print("*** SEARCH BY DOG'S NAME ***\n")
-            print(colored("Enter the Dog's name", 'yellow'))
             dogs_name = get_dogs_name()
             print(colored("collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
