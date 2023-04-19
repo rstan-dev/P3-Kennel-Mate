@@ -258,7 +258,7 @@ def update_booking():
     # method from the gspread library.
     if row_index is not None:
 
-    # validating Y/N for updating the date
+        # validating Y/N for updating the date
         print("*" * 25)
         print(colored("\nWould you like to update the date? Enter Y/N\n", 'yellow'))
         while True:
@@ -276,7 +276,7 @@ def update_booking():
         else:
             pass
 
-    # validating Y/N for updating the dog's name
+        # validating Y/N for updating the dog's name
         print(colored("\nWould you like to update the dog's name? Enter Y/N\n", 'yellow'))
         while True:
             update_dog_choice = input().upper()
@@ -352,8 +352,6 @@ def update_booking():
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             pass
-
-
 
 
 def delete_booking():
@@ -819,6 +817,7 @@ def choose_view_menu():
         else:
             print(colored("Invalid choice, please choose between 1 and 5", 'red'))
 
+
 def choose_main_menu():
     '''
     Main menu choice passed to this if else statement which activates
@@ -850,41 +849,5 @@ def choose_main_menu():
             print(colored("Invalid choice, please choose between 1 and 5\n", 'red'))
         main_menu_choice = display_main_menu()
 
-
-
-print("______________Test Area (to be deleted)___________________")
-def test_function_calls():
-    '''
-    A place to keep all test function calls during the build process.
-    Delete when project is completed
-    '''
-    # print(all_bookings)
-    # start()
-    # while True:
-    #     main_menu_choice = display_main_menu()
-    #     choose_main_menu(main_menu_choice)
-    #     if main_menu_choice == 5:
-    #     # Exit the program
-    #         break
-    # main_menu_choice = display_main_menu()
-    # # print(main_menu_choice)
-    # choose_main_menu(main_menu_choice)
-    # update_bkg_menu()
-    # delete_bkg_menu()
-    # view_bkg_menu()
-    #print(todays_date())
-    #get_booking_date()
-    #print(increment_booking_number())
-    #view_all_bookings()
-    #view_booking_no()
-    # print("Enter date DD-MM-YYYY")
-    # input_date = input()
-    # view_booking_date(input_date)
-    # print("Enter the Dog's name")
-    # dogs_name = input().title()
-    # view_dog_bookings(dogs_name)
+if __name__ == '__main__':
     start()
-
-
-test_function_calls()
-
