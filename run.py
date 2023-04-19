@@ -182,12 +182,16 @@ def get_dogs_name():
 #CRUD FUNCTIONS
 def create_booking():
     '''
-    Get booking input data from the user.
-    Get last known booking number from sheet and add 1. If no number,
-    start the booking number sequence from B-1001.
-    Run a while loop to collect a valid string of data from the user
-    via the terminal.
-    The loop will repeatedly request data until it is valid.
+    Prompts the user to input booking data and adds it to the bookings sheet.
+
+    This function obtains the last known booking number from the sheet, adds 1 to it, and uses it as the next booking number. If no booking numbers are present in the sheet, the function starts the booking number sequence from B-1001.
+
+    The function then prompts the user to input the booking date, dog's name, family name, and amount charged.
+    It ensures that the user provides valid input for each field before adding the booking data to the sheet.
+
+    Raises:
+    ValueError: If the user inputs an invalid amount charged, which must be either a whole number or a number
+                with two decimal places.
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
@@ -202,7 +206,7 @@ def create_booking():
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
 
-    # check if the input is empty or contains only white spaces
+    # checks if the Dog's name input is empty or contains only white spaces
     while True:
         dogs_name = input(colored("\nPlease enter the Dog's name:", 'yellow')).strip().title()
         if not dogs_name:
@@ -210,7 +214,7 @@ def create_booking():
                           "only white spaces. Please try again.", 'red'))
         else:
             break
-
+    # checks if the Dog's Family name input is empty or contains only white spaces
     while True:
         family_name = input(colored("\nPlease enter the Family name:", 'yellow')).strip().title()
         if not dogs_name:
@@ -219,7 +223,7 @@ def create_booking():
         else:
             break
 
-    while True:
+    # checks if the amount charged input is a valid number
         amount_charged = input(colored("\nPlease enter amount charged:", 'yellow'))
         try:
             float_amount = float(amount_charged)
