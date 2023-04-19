@@ -117,6 +117,9 @@ def revenue_total(values):
 
     Returns:
     None
+
+    Displays:
+    Total Revenue on screen.
     '''
     pattern = re.compile(r"\d+.\d{2}")
     revenue_list = []
@@ -134,7 +137,16 @@ def revenue_total(values):
 
 def bookings_counter(values):
     '''
-    Displays a total count of displayed bookings
+    Counts the number of bookings in a list of bookings and displays the total count.
+
+    Args:
+    values (list): A list of bookings.
+
+    Returns:
+    None
+
+    Displays:
+    The total number of bookings in the given list.
     '''
     count_bookings = sum(isinstance(elem, list) for elem in values)
     print("\n")
