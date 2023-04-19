@@ -418,16 +418,23 @@ def update_booking():
 
 def delete_booking():
     '''
-    Allows user to delete the booking_data in the worksheet with new data
+    Allows user to delete the booking_data in the worksheet.
+    Prompts the user for a booking number.
+    If booking data is available, data is displayed and prompts
+    if they wish to delete the booking.
+    If yes, data is deleted from the worksheet.
+    If no, the user is returned to the Delete Booking menu.
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
     all_bookings = bookings.get_all_values()
 
+    # Prompts user to enter a booking number to delete
     print('*' * 23)
     print("*** DELETE BOOKING ***\n")
     print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
-    # validates the entry is a 4 digit number only
+
+    # Validates the entry is a 4 digit number only
     while True:
         booking_num = input()
         if len(booking_num) == 4 and booking_num.isdigit():
@@ -441,7 +448,7 @@ def delete_booking():
     rows_containing_booking_num = []
     no_booking_data = True
 
-    # adds matching booking data to list, or displays a message if there is
+    # Adds matching booking data to list, or displays a message if there is
     # no data to display
     for row in all_bookings:
         if ('B' + str(booking_num)) in row:
@@ -462,7 +469,7 @@ def delete_booking():
         revenue_total(rows_containing_booking_num)
 
     # The following code locates the index of the row in the worksheet
-    # that comntains the booking number entered by the user, and stores
+    # that contains the booking number entered by the user, and stores
     # the index in the row_index variable.
     row_index = None
     for i, row in enumerate(all_bookings):
@@ -470,10 +477,10 @@ def delete_booking():
             row_index = i + 1
             break
 
-    # The code then prompts the user to confirm if they wish to
+    # If there is data, the system prompts the user to confirm if they wish to
     # delete the booking before using the delete_rows method from
     # the gspread library.
-    # The while loop validates for a correct y or n input
+    # The while loop validates for a correct Y or N input
     if row_index is not None:
         print(colored("Are you sure you want to delete this booking? Enter Y/N", 'yellow'))
         while True:
