@@ -943,10 +943,11 @@ def choose_delete_menu():
     one of the relevant functions.
 
     The user can choose between deleting the booking with the booking number,
-    or Searching for bookings by date or by dog's name to see the relevant number.
+    or Searching for bookings by date or by dog's name to see the relevant
+    number.
 
-    The user is notified of an invalid entry if they do not choose a number between
-    1 and 4.
+    The user is notified of an invalid entry if they do not choose a number
+    between 1 and 4.
 
     Returns:
         None
@@ -981,7 +982,8 @@ def choose_delete_menu():
             time.sleep(1)
             choose_main_menu()
         else:
-            print(colored("Invalid choice, please choose between 1 and 4\n", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 4\n",
+                          'red'))
 
 
 def choose_view_menu():
