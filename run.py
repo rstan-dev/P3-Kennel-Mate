@@ -413,14 +413,26 @@ def delete_booking():
     # The code then prompts the user to confirm if they wish to
     # delete the booking before using the delete_rows method from
     # the gspread library.
+    # The while loop validates for a correct y or n input
     if row_index is not None:
         print(colored("Are you sure you want to delete this booking? Enter Y/N", 'yellow'))
-        delete_choice = input().upper()
-        if delete_choice == 'Y':
+        while True:
+            delete_choice = input().upper()
+            if delete_choice == 'Y' or delete_choice == "N":
+                break
+            else:
+                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+
+        if delete_choice == "Y":
+            print(colored(f"Deleting B-{booking_num} in progress...\n", 'magenta'))
             bookings.delete_rows(row_index)
-            print(colored(f"Deleting {booking_num} in progress...\n", 'magenta'))
-            print(colored(f"{booking_num} deleted successfully.\n", 'green'))
+            print(colored(f"Booking B-{booking_num} deleted successfully.\n", 'green'))
+            time.sleep(1)
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
         else:
+            print(colored("\nBooking deletions completed, returning to Delete Booking Menu...", 'green'))
+            time.sleep(1)
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             pass
 
 
