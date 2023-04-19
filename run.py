@@ -384,15 +384,16 @@ def update_booking():
 
         if update_dog_choice == "Y":
             while True:
-                new_dogs_name = input(colored("\nPlease update the Dog's name:",
+                new_dogs_name = input(colored("\nPlease update the Dog's "
+                                              "name:",
                                               'yellow')).strip().title()
                 if not new_dogs_name:
                     print(colored("Error: Dog's name cannot be empty or"
                                   "contain\n only white spaces. Please try"
                                   "again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in progress...\n",
-                                  'magenta'))
+                    print(colored(f"\nUpdating B-{booking_num} in "
+                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
                     print(colored(f"\nBooking B-{booking_num} updated"
                                   "successfully.\n", 'green'))
