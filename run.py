@@ -812,14 +812,16 @@ def update_bkg_menu():
         print('[2] - Or, Search Bookings By Date')
         print("[3] - Or, Search Bookings By Dog's Name")
         print('[4] - Return to Main Menu')
-        print(colored('\nPlease choose a Menu option between [1] and [4]:', 'yellow'))
+        print(colored('\nPlease choose a Menu option between [1] and [4]:',
+                      'yellow'))
         try:
             update_menu_choice = int(input())
             if update_menu_choice not in range(1, 5):
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [4]\n', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1]'
+                          'and [4]\n', 'red'))
     return update_menu_choice
 
 
