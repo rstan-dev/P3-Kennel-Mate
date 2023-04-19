@@ -773,8 +773,11 @@ def delete_bkg_menu():
 
 def view_bkg_menu():
     '''
-    Displays View bookings menu of options. Try statement validates user input for
-    number between 1 and 4 only
+    Displays View bookings menu of options.
+    Try statement validates user input for a number between 1 and 4 only.
+
+    Returns:
+        view_menu_choice (users menu choice)
     '''
     print('*' * 26)
     print("*** VIEW BOOKINGS MENU ***\n")
