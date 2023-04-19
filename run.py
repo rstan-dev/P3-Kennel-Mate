@@ -673,10 +673,12 @@ def view_booking_no(booking_num):
 
 def view_booking_date(booking_date):
     '''
-    Displays all bookings in the system by Date, with a count of total bookings and a sum of total revenue.
+    Displays all bookings in the system by Date, with a count of total
+    bookings and a sum of total revenue.
 
     Parameters:
-    booking_date (str): The date to search for bookings in the system. Should be in the format 'dd/mm/yyyy'.
+    booking_date (str): The date to search for bookings in the system. Should
+    be in the format 'dd/mm/yyyy'.
     '''
     all_bookings = bookings.get_all_values()
 
@@ -693,12 +695,14 @@ def view_booking_date(booking_date):
     if no_booking_data:
         print(tabulate(
             rows_containing_booking_date,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                    'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_date,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
 
         bookings_counter(rows_containing_booking_date)
         revenue_total(rows_containing_booking_date)
