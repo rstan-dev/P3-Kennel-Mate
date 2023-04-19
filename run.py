@@ -200,14 +200,18 @@ def create_booking():
     '''
     Prompts the user to input booking data and adds it to the bookings sheet.
 
-    This function obtains the last known booking number from the sheet, adds 1 to it, and uses it as the next booking number. If no booking numbers are present in the sheet, the function starts the booking number sequence from B-1001.
+    This function obtains the last known booking number from the sheet, adds
+    1 to it, and uses it as the next booking number. If no booking numbers are
+    present in the sheet, the function starts the booking number sequence from
+    B-1001.
 
-    The function then prompts the user to input the booking date, dog's name, family name, and amount charged.
-    It ensures that the user provides valid input for each field before adding the booking data to the sheet.
+    The function then prompts the user to input the booking date, dog's name,
+    family name, and amount charged. It ensures that the user provides valid
+    input for each field before adding the booking data to the sheet.
 
     Raises:
-    ValueError: If the user inputs an invalid amount charged, which must be either a whole number or a number
-                with two decimal places.
+    ValueError: If the user inputs an invalid amount charged, which must be
+    either a whole number or a number with two decimal places.
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
@@ -222,38 +226,51 @@ def create_booking():
     next_booking_num = increment_booking_number()
     booking_date = get_booking_date()
 
-    # checks if the Dog's name input is empty or contains only white spaces
+    # checks if the Dog's name input is empty or contains only
+    # white spaces
     while True:
-        dogs_name = input(colored("\nPlease enter the Dog's name:", 'yellow')).strip().title()
+        dogs_name = input(colored("\nPlease enter the Dog's name:",
+                                  'yellow')).strip().title()
+
         if not dogs_name:
             print(colored("Error: Dog's name cannot be empty or contain\n"
                           "only white spaces. Please try again.", 'red'))
         else:
             break
-    # checks if the Dog's Family name input is empty or contains only white spaces
+
+    # checks if the Dog's Family name input is empty or contains
+    # only white spaces
     while True:
-        family_name = input(colored("\nPlease enter the Family name:", 'yellow')).strip().title()
+        family_name = input(colored("\nPlease enter the Family name:",
+                                    'yellow')).strip().title()
         if not dogs_name:
             print(colored("Error: Family name cannot be empty or contain\n"
-                        "only white spaces. Please try again.", 'red'))
+                          "only white spaces. Please try again.", 'red'))
         else:
             break
 
     # checks if the amount charged input is a valid number
-        amount_charged = input(colored("\nPlease enter amount charged:", 'yellow'))
+        amount_charged = input(colored("\nPlease enter amount charged:",
+                                       'yellow'))
         try:
             float_amount = float(amount_charged)
-            if not float_amount.is_integer() and round(float_amount, 2) != float_amount:
+            if not float_amount.is_integer() and \
+                    round(float_amount, 2) != float_amount:
                 raise ValueError
+
         except ValueError:
-            print(colored("Invalid Input: Amount charged must be a whole number\n"
-                          "or a number with 2 decimal places. Please try again.", 'red'))
+            print(colored("Invalid Input: Amount charged must be a whole"
+                          "number\n"
+                          "or a number with 2 decimal places. Please try"
+                          "again.", 'red'))
         else:
             break
 
-    data_list = [next_booking_num, booking_date, dogs_name, family_name, "{:.2f}".format(
-        float_amount)]
+    data_list = [next_booking_num, booking_date, dogs_name, family_name,
+                 "{:.2f}".format(float_amount)]
+
     bookings.append_row(data_list)
+
     print("\n")
     print(colored("\nBooking entered successfully\n", 'green'))
     time.sleep(1)
