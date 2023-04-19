@@ -774,7 +774,7 @@ def delete_bkg_menu():
 def view_bkg_menu():
     '''
     Displays View bookings menu of options.
-    Try statement validates user input for a number between 1 and 4 only.
+    Try statement validates user input for a number between 1 and 5 only.
 
     Returns:
         view_menu_choice (users menu choice)
@@ -897,8 +897,17 @@ def choose_delete_menu():
 
 def choose_view_menu():
     '''
-    View menu choice passed to this if else statement which activates
-    one of the relevant functions
+    The view_menu_choice is passed to this if else statement which activates
+    one of the relevant functions.
+
+    The user can choose between viewing all the bookings.  Viewing by the booking number,
+    or viewing bookings by date or by dog's name.
+
+    The user is notified of an invalid entry if they do not choose a number between
+    1 and 5.
+
+    Returns:
+        None
     '''
     view_menu_choice = view_bkg_menu()
     while True:
