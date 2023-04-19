@@ -850,8 +850,17 @@ def choose_update_menu():
 
 def choose_delete_menu():
     '''
-    Delete menu choice passed to this if else statement which activates
-    one of the relevant functions
+    The delete_menu_choice is passed to this if else statement which activates
+    one of the relevant functions.
+
+    The user can choose between deleting the booking with the booking number,
+    or Searching for bookings by date or by dog's name to see the relevant number.
+
+    The user is notified of an invalid entry if they do not choose a number between
+    1 and 4.
+
+    Returns:
+        None
     '''
     delete_menu_choice = delete_bkg_menu()
     while True:
