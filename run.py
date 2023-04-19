@@ -105,7 +105,18 @@ def increment_booking_number():
 
 def revenue_total(values):
     '''
-    Displays a sum total of the revenue for the displayed bookings
+    Calculates the total revenue for a list of bookings and displays it on the screen.
+
+    The function takes a list of booking data, which should include the amount charged for each
+    booking in the format "£xxx.xx". It then extracts the revenue values, calculates the sum
+    of all revenues, and displays the result on the screen in the format "Total Revenue: £xxx.xx".
+
+    Args:
+    values (list): A list of booking data, from google sheets, where each item is a list containing booking
+    details including amount charged in the format "£xxx.xx".
+
+    Returns:
+    None
     '''
     pattern = re.compile(r"\d+.\d{2}")
     revenue_list = []
