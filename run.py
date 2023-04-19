@@ -88,13 +88,14 @@ def increment_booking_number():
     Automatically generates and increments a sequential booking
     number starting with B1001.
 
-    Searches through the existing booking numbers in the first column of the bookings sheet
-    and finds the highest number that matches the pattern "B<digits>". The function then
-    increments that number by 1 to generate the next booking number.
+    Searches through the existing booking numbers in the first column of the
+    bookings sheet and finds the highest number that matches the pattern
+    "B<digits>". The function then increments that number by 1 to generate
+    the next booking number.
 
     Returns:
-    str: A string representing the next booking number in the format "Bxxxx", where "xxxx"
-    is a sequence of four digits.
+    str: A string representing the next booking number in the format "Bxxxx",
+    where "xxxx" is a sequence of four digits.
     '''
     highest_num = 1000
 
