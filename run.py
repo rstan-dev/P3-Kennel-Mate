@@ -667,7 +667,10 @@ def view_dog_bookings(dogs_name):
 
 def start():
     '''
-    Starts the program - generates a welcome screen to the user
+    Starts the program - generates a welcome screen to the user.
+    Prompts the user to press ENTER
+    Calls the choose_main_menu function, which guides the user
+    through the options.
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
     print('*' * 46)
