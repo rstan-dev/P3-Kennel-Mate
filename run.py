@@ -611,8 +611,8 @@ def view_all_bookings():
 
 def view_booking_no(booking_num):
     '''
-    Displays all bookings in the system for a given Booking Number, along with a count of
-    total bookings and sum of revenue for that number.
+    Displays all bookings in the system for a given Booking Number, along with
+    a count of total bookings and sum of revenue for that number.
 
     Parameters:
     booking_num (int): The 4-digit booking number to be searched for.
@@ -639,7 +639,8 @@ def view_booking_no(booking_num):
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number.\n", 'red'))
+            print(colored("Invalid entry. Please enter a 4-digit number.\n",
+                          'red'))
 
     print(colored(f"collecting booking data...\n", 'magenta'))
 
@@ -656,14 +657,15 @@ def view_booking_no(booking_num):
     if no_booking_data:
         print(tabulate(
             rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid'])
-            )
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
 
     else:
         print(tabulate(
             rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
 
         bookings_counter(rows_containing_booking_num)
         revenue_total(rows_containing_booking_num)
