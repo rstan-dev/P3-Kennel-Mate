@@ -1047,8 +1047,8 @@ def choose_main_menu():
     he user can choose between creating a booking, updating a booking,
     deleting a booking or viewing bookings.
 
-    The user is notified of an invalid entry if they do not choose a number between
-    1 and 5.
+    The user is notified of an invalid entry if they do not choose a number
+    between 1 and 5.
 
     Returns:
         None
@@ -1076,7 +1076,8 @@ def choose_main_menu():
             time.sleep(1)
             start()
         else:
-            print(colored("Invalid choice, please choose between 1 and 5\n", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 5\n",
+                          'red'))
         main_menu_choice = display_main_menu()
 
 
