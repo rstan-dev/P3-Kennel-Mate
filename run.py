@@ -802,8 +802,17 @@ def view_bkg_menu():
 # SUBMENU CHOICE FUNCTIONS
 def choose_update_menu():
     '''
-    Update menu choice passed to this if else statement which activates
-    one of the relevant functions
+    The update_menu_choice is passed to this if else statement which activates
+    one of the relevant functions.
+
+    The user can choose between updating the booking with the booking number,
+    or Searching for bookings by date or by dog's name to see the relevant number.
+
+    The user is notified of an invalid entry if they do not choose a number between
+    1 and 4.
+
+    Returns:
+        None
     '''
     update_menu_choice = update_bkg_menu()
     while True:
