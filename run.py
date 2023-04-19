@@ -696,7 +696,7 @@ def view_booking_date(booking_date):
         print(tabulate(
             rows_containing_booking_date,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
-                    'Amount Paid']))
+                     'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
@@ -710,8 +710,9 @@ def view_booking_date(booking_date):
 
 def view_dog_bookings(dogs_name):
     '''
-     Displays all bookings in the system for a given dog's name, with a count of total bookings
-    and a sum of total revenue. Searches can be performed by first name or last name.
+     Displays all bookings in the system for a given dog's name, with a count
+     of total bookings and a sum of total revenue. Searches can be performed
+     by first name or last name.
     '''
     all_bookings = bookings.get_all_values()
 
@@ -728,12 +729,14 @@ def view_dog_bookings(dogs_name):
     if no_booking_data:
         print(tabulate(
             rows_containing_dog,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
             rows_containing_dog,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
 
         bookings_counter(rows_containing_dog)
         revenue_total(rows_containing_dog)
