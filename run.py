@@ -245,19 +245,23 @@ def create_booking():
 
 def update_booking():
     '''
-    Allows user to overwrite the booking_data in the worksheet with
-    new data.
-    User needs to know the booking number, found through searching
-    the bookings.
+    Allows the user to update the booking data in the worksheet with new data.
+    Prompts the user for the booking number they wish to update, searches for the
+    corresponding row in the worksheet and updates the row with the new data.
+
+    Returns:
+        None
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
     all_bookings = bookings.get_all_values()
 
+    # Prompts user to enter a booking number to update
     print('*' * 23)
     print("*** UPDATE BOOKING ***\n")
     print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
-    # validates the entry is a 4 digit number only
+
+    # Validates the entry is a 4 digit number only
     while True:
         booking_num = input()
         if len(booking_num) == 4 and booking_num.isdigit():
@@ -271,8 +275,8 @@ def update_booking():
     rows_containing_booking_num = []
     no_booking_data = True
 
-    # adds matching booking data to list, or displays a message if there is
-    # no data to display
+    # Searches for the row containing the booking number,
+    # or displays a message if there is no data to display.
     for row in all_bookings:
         if ('B' + str(booking_num)) in row:
             rows_containing_booking_num.append(row)
@@ -300,7 +304,7 @@ def update_booking():
             row_index = i + 1
             break
 
-    # The code then prompts the user to update various details of the booking,
+    # Prompts the user to update various details of the booking,
     # such as the date, dog's name, family name, and amount paid.
     # If the user chooses to update a particular detail, the new value is
     # entered by the user and stored in a variable.
@@ -308,9 +312,11 @@ def update_booking():
     # method from the gspread library.
     if row_index is not None:
 
-        # validating Y/N for updating the date
+        # Prompts user to update the booking date
         print("*" * 25)
         print(colored("\nWould you like to update the date? Enter Y/N\n", 'yellow'))
+
+        # Validates Y/N for updating the date
         while True:
             update_date_choice = input().upper()
             if update_date_choice == "Y" or update_date_choice == "N":
@@ -326,8 +332,10 @@ def update_booking():
         else:
             pass
 
-        # validating Y/N for updating the dog's name
-        print(colored("\nWould you like to update the dog's name? Enter Y/N\n", 'yellow'))
+        # Prompts user to update the dog's name
+        print(colored("\nWould you like to update the Dog's name? Enter Y/N\n", 'yellow'))
+
+        # validates Y/N for updating the dog's name
         while True:
             update_dog_choice = input().upper()
             if update_dog_choice == "Y" or update_dog_choice == "N":
@@ -349,8 +357,10 @@ def update_booking():
         else:
             pass
 
-        # validating Y/N for updating the dog's family name
-        print(colored("\nWould you like to update the dog's family name? Enter Y/N\n", 'yellow'))
+        # Prompts user to update the dog's family name
+        print(colored("\nWould you like to update the Dog's Family name? Enter Y/N\n", 'yellow'))
+
+        # Validates Y/N for updating the dog's family name
         while True:
             update_family_choice = input().upper()
             if update_family_choice == "Y" or update_family_choice == "N":
@@ -360,7 +370,7 @@ def update_booking():
 
         if update_family_choice == "Y":
             while True:
-                new_family_name = input(colored("\nPlease update the dog's family name:", 'yellow')).strip().title()
+                new_family_name = input(colored("\nPlease update the Dog's Family name:", 'yellow')).strip().title()
                 if not new_family_name:
                     print(colored("Error: Family name cannot be empty or contain\n"
                           "only white spaces. Please try again.", 'red'))
@@ -372,8 +382,10 @@ def update_booking():
         else:
             pass
 
-        # validating Y/N for updating the amount paid
+        # Prompts user to update the amount paid
         print(colored("\nWould you like to update the amount paid? Enter Y/N\n", 'yellow'))
+
+        # Validates Y/N for updating the amount paid
         while True:
             update_amount_choice = input().upper()
             if update_amount_choice == "Y" or update_amount_choice == "N":
