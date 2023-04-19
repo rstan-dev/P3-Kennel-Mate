@@ -949,8 +949,17 @@ def choose_view_menu():
 
 def choose_main_menu():
     '''
-    Main menu choice passed to this if else statement which activates
-    one of the relevant functions
+    The main_menu_choice is passed to this if else statement which activates
+    one of the relevant functions.
+
+    he user can choose between creating a booking, updating a booking,
+    deleting a booking or viewing bookings.
+
+    The user is notified of an invalid entry if they do not choose a number between
+    1 and 5.
+
+    Returns:
+        None
     '''
     main_menu_choice = display_main_menu()
     while True:
