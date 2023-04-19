@@ -289,11 +289,16 @@ def update_booking():
                 print(colored("Invalid input.  Please enter Y or N\n", 'red'))
 
         if update_family_choice == "Y":
-            print(colored("Please update the family name\n", 'yellow'))
-            new_family_name = input().title()
-            print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
-            bookings.update_cell(row_index, 4, new_family_name)
-            print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+            while True:
+                new_family_name = input(colored("\nPlease update the dog's family name:", 'yellow')).strip().title()
+                if not new_family_name:
+                    print(colored("Error: Family name cannot be empty or contain\n"
+                          "only white spaces. Please try again.", 'red'))
+                else:
+                    print(colored(f"\nUpdating B-{booking_num} in progress...\n", 'magenta'))
+                    bookings.update_cell(row_index, 4, new_family_name)
+                    print(colored(f"\nBooking B-{booking_num} updated successfully.\n", 'green'))
+                    break
         else:
             pass
 
@@ -325,6 +330,7 @@ def update_booking():
         else:
             print(colored("\nBooking updates completed, returning to Upate Booking Menu...", 'green'))
             time.sleep(1)
+            os.system('cls' if os.name == 'nt' else "printf '\033c'")
             pass
 
 
@@ -590,7 +596,6 @@ def update_bkg_menu():
     Displays Update booking menu options. Try statement validates user input for
     number between 1 and 4 only
     '''
-    os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
     print('*' * 27)
     print("*** UPDATE BOOKING MENU ***\n")
