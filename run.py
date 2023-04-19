@@ -505,7 +505,11 @@ def delete_booking():
 
 def view_all_bookings():
     '''
-    Displays all bookings in the system, with a count of total bookings and sum of revenue, and displays a message if there is no booking data - based on if any data is present after the header
+    Displays all bookings in the system along with a count of total bookings and the total sum of revenue.
+    If there is no booking data available, a message will be displayed to inform the user.
+
+    Returns:
+        None
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
