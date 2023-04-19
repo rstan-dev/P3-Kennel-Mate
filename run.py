@@ -23,11 +23,15 @@ bookings = SHEET.worksheet('bookings-data')
 all_bookings = bookings.get_all_values()
 booking_num_column = bookings.col_values(1)
 
+
 # UTILITY FUNCTIONS
 def todays_date():
     '''
     Returns todays date formatted as dd-mm-yyyy, which is used to display
     the current days data for the benefit of the user.
+
+    Returns:
+    str: A string representing today's date in the format "dd-mm-yyyy".
     '''
     today = datetime.date.today()
     today_formatted = today.strftime('%d-%m-%Y')
