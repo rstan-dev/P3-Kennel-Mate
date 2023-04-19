@@ -43,7 +43,8 @@ def todays_date():
 
 def get_booking_date():
     '''
-    Prompts the user to enter a date in the format "DD-MM-YYYY", validates the input, and returns it.
+    Prompts the user to enter a date in the format "DD-MM-YYYY", validates the
+    input, and returns it.
 
     Returns:
     str: A string representing the booking date in the format "DD-MM-YYYY".
@@ -54,22 +55,26 @@ def get_booking_date():
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
 
     while True:
-        print(colored("\nPlease enter the booking date as: (DD-MM-YYYY)", 'yellow'))
+        print(colored("\nPlease enter the booking date as: (DD-MM-YYYY)",
+                      'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
-            print(colored("\nInvalid date format, please try again as DD-MM-YYY.\n"
-                  "The day must be between 1 and 31,\n"
-                  "The month must be between 1 and 12,\n"
-                  "And the year must be a four-digit number\n", 'red'))
+            print(colored("\nInvalid date format, please try again as "
+                          "DD-MM-YYY.\n"
+                          "The day must be between 1 and 31,\n"
+                          "The month must be between 1 and 12,\n"
+                          "And the year must be a four-digit number\n", 'red'))
             continue
         try:
             day, month, year = map(int, booking_date.split("-"))
             date = datetime.date(year, month, day)
             if date.month != month or date.day != day:
-                raise ValueError(colored("\nInvalid date format, please try again as DD-MM-YYY.\n"
-                                 "The day must be between 1 and 31,\n "
-                                 "The month must be between 1 and 12,"
-                                 "\nAnd the year must be a four-digit number\n", 'red'))
+                raise ValueError(colored("\nInvalid date format, "
+                                         "please try again as DD-MM-YYY.\n"
+                                         "The day must be between 1 and 31,\n"
+                                         "The month must be between 1 and 12,"
+                                         "\nAnd the year must be a four-digit"
+                                         "number\n", 'red'))
             else:
                 return booking_date
             break
