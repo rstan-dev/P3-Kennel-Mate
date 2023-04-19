@@ -607,7 +607,6 @@ def view_booking_date(booking_date):
 
     Parameters:
     booking_date (str): The date to search for bookings in the system. Should be in the format 'dd/mm/yyyy'.
-
     '''
     all_bookings = bookings.get_all_values()
 
@@ -637,15 +636,15 @@ def view_booking_date(booking_date):
 
 def view_dog_bookings(dogs_name):
     '''
-    Displays all bookings in the system by Dogs name, either by first name or last name,
-    with a count of total bookings and a sum of total revenue
+     Displays all bookings in the system for a given dog's name, with a count of total bookings
+    and a sum of total revenue. Searches can be performed by first name or last name.
     '''
     all_bookings = bookings.get_all_values()
 
     rows_containing_dog = []
     no_booking_data = True
 
-    # adds matching booking data to list, or displays a message if there is
+    # Adds matching booking data to list, or displays a message if there is
     # no data to display
     for row in all_bookings:
         if dogs_name in row:
