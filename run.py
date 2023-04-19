@@ -635,9 +635,9 @@ def update_bkg_menu():
     print("To update a booking, you will need the Booking Number\n")
     while True:
         print('[1] - Enter Booking No.')
-        print('[2] - Or, Search bookings by Date')
-        print("[3] - Or, Search bookings by Dog's Name")
-        print('[4] - Return to Main menu')
+        print('[2] - Or, Search Bookings By Date')
+        print("[3] - Or, Search Bookings By Dog's Name")
+        print('[4] - Return to Main Menu')
         print(colored('\nPlease choose a Menu option between [1] and [4]:', 'yellow'))
         try:
             update_menu_choice = int(input())
@@ -660,9 +660,9 @@ def delete_bkg_menu():
     print("To delete a booking, you will need the Booking Number\n")
     while True:
         print('[1] - Enter Booking No.')
-        print('[2] - Or, Search bookings by Date')
-        print("[3] - Or, Search bookings by Dog's Name")
-        print('[4] - Return to Main menu')
+        print('[2] - Or, Search Bookings By Date')
+        print("[3] - Or, Search Bookings By Dog's Name")
+        print('[4] - Return to Main Menu')
         print(colored('\nPlease choose a Menu option between [1] and [4]:', 'yellow'))
         try:
             delete_menu_choice = int(input())
@@ -683,11 +683,11 @@ def view_bkg_menu():
     print("*** VIEW BOOKINGS MENU ***\n")
     print("** OPTIONS:\n")
     while True:
-        print('[1] - View all bookings')
-        print('[2] - View by booking No.')
-        print('[3] - View by booking Date')
-        print("[4] - View by booking Name")
-        print('[5] - Return to Main menu')
+        print('[1] - View All Bookings')
+        print('[2] - View By Booking No.')
+        print('[3] - View By Booking Date')
+        print("[4] - View By Booking Name")
+        print('[5] - Return to Main Menu')
         print(colored('\nPlease choose a Menu option between [1] and [5]:', 'yellow'))
         try:
             view_menu_choice = int(input())
