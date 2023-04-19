@@ -642,7 +642,7 @@ def view_booking_no(booking_num):
             print(colored("Invalid entry. Please enter a 4-digit number.\n",
                           'red'))
 
-    print(colored(f"collecting booking data...\n", 'magenta'))
+    print(colored("collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
