@@ -745,8 +745,11 @@ def update_bkg_menu():
 
 def delete_bkg_menu():
     '''
-    Displays Delete menu options. Try statement validates user input for
-    number between 1 and 4 only
+    Displays Delete Booking Menu options.
+    Try statement validates user input for a number between 1 and 4 only.
+
+    Returns:
+        delete_menu_choice (users menu choice)
     '''
     print('*' * 27)
     print("*** DELETE BOOKING MENU ***\n")
