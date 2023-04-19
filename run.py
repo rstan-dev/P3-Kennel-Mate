@@ -991,11 +991,11 @@ def choose_view_menu():
     The view_menu_choice is passed to this if else statement which activates
     one of the relevant functions.
 
-    The user can choose between viewing all the bookings.  Viewing by the booking number,
-    or viewing bookings by date or by dog's name.
+    The user can choose between viewing all the bookings.  Viewing by the
+    booking number, or viewing bookings by date or by dog's name.
 
-    The user is notified of an invalid entry if they do not choose a number between
-    1 and 5.
+    The user is notified of an invalid entry if they do not choose a number
+    between 1 and 5.
 
     Returns:
         None
@@ -1035,7 +1035,8 @@ def choose_view_menu():
             choose_main_menu()
             break
         else:
-            print(colored("Invalid choice, please choose between 1 and 5", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 5",
+                          'red'))
 
 
 def choose_main_menu():
