@@ -1,3 +1,5 @@
+# IMPORTS
+
 import os
 import gspread
 import datetime
@@ -25,6 +27,7 @@ booking_num_column = bookings.col_values(1)
 
 
 # UTILITY FUNCTIONS
+
 def todays_date():
     '''
     Returns todays date formatted as dd-mm-yyyy, which is used to display
@@ -179,7 +182,8 @@ def get_dogs_name():
     return dogs_name
 
 
-#CRUD FUNCTIONS
+# CRUD FUNCTIONS
+
 def create_booking():
     '''
     Prompts the user to input booking data and adds it to the bookings sheet.
@@ -682,6 +686,7 @@ def start():
 
 
 # MENU FUNCTIONS
+
 def display_main_menu():
     '''
     Displays Main Menu of options.
@@ -800,6 +805,7 @@ def view_bkg_menu():
 
 
 # SUBMENU CHOICE FUNCTIONS
+
 def choose_update_menu():
     '''
     The update_menu_choice is passed to this if else statement which activates
@@ -986,6 +992,9 @@ def choose_main_menu():
         else:
             print(colored("Invalid choice, please choose between 1 and 5\n", 'red'))
         main_menu_choice = display_main_menu()
+
+
+# MAIN GUARD
 
 if __name__ == '__main__':
     start()
