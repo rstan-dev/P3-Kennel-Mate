@@ -872,14 +872,16 @@ def view_bkg_menu():
         print('[3] - View By Booking Date')
         print("[4] - View By Booking Name")
         print('[5] - Return to Main Menu')
-        print(colored('\nPlease choose a Menu option between [1] and [5]:', 'yellow'))
+        print(colored('\nPlease choose a Menu option between [1] and [5]:',
+                      'yellow'))
         try:
             view_menu_choice = int(input())
             if view_menu_choice not in range(1, 6):
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1] and [5]\n', 'red'))
+            print(colored('\nInvalid input.  Please enter a number between [1]'
+                          ' and [5]\n', 'red'))
     return view_menu_choice
 
 
