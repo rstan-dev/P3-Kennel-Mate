@@ -684,8 +684,11 @@ def start():
 # MENU FUNCTIONS
 def display_main_menu():
     '''
-    Displays Main menu of options. Try statement validates user input for
-    number between 1 and 5 only
+    Displays Main Menu of options.
+    Try statement validates user input for a number between 1 and 5 only
+
+    Returns:
+        menu_choice (users menu choice)
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
