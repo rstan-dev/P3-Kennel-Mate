@@ -543,17 +543,28 @@ def view_all_bookings():
 
 def view_booking_no(booking_num):
     '''
-    Displays all bookings in the system by Booking No., with a count of total
-        bookings and a sum of total revenue
+    Displays all bookings in the system for a given Booking Number, along with a count of
+    total bookings and sum of revenue for that number.
+
+    Parameters:
+    booking_num (int): The 4-digit booking number to be searched for.
+
+    Returns:
+    None
+
+    Raises:
+    ValueError: If an invalid booking number (not a 4-digit number) is entered.
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
     all_bookings = bookings.get_all_values()
 
+    # Prompts user to enter a booking number to view
     print('*' * 30)
     print("*** VIEW BY BOOKING NUMBER ***\n")
     print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
-    # validates the entry is a 4 digit number only
+
+    # Validates the entry is a 4 digit number only
     while True:
         booking_num = input()
         if len(booking_num) == 4 and booking_num.isdigit():
@@ -567,7 +578,7 @@ def view_booking_no(booking_num):
     rows_containing_booking_num = []
     no_booking_data = True
 
-    # adds matching booking data to list, or displays a message if there is
+    # Adds matching booking data to list, or displays a message if there is
     # no data to display
     for row in all_bookings:
         if 'B' + str(booking_num) in row:
