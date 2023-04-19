@@ -149,7 +149,8 @@ def revenue_total(values):
 
 def bookings_counter(values):
     '''
-    Counts the number of bookings in a list of bookings and displays the total count.
+    Counts the number of bookings in a list of bookings and displays the total
+    count.
 
     Args:
     values (list): A list of bookings.
