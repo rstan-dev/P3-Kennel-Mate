@@ -715,8 +715,12 @@ def display_main_menu():
 
 def update_bkg_menu():
     '''
-    Displays Update booking menu options. Try statement validates user input for
-    number between 1 and 4 only
+    Displays Update Booking Menu options.
+    Try statement validates user input for
+    number between 1 and 4 only.
+
+    Returns:
+        update_menu_choice (users menu choice)
     '''
 
     print('*' * 27)
