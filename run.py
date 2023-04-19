@@ -155,7 +155,13 @@ def bookings_counter(values):
 
 def get_dogs_name():
     '''
-    Returns the dogs name without any white spaces
+    Prompts the user to enter the dog's name and returns it without any leading or trailing white spaces.
+
+    Returns:
+    str: The dog's name without any leading or trailing white spaces.
+
+    Raises:
+    ValueError: If the user enters an empty string or a string containing only white spaces.
     '''
     while True:
         dogs_name = input(
