@@ -893,10 +893,11 @@ def choose_update_menu():
     one of the relevant functions.
 
     The user can choose between updating the booking with the booking number,
-    or Searching for bookings by date or by dog's name to see the relevant number.
+    or Searching for bookings by date or by dog's name to see the relevant
+    number.
 
-    The user is notified of an invalid entry if they do not choose a number between
-    1 and 4.
+    The user is notified of an invalid entry if they do not choose a number
+    between 1 and 4.
 
     Returns:
         None
@@ -932,7 +933,8 @@ def choose_update_menu():
             choose_main_menu()
             break
         else:
-            print(colored("Invalid choice, please choose between 1 and 4\n", 'red'))
+            print(colored("Invalid choice, please choose between 1 and 4\n",
+                          'red'))
 
 
 def choose_delete_menu():
