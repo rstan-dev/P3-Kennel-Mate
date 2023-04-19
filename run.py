@@ -499,9 +499,10 @@ def delete_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number.\n", 'red'))
+            print(colored("Invalid entry. Please enter a 4-digit number.\n",
+                          'red'))
 
-    print(colored(f"collecting booking data...\n", 'magenta'))
+    print(colored("collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
@@ -516,12 +517,14 @@ def delete_booking():
     if no_booking_data:
         print(tabulate(
             rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_num,
-            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name', 'Amount Paid']))
+            headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
+                     'Amount Paid']))
 
         bookings_counter(rows_containing_booking_num)
         revenue_total(rows_containing_booking_num)
@@ -540,7 +543,8 @@ def delete_booking():
     # the gspread library.
     # The while loop validates for a correct Y or N input
     if row_index is not None:
-        print(colored("Are you sure you want to delete this booking? Enter Y/N", 'yellow'))
+        print(colored("Are you sure you want to delete this booking? "
+                      "Enter Y/N", 'yellow'))
         while True:
             delete_choice = input().upper()
             if delete_choice == 'Y' or delete_choice == "N":
@@ -549,13 +553,16 @@ def delete_booking():
                 print(colored("Invalid input.  Please enter Y or N\n", 'red'))
 
         if delete_choice == "Y":
-            print(colored(f"Deleting B-{booking_num} in progress...\n", 'magenta'))
+            print(colored(f"Deleting B-{booking_num} in progress...\n",
+                          'magenta'))
             bookings.delete_rows(row_index)
-            print(colored(f"Booking B-{booking_num} deleted successfully.\n", 'green'))
+            print(colored(f"Booking B-{booking_num} deleted successfully.\n",
+                          'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
         else:
-            print(colored("\nBooking deletions completed, returning to Delete Booking Menu...", 'green'))
+            print(colored("\nBooking deletions completed, returning to Delete "
+                          "Booking Menu...", 'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             pass
