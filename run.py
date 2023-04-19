@@ -570,8 +570,11 @@ def delete_booking():
 
 def view_all_bookings():
     '''
-    Displays all bookings in the system along with a count of total bookings and the total sum of revenue.
-    If there is no booking data available, a message will be displayed to inform the user.
+    Displays all bookings in the system along with a count of total bookings
+    and the total sum of revenue.
+
+    If there is no booking data available, a message will be displayed to
+    inform the user.
 
     Returns:
         None
