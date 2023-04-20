@@ -243,17 +243,18 @@ def create_booking():
     while True:
         family_name = input(colored("\nPlease enter the Family name:",
                                     'yellow')).strip().title()
-        if not dogs_name:
+        if not family_name:
             print(colored("Error: Family name cannot be empty or contain\n"
                           "only white spaces. Please try again.", 'red'))
         else:
             break
 
     # checks if the amount charged input is a valid number
+    while True:
         amount_charged = input(colored("\nPlease enter amount charged:",
                                        'yellow'))
+        float_amount = float(amount_charged)
         try:
-            float_amount = float(amount_charged)
             if not float_amount.is_integer() and \
                     round(float_amount, 2) != float_amount:
                 raise ValueError
@@ -268,12 +269,11 @@ def create_booking():
 
     data_list = [next_booking_num, booking_date, dogs_name, family_name,
                  "{:.2f}".format(float_amount)]
-
     bookings.append_row(data_list)
-
     print("\n")
     print(colored("\nBooking entered successfully\n", 'green'))
     time.sleep(1)
+
 
 
 def update_booking():
