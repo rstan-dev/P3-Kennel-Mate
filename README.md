@@ -136,7 +136,6 @@
    * <img src="assets/images/logic_main_menu_flow.jpeg">
    * Update Booking Menu and Logic:
    * <img src="assets/images/logic_update_booking_menu_flow.jpeg">
-   /workspace/P3-Kennel-Mate/assets/images/logic_update_booking _menu_flow.jpeg
    * Delete Booking Menu and Logic:
    * <img src="assets/images/logic_delete_booking_menu_flow.jpeg">
    * View Booking Menu and Logic:
@@ -145,31 +144,26 @@
 
 
 ## Validation
-    * Various validation messages were used to ensure that the user was notified correctly of any incorrect input and to ensure the program would not crash.
-   * <img src="assets/documents/XXXX">
+* Various validation messages were used to ensure that the user was notified correctly of any incorrect input and to ensure the program would not crash.
+* <img src="assets/documents/XXXX">
 
 ## Technology
-
-   *
+*
 
 ## Modules & Libraries
-
-  *
+*
 
 
 
 ## Deployment
-
-The following steps were taken to deploy this site:
-
-  *
+* The following steps were taken to deploy this site:
+*
 
 
 
 ## Testing
-### Tests performed
-
-  *
+* Extensive testing was carried out on the site which can be viewed here:
+* [TESTING.md](TESTING.md)
 
 
 ### User Story Tests
