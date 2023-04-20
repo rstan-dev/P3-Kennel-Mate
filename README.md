@@ -100,7 +100,7 @@
    * Main background
    * The app uses one background image which is a royalty-free template from Canva, to make the site relevant to the dog daycare industry
    * The design was initially conceived in Canva
-   * <img src="assets/images/kennel_mate_canva.png">
+   * <img src="assets/images/kennel_mate_canva.jpg">
    * In the terminal several font colors were chosen:
    * White for Menu items and headers
    * Yellow for anything requiring user input
@@ -125,14 +125,24 @@
    * The original plan was to allow the user to navigate through the system using simple, familiar menus which led them to various actions and interactions within the program.
    * The original plan was to include a unique Booking number, which was the basis for finding, upating, and deleting bookings.
    * The date, dog's name and amount charged were identified as the basic requirements.
-   * As the project developed it was clear that a family name was also needed in the case where there was more than one dog with the same name.  This was incorporated into the system.
+   * As the project developed it was clear that a seperate family name was also needed in the case where there was more than one dog with the same name.  This was incorporated into the system.
    * The final system deployed all of the planned features .
 
 
 ## Logic
 
    * The system was conceived using process flow diagrams created in [Lucid](https://lucid.app/) as follows:
-   * <img src="assets/documents/XXXX">
+   * Main Menu Flow and Create Booking Logic:
+   * <img src="assets/images/logic_main_menu_flow.jpeg">
+   * Update Booking Menu and Logic:
+   * <img src="assets/images/logic_update_booking_menu_flow.jpeg">
+   /workspace/P3-Kennel-Mate/assets/images/logic_update_booking _menu_flow.jpeg
+   * Delete Booking Menu and Logic:
+   * <img src="assets/images/logic_delete_booking_menu_flow.jpeg">
+   * View Booking Menu and Logic:
+   * <img src="assets/images/logic_view_booking_menu_flow.jpeg">
+
+
 
 ## Validation
     * Various validation messages were used to ensure that the user was notified correctly of any incorrect input and to ensure the program would not crash.
