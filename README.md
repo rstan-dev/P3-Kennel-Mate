@@ -97,16 +97,22 @@
 
    ### Color Scheme (created in [Canva](https://www.canva.com/))
 
-   * Main background
+   ## Main background
    * The app uses one background image which is a royalty-free template from Canva, to make the site relevant to the dog daycare industry
    * The design was initially conceived in Canva
    * <img src="assets/images/kennel_mate_canva.jpg">
+
+   ## Terminal colors
    * In the terminal several font colors were chosen:
    * White for Menu items and headers
    * Yellow for anything requiring user input
+   * <img src="assets/images/col_yellow_input_msg.png">
    * Magenta for progress updates and displaying dynamic information such as the Bookings Counter and Revenue Total
-   * Red for invalid messages
+   * <img src="assets/images/col_magenta_activity_msg.png">
    * Green for success messages
+   * <img src="assets/images/col_green_success_msg.png">
+   * Red for invalid messages [(see validation section below)](#validation)
+
 
 
    ### Typography
@@ -145,7 +151,7 @@
 
 ## Validation
 * Various validation messages were used to ensure that the user was notified correctly of any incorrect input and to ensure the program would not crash.
-* <img src="assets/documents/XXXX">
+* * <img src="assets/images/col_red_invalid_msg.png">
 
 ## Technology
 *
