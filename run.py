@@ -275,7 +275,6 @@ def create_booking():
     time.sleep(1)
 
 
-
 def update_booking():
     '''
     Allows the user to update the booking data in the worksheet with new data.
