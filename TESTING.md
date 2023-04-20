@@ -1,6 +1,13 @@
 # TESTING
+* The following tests were carried out on the code and the system
 
 ## PEP-8
+* After the code was written, each line of code was checked for problems and errors identified in the Problems panel of Gitpod.
+* The Problems panel is a built-in feature of Gitpod that displays any issues or errors detected in the codebase.
+* These issues included syntax errors, semantic errors and warnings similar to the below:
+* <img src="assets/images/tests_problems_panel.png">
+* Once this was completed, the code was passed through a PEP8 Validator and passed
+* <img src="assets/images/tests_pep8_linter.png">
 
 ## W3C
 
