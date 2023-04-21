@@ -230,7 +230,7 @@ def create_booking():
     # checks if the Dog's name input is empty or contains only
     # white spaces
     while True:
-        dogs_name = input(colored("\nPlease enter the Dog's name:",
+        dogs_name = input(colored("\nPlease enter the Dog's name:\n",
                                   'yellow')).strip().title()
 
         if not dogs_name:
@@ -242,7 +242,7 @@ def create_booking():
     # checks if the Dog's Family name input is empty or contains
     # only white spaces
     while True:
-        family_name = input(colored("\nPlease enter the Family name:",
+        family_name = input(colored("\nPlease enter the Dog's Family name:\n",
                                     'yellow')).strip().title()
         if not family_name:
             print(colored("Error: Family name cannot be empty or contain\n"
@@ -252,7 +252,7 @@ def create_booking():
 
     # checks if the amount charged input is a valid number
     while True:
-        amount_charged = input(colored("\nPlease enter amount charged:",
+        amount_charged = input(colored("\nPlease enter amount charged:\n",
                                        'yellow'))
         float_amount = float(amount_charged)
         try:
