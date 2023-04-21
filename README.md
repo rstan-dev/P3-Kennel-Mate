@@ -204,33 +204,25 @@
 * Extensive testing was carried out on the site which can be viewed here:
 * [TESTING.md](TESTING.md)
 
-
-### User Story Tests
-
-
-
-
-* Features tests
-
-* Menu tests
-
-* API Update tests
-
-* Validation tests
-
-
-
 ### Bugs resolved:
 
-  *
+  * A number of bugs were resolved including:
+  * Input errors that would cause the system to crash.  these were resolved with various while loops and try except statements.
+  * Google creds issue. Originally the creds were added to the project and not ignored before committing. An email from Google was received, alerting to the potential security breach.  This was resolved by creating new creds from a new service account, closing down the old service account and using git.ignore on the creds.json file.  These new creds were updated in Heroku.
 
 ### Unresolved bugs:
 
-  *
+  * There is one Failed UX test (KOT11) where the Amount Charged is not always displayed with 2 decimal places. Due to time contraints and the fact that the Revenue Total figure is formatted correctly, and this does not affect the system performance, this was left for future development.
 
  ### Improvements and future developments:
 
-  *
+  * The system could have an employee login and each booking could be linked to the employee that is logged in.
+  * A data backup function would be useful so accidentlly deleted information could be retrieved.
+  * Additional fields could be entered suc as the owners name and telephone number - in case of emergency etc.
+  * Additional fields could be added to collect dog specific information such as dietary, medication, health conditions, behavioural observations etc.
+  * Additional services could be added and revenue tracked such as meals, grooming, half day and full day rates etc.
+  * As stated above the KOT11 unresolved bug could be fixed for enhanced UX.
+
 ## Forking & Cloning Instructions
 
 
