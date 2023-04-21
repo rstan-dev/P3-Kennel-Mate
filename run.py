@@ -78,9 +78,7 @@ def get_booking_date():
                                          "The month must be between 1 and 12,"
                                          "\nAnd the year must be a four-digit"
                                          "number\n", 'red'))
-            else:
-                return booking_date
-            break
+            return booking_date
 
         except ValueError as e:
             print(colored(f"\nInvalid date input: {e}\n", 'red'))
