@@ -46,15 +46,15 @@
    ### User Story
 
    * The user is presented with an attractive intuitive command-line admin portal, navigating through various menu choices.
-   *  The user can choose to create a booking
-   *  The user can choose to update a booking
-   *  The user can choose to delete a booking
-   *  The user can choose to view bookings in the system
-   *  The user can find bookings by booking number
+   * The user can choose to create a booking
+   * The user can choose to update a booking
+   * The user can choose to delete a booking
+   * The user can choose to view bookings in the system
+   * The user can find bookings by booking number
    * The user can find bookings by booking date
    * The user can find bookings by dog’s name or family name
    * The user will be presented with a list of relevant bookings at various points in the program, which will also include a useful count of the total bookings in the view and a total of the revenue for those bookings
-   *  The user will be notified when the data has been updated after each action
+   * The user will be notified when the data has been updated after each action
    * The user will be notified if they enter invalid characters, and will prompt them to reenter the information correctly
 
   ### Goals
@@ -67,7 +67,7 @@
 
 ## Design
 
-*  The design is based around a terminal application that show cases Python.  The Code Institute mock terminal template was used.
+* The design is based around a terminal application that show cases Python.  The Code Institute mock terminal template was used.
 
 * The initial menu function concept was sketched out using wireframes, a UX background designed in Canva and the logic behind the menus was created using Lucid.
 
@@ -94,8 +94,6 @@
    * <img src="assets/images/wire_frame_view.png">
 
 
-
-
    ### Color Scheme (created in [Canva](https://www.canva.com/))
 
    ## Main background
@@ -113,7 +111,6 @@
    * Green for success messages
    * <img src="assets/images/col_green_success_msg.png">
    * Red for invalid messages [(see validation section below)](#validation)
-
 
 
    ### Typography
@@ -149,22 +146,42 @@
    * <img src="assets/images/logic_view_booking_menu_flow.jpeg">
 
 
-
 ## Validation
 * Various validation messages were used to ensure that the user was notified correctly of any incorrect input and to ensure the program would not crash.
 * * <img src="assets/images/col_red_invalid_msg.png">
 
 ## Technology
-*
+* a number of tools and technology was used to complete this project:
+* [Balsamiq](https://balsamiq.cloud/) - wireframes
+* [Canva](https://www.canva.com/) - graphic design
+* [Lucid](https://lucid.app/) - logic chart
+* [Business Name Maker](https://businessnamemaker.com/) - creating a business name
+* [Google Cloud Service Accounts & API](https://cloud.google.com)
+* HTML - landing page
+* CSS - landing page
+* Python - terminal application
+* [Heroku](https://www.heroku.com/)
+* [HTML Validator](https://validator.w3.org/nu)
+* [CSS Validator](https://jigsaw.w3.org/css-validator)
+* [PEP-8 Validator](https://pep8ci.herokuapp.com/)
+
+
 
 ## Modules & Libraries
-*
+* The following libraries were imported to run the application
+* os - to clear the terminal
+* datetime - for date functions
+* time - for date functions
+* re - for regular expressions
+* gspread - for google worksheet api
+* tabulate - to present data in a table format
+* termcolor - to present data in different colors
 
 
 
 ## Deployment
 * The following steps were taken to deploy this site:
-*
+* [Login to Heroku (create an account if needed)](https://id.heroku.com/login)
 
 
 
