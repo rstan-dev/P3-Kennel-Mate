@@ -313,7 +313,7 @@ def update_booking():
     # Searches for the row containing the booking number,
     # or displays a message if there is no data to display.
     for row in all_bookings:
-        if ('B' + str(booking_num)) in row:
+        if 'B' + str(booking_num) in row:
             rows_containing_booking_num.append(row)
             no_booking_data = False
 
