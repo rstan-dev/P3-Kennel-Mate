@@ -181,12 +181,12 @@ def get_dogs_name():
     '''
     while True:
         dogs_name = input(
-            colored("\nPlease enter the Dog's name:\n", 'yellow')
-            ).strip().title()
+            colored("\nPlease enter the Dog's name or the Family name:\n",
+                    'yellow')).strip().title()
         if not dogs_name:
             print(
                 colored(
-                    "Error: Dog's name cannot be empty or contain\n"
+                    "Error: name cannot be empty or contain\n"
                     "only white spaces. Please try again.", 'red'
                     )
                 )
