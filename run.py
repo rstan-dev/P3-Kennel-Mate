@@ -217,7 +217,7 @@ def create_booking():
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
     print("\n")
-    print('*' * 23)
+    print('*' * 22)
     print("*** CREATE BOOKING ***\n")
 
     print(colored("Bookings Today:\n", 'magenta'))
@@ -745,9 +745,9 @@ def start():
     through the options.
     '''
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
-    print('*' * 46)
+    print('*' * 44)
     print("*** Welcome to Kennel-Mate Admin System. ***\n")
-    print("** book, update, delete and view bookings **\n")
+    print("** Book, Update, Delete and View bookings **\n")
     print(colored("Press ENTER to start the program...", "yellow"))
     input()
     choose_main_menu()
@@ -915,7 +915,7 @@ def choose_update_menu():
             break
         elif update_menu_choice == 3:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
-            print('*' * 24)
+            print('*' * 36)
             print("*** SEARCH BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
             print(colored("Collecting booking data...\n", 'magenta'))
@@ -965,7 +965,7 @@ def choose_delete_menu():
             break
         elif delete_menu_choice == 3:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
-            print('*' * 24)
+            print('*' * 36)
             print("*** SEARCH BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
             print(colored("Collecting booking data...\n", 'magenta'))
@@ -1017,7 +1017,7 @@ def choose_view_menu():
             break
         elif view_menu_choice == 4:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
-            print('*' * 24)
+            print('*' * 34)
             print("*** VIEW BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
             print(colored("Collecting booking data...\n", 'magenta'))
