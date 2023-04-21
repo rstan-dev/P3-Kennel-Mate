@@ -1,10 +1,15 @@
 # IMPORTS
-
+'''
+The following libraries are needed to clear the screen,
+handling date functions, regular exporessions, presenting
+data in a table format on screen, and displaying colors for
+onscreen messages
+'''
 import os
-import gspread
 import datetime
 import time
 import re
+import gspread
 from tabulate import tabulate
 from termcolor import colored
 
