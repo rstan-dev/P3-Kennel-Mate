@@ -472,7 +472,6 @@ def update_booking():
                           "Booking Menu...", 'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
-            pass
 
 
 def delete_booking():
