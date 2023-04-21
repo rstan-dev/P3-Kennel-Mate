@@ -775,7 +775,7 @@ def display_main_menu():
         print('[3] - Delete A Booking')
         print('[4] - View Bookings')
         print('[5] - Exit')
-        print(colored('\nPlease choose a Menu option between [1] and [5]:',
+        print(colored('\nPlease choose a menu option between [1] and [5]:',
                       'yellow'))
         try:
             menu_choice = int(input())
@@ -807,7 +807,7 @@ def update_bkg_menu():
         print('[2] - Or, Search Bookings By Date')
         print("[3] - Or, Search Bookings By Dog's Name")
         print('[4] - Return to Main Menu')
-        print(colored('\nPlease choose a Menu option between [1] and [4]:',
+        print(colored('\nPlease choose a menu option between [1] and [4]:',
                       'yellow'))
         try:
             update_menu_choice = int(input())
@@ -837,7 +837,7 @@ def delete_bkg_menu():
         print('[2] - Or, Search Bookings By Date')
         print("[3] - Or, Search Bookings By Dog's Name")
         print('[4] - Return to Main Menu')
-        print(colored('\nPlease choose a Menu option between [1] and [4]:',
+        print(colored('\nPlease choose a menu option between [1] and [4]:',
                       'yellow'))
         try:
             delete_menu_choice = int(input())
@@ -867,7 +867,7 @@ def view_bkg_menu():
         print('[3] - View By Booking Date')
         print("[4] - View By Booking Name")
         print('[5] - Return to Main Menu')
-        print(colored('\nPlease choose a Menu option between [1] and [5]:',
+        print(colored('\nPlease choose a menu option between [1] and [5]:',
                       'yellow'))
         try:
             view_menu_choice = int(input())
@@ -923,7 +923,7 @@ def choose_update_menu():
             choose_update_menu()
             break
         elif update_menu_choice == 4:
-            print(colored("Returning to main menu\n", 'magenta'))
+            print(colored("Returning to Main Menu\n", 'magenta'))
             time.sleep(1)
             choose_main_menu()
             break
@@ -973,7 +973,7 @@ def choose_delete_menu():
             choose_delete_menu()
             break
         elif delete_menu_choice == 4:
-            print(colored("Returning to main menu\n", 'magenta'))
+            print(colored("Returning to Main Menu\n", 'magenta'))
             time.sleep(1)
             choose_main_menu()
         else:
@@ -1025,7 +1025,7 @@ def choose_view_menu():
             choose_view_menu()
             break
         elif view_menu_choice == 5:
-            print(colored("Returning to main menu\n", 'magenta'))
+            print(colored("Returning to Main Menu\n", 'magenta'))
             time.sleep(1)
             choose_main_menu()
             break
