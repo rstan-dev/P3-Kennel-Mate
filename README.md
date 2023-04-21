@@ -242,23 +242,23 @@
 6. Type the following command, replacing the "repository_URL" with the URL of the repository that you copied in step 4: git clone repository_URL
 7. Press Enter and wait for the cloning process to complete.
 
-
-
 ## Credits:
 
   ### Code
-
-  *
-
+  * All the code was written and developed entirely for this project.
+  * Google Search, Stack Overflow and ChatGPT were used to clarify functions, PEP-8 requirements and docstring formats.
 
   ### Content
-
-  *
+  * The system name Kennel-Mate was developoed for this project
 
   ### Media
 
-  *
+  * The media used for the landing page background is royalty free
 
   ### Acknowledgements
 
-  *
+  * Spencer Bariball for your mentorship
+  * Code Institute's Love Sandwiches project for the Google API
+  * Inspiration from Lasmina Pal's [American Pizza Order System Project](https://github.com/useriasminna/american_pizza_order_system)
+  * Inspiration from  Steven Weir's [Snakes-and-Ladders Project](https://github.com/StevenWeir038/Snakes-and-Ladders)
+  * Phil Ebiner & Federico Garay's [Udemy Course - Total Python](https://www.udemy.com/course/total-python)
