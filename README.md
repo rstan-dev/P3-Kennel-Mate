@@ -1,9 +1,10 @@
 # Project Name - Kennel-Mate
+* <img src="assets/images/readme_main_image.jpg">
 
+## View Live Project
 * [Link to Deployed Project](https://kennel-mate.herokuapp.com/)
 
 ## Contents(#contents)
-​
 * [User Experience (UX)](#user-experience)
     *  [Purpose & target audience](#purpose-and-target-audience)
     *  [User Story](#user-story)
