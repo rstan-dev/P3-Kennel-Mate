@@ -544,7 +544,7 @@ def delete_booking():
     # The while loop validates for a correct Y or N input
     if row_index is not None:
         print(colored("Are you sure you want to delete this booking? "
-                      "Enter Y/N", 'yellow'))
+                      "Enter Y/N:", 'yellow'))
         while True:
             delete_choice = input().upper()
             if delete_choice == 'Y' or delete_choice == "N":
