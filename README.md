@@ -225,6 +225,23 @@
 
 ## Forking & Cloning Instructions
 
+* To create a copy of the repo in GitHub to edit:
+1. Log in to your GitHub account.
+2. Navigate to [Kennel-Mate repository](https://github.com/rstan-dev/P3-Kennel-Mate)
+3. Click on the "Fork" button located in the upper right-hand corner of the repository's page.
+4. Select the account where you want to fork the repository.
+5. Wait for GitHub to complete the forking process.
+6. Open the project in GitPod (or whichever IDE you have setup)
+
+* To clone a copy of the repo on your local machine to edit:
+1. Log in to your GitHub account.
+2. Navigate to [Kennel-Mate repository](https://github.com/rstan-dev/P3-Kennel-Mate)
+3. Click on the "Code" button located in the upper right-hand corner of the repository's page.
+4. Click on the "HTTPS" link to copy the URL of the repository.
+5. Open the terminal or command prompt on your local machine and navigate to the directory where you want to clone the repository.
+6. Type the following command, replacing the "repository_URL" with the URL of the repository that you copied in step 4: git clone repository_URL
+7. Press Enter and wait for the cloning process to complete.
+
 
 
 ## Credits:
