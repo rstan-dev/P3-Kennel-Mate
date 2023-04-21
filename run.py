@@ -302,10 +302,10 @@ def update_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number.\n",
+            print(colored("Invalid entry. Please enter a 4-digit number:\n",
                           'red'))
 
-    print(colored("collecting booking data...\n", 'magenta'))
+    print(colored("Collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
@@ -349,7 +349,7 @@ def update_booking():
 
         # Prompts user to update the booking date
         print("*" * 25)
-        print(colored("\nWould you like to update the date? Enter Y/N\n",
+        print(colored("\nWould you like to update the date? Enter Y/N:",
                       'yellow'))
 
         # Validates Y/N for updating the date
@@ -358,7 +358,7 @@ def update_booking():
             if update_date_choice == "Y" or update_date_choice == "N":
                 break
             else:
-                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+                print(colored("Invalid input. Please enter Y or N\n", 'red'))
 
         if update_date_choice == "Y":
             new_date = get_booking_date()
@@ -371,7 +371,7 @@ def update_booking():
             pass
 
         # Prompts user to update the dog's name
-        print(colored("\nWould you like to update the Dog's name? Enter Y/N\n",
+        print(colored("\nWould you like to update the Dog's name? Enter Y/N:",
                       'yellow'))
 
         # validates Y/N for updating the dog's name
@@ -380,12 +380,12 @@ def update_booking():
             if update_dog_choice == "Y" or update_dog_choice == "N":
                 break
             else:
-                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+                print(colored("Invalid input. Please enter Y or N\n", 'red'))
 
         if update_dog_choice == "Y":
             while True:
                 new_dogs_name = input(colored("\nPlease update the Dog's "
-                                              "name:",
+                                              "name:\n",
                                               'yellow')).strip().title()
                 if not new_dogs_name:
                     print(colored("Error: Dog's name cannot be empty or"
@@ -395,15 +395,15 @@ def update_booking():
                     print(colored(f"\nUpdating B-{booking_num} in "
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
-                    print(colored(f"\nBooking B-{booking_num} updated"
+                    print(colored(f"\nBooking B-{booking_num} updated "
                                   "successfully.\n", 'green'))
                     break
         else:
             pass
 
         # Prompts user to update the dog's family name
-        print(colored("\nWould you like to update the Dog's Family name?"
-                      "Enter Y/N\n", 'yellow'))
+        print(colored("\nWould you like to update the Dog's Family name? "
+                      "Enter Y/N:", 'yellow'))
 
         # Validates Y/N for updating the dog's family name
         while True:
@@ -411,16 +411,16 @@ def update_booking():
             if update_family_choice == "Y" or update_family_choice == "N":
                 break
             else:
-                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+                print(colored("Invalid input. Please enter Y or N\n", 'red'))
 
         if update_family_choice == "Y":
             while True:
                 new_family_name = input(colored("\nPlease update the Dog's "
-                                                "Family name:",
+                                                "Family name\n:",
                                                 'yellow')).strip().title()
                 if not new_family_name:
                     print(colored("Error: Family name cannot be empty or "
-                                  "contain\nonly white spaces."
+                                  "contain\nonly white spaces. "
                                   "Please try again.", 'red'))
                 else:
                     print(colored(f"\nUpdating B-{booking_num} in "
@@ -434,7 +434,7 @@ def update_booking():
 
         # Prompts user to update the amount paid
         print(colored("\nWould you like to update the amount paid? "
-                      "Enter Y/N\n", 'yellow'))
+                      "Enter Y/N:", 'yellow'))
 
         # Validates Y/N for updating the amount paid
         while True:
@@ -442,12 +442,12 @@ def update_booking():
             if update_amount_choice == "Y" or update_amount_choice == "N":
                 break
             else:
-                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+                print(colored("Invalid input. Please enter Y or N\n", 'red'))
 
         if update_amount_choice == "Y":
             while True:
                 update_amount_paid = input(colored("\nPlease update the "
-                                                   "amount paid:", 'yellow'))
+                                                   "amount paid:\n", 'yellow'))
                 try:
                     float_amount = float(update_amount_paid)
                     if not float_amount.is_integer() and \
