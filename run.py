@@ -625,7 +625,7 @@ def view_booking_no(booking_num):
     # Prompts user to enter a booking number to view
     print('*' * 30)
     print("*** VIEW BY BOOKING NUMBER ***\n")
-    print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
+    print(colored("Enter Booking Number (4-digit number only):", 'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -637,7 +637,7 @@ def view_booking_no(booking_num):
             print(colored("Invalid entry. Please enter a 4-digit number.\n",
                           'red'))
 
-    print(colored("collecting booking data...\n", 'magenta'))
+    print(colored("Collecting booking data...\n", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
