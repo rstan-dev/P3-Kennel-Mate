@@ -181,7 +181,22 @@
 
 ## Deployment
 * The following steps were taken to deploy this site:
+* The project was initially setup in GitHub using Code Institute's project template
+* A Google worksheet was created to store the data
+* An API was setup through [Google Cloud](https://cloud.google.com)
+* A JSON key was created from the Service Account and copied into the repo as creds.json
+* The creds.json file was added to git ignore
+* The email adress in the creds.json file was shared with the Google Worksheet
+* gspread was installed by typing "pip3 install gspread google-auth" in the terminal
+* The live site was deployed to Heroku early on so the final UX could be experienced early and often.
 * [Login to Heroku (create an account if needed)](https://id.heroku.com/login)
+* Create New App - choosing a unique name
+* Under Settings / Config Vars enter the PORT in the KEY section as 8000
+* Add buildpacks Python and then Node.js - in that order
+* <img src="assets/images/readme_heroku_settings.png">
+* Under Deploy - select GitHub and link to repo name
+* Under Manual Deployment, click Deploy Branch
+* <img src="assets/images/readme_heroku_deployment.png">
 
 
 
