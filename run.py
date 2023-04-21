@@ -597,18 +597,14 @@ def view_all_bookings():
             tabulate(
                 bookings_data,
                 headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
-                         'Amount Paid']
-                )
-            )
+                         'Amount Paid']))
         print(colored("\nNo booking data to display for this date\n", 'red'))
     else:
         print(
             tabulate(
                 bookings_data,
                 headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
-                         'Amount Paid']
-                )
-            )
+                         'Amount Paid']))
 
         bookings_counter(bookings_data)
         revenue_total(bookings_data)
