@@ -805,7 +805,7 @@ def update_bkg_menu():
     while True:
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search Bookings By Date')
-        print("[3] - Or, Search Bookings By Dog's Name")
+        print("[3] - Or, Search Bookings By Dog or Family Name")
         print('[4] - Return to Main Menu')
         print(colored('\nPlease choose a menu option between [1] and [4]:',
                       'yellow'))
@@ -835,7 +835,7 @@ def delete_bkg_menu():
     while True:
         print('[1] - Enter Booking No.')
         print('[2] - Or, Search Bookings By Date')
-        print("[3] - Or, Search Bookings By Dog's Name")
+        print("[3] - Or, Search Bookings By Dog or Family Name")
         print('[4] - Return to Main Menu')
         print(colored('\nPlease choose a menu option between [1] and [4]:',
                       'yellow'))
@@ -916,7 +916,7 @@ def choose_update_menu():
         elif update_menu_choice == 3:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             print('*' * 24)
-            print("*** SEARCH BY DOG'S NAME ***\n")
+            print("*** SEARCH BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
             print(colored("Collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
@@ -966,7 +966,7 @@ def choose_delete_menu():
         elif delete_menu_choice == 3:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             print('*' * 24)
-            print("*** SEARCH BY DOG'S NAME ***\n")
+            print("*** SEARCH BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
             print(colored("Collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
@@ -1018,7 +1018,7 @@ def choose_view_menu():
         elif view_menu_choice == 4:
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
             print('*' * 24)
-            print("*** VIEW BY DOG'S NAME ***\n")
+            print("*** VIEW BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
             print(colored("Collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
