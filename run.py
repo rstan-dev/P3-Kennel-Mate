@@ -909,7 +909,7 @@ def choose_update_menu():
             print('*' * 22)
             print("*** SEARCH BY DATE ***\n")
             input_date = get_booking_date()
-            print(colored("collecting booking data...\n", 'magenta'))
+            print(colored("Collecting booking data...\n", 'magenta'))
             view_booking_date(input_date)
             choose_update_menu()
             break
@@ -918,7 +918,7 @@ def choose_update_menu():
             print('*' * 24)
             print("*** SEARCH BY DOG'S NAME ***\n")
             dogs_name = get_dogs_name()
-            print(colored("collecting booking data...\n", 'magenta'))
+            print(colored("Collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_update_menu()
             break
@@ -959,7 +959,7 @@ def choose_delete_menu():
             print('*' * 22)
             print("*** SEARCH BY DATE ***\n")
             input_date = get_booking_date()
-            print(colored("collecting booking data...\n", 'magenta'))
+            print(colored("Collecting booking data...\n", 'magenta'))
             view_booking_date(input_date)
             choose_delete_menu()
             break
@@ -968,7 +968,7 @@ def choose_delete_menu():
             print('*' * 24)
             print("*** SEARCH BY DOG'S NAME ***\n")
             dogs_name = get_dogs_name()
-            print(colored("collecting booking data...\n", 'magenta'))
+            print(colored("Collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_delete_menu()
             break
@@ -1011,7 +1011,7 @@ def choose_view_menu():
             print('*' * 20)
             print("*** VIEW BY DATE ***\n")
             input_date = get_booking_date()
-            print(colored("collecting booking data...\n", 'magenta'))
+            print(colored("Collecting booking data...\n", 'magenta'))
             view_booking_date(input_date)
             choose_view_menu()
             break
@@ -1020,7 +1020,7 @@ def choose_view_menu():
             print('*' * 24)
             print("*** VIEW BY DOG'S NAME ***\n")
             dogs_name = get_dogs_name()
-            print(colored("collecting booking data...\n", 'magenta'))
+            print(colored("Collecting booking data...\n", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_view_menu()
             break
