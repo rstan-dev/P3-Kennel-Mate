@@ -27,8 +27,6 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('p3-kennel-mate-data')
 
 bookings = SHEET.worksheet('bookings-data')
-all_bookings = bookings.get_all_values()
-booking_num_column = bookings.col_values(1)
 
 
 # UTILITY FUNCTIONS
