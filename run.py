@@ -187,9 +187,7 @@ def get_dogs_name():
             print(
                 colored(
                     "Error: name cannot be empty or contain\n"
-                    "only white spaces. Please try again.", 'red'
-                    )
-                )
+                    "only white spaces. Please try again.", 'red'))
         else:
             break
     return dogs_name
