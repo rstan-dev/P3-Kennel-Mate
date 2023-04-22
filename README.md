@@ -37,11 +37,11 @@
 
 ## User Experience
 
-   ### Purpose and Target Audience
+### Purpose and Target Audience
    * Kennel-Mate is a simple admin booking system for a doggy daycare business, safely backed up and updated to a google cloud worksheet.
    * The system is designed for an employee to capture, update, delete and view booking information, including date, name, family name and the amount charged, each with a unique booking number.
 
-   ### User Story
+### User Story
    * The user is presented with an attractive intuitive command-line admin portal, navigating through various menu choices.
    * The user can choose to create a booking.
    * The user can choose to update a booking.
@@ -54,7 +54,7 @@
    * The user will be notified when the data has been updated after each action.
    * The user will be notified if they enter invalid characters, and will prompt them to reenter the information correctly.
 
-  ### Goals
+### Goals
    * The program should be clear and easy to use by anyone, with very little training required.
    * The information displayed should be relevant to each menu item selected.
    * The system should automatically generate a sequential booking number, which can be used as a unique identifier.
@@ -68,7 +68,7 @@
 * The initial menu function concept was sketched out using wireframes, a UX background designed in Canva and the logic behind the menus was created using Lucid.
 * Due to the nature of the project, only desktop was considered.  The mock terminal is not suitable for mobile.
 
-   ### Wireframes  (created in [Balsamiq](https://balsamiq.cloud/))
+### Wireframes  (created in [Balsamiq](https://balsamiq.cloud/))
 
    * Start Page
    * <img src="assets/images/wire_frame_start.png">
@@ -88,14 +88,14 @@
     * View Bookings Menu
    * <img src="assets/images/wire_frame_view.png">
 
-   ### Color Scheme (created in [Canva](https://www.canva.com/))
+### Color Scheme (created in [Canva](https://www.canva.com/))
 
-   ## Main Background
+### Main Background
    * The app uses one background image which is a royalty-free template from Canva, to make the site relevant to the dog daycare industry
    * The design was initially conceived in Canva.
    * <img src="assets/images/kennel_mate_canva.jpg">
 
-   ## Terminal Colors
+### Terminal Colors
    * In the terminal several font colors were chosen:
    * White for Menu items and headers
    * Yellow for anything requiring user input
@@ -106,16 +106,16 @@
    * <img src="assets/images/col_green_success_msg.png">
    * Red for invalid messages [(see validation section below)](#validation)
 
-   ### Typography
+### Typography
    * The main text font is the default font in the command line terminal.
    * The font chosen for the Kennel-Mate logo is a Google Font called 'Geo" which was the closest font to the Canva font used.
    * Arial was used for the body font on the main page which included the Run Program button.
 
-   ### MVP
+### MVP
    * The minimum viable product was to have a working system that allowed the user to create a new booking, update the information in an existing booking, delete a booking and view bookings by booking number, date, and dog's name or family name.
    * The system also needed to handle invalid entries so as not to crash
 
-   ### Planned features
+### Planned features
    * The original plan was to allow the user to navigate through the system using simple, familiar menus which led them to various actions and interactions within the program.
    * The original plan was to include a unique Booking number, which was the basis for finding, updating, and deleting bookings.
    * The date, dog's name and amount charged were identified as the basic requirements.
@@ -197,7 +197,7 @@
 ### Unresolved bugs:
   * There is one Failed UX test (KOT11) where the Amount Charged is not always displayed with 2 decimal places. Due to time constraints and the fact that the Revenue Total figure is formatted correctly, and this does not affect the system performance, this was left for future development.
 
- ### Improvements and Future Developments:
+### Improvements and Future Developments:
   * The system could have an employee login allowing each booking to be linked to the employee that is logged in.
   * A data backup function would be useful so accidentally deleted information could be retrieved.
   * Additional fields could be entered such as the owners name and telephone number - in case of emergency etc.
@@ -224,17 +224,17 @@
 7. Press Enter and wait for the cloning process to complete.
 
 ## Credits:
-  ### Code
+### Code
   * All the code was written and developed entirely for this project.
   * Google Search, Stack Overflow and ChatGPT were used to clarify functions, PEP-8 requirements and docstring formats.
 
-  ### Content
+### Content
   * The system name Kennel-Mate was developed for this project.
 
-  ### Media
+### Media
   * The media used for the landing page background is royalty-free. The design was created specifically for this project.
 
-  ### Acknowledgements
+### Acknowledgements
   * Spencer Barriball for your mentorship.
   * Code Institute's Love Sandwiches project for the Google API
   * Inspiration from Lasmina Pal's [American Pizza Order System Project](https://github.com/useriasminna/american_pizza_order_system)
