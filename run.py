@@ -602,6 +602,7 @@ def view_all_bookings():
 
         bookings_counter(bookings_data)
         revenue_total(bookings_data)
+        time.sleep(1.5)
 
 
 def view_booking_no(booking_num):
@@ -664,6 +665,7 @@ def view_booking_no(booking_num):
 
         bookings_counter(rows_containing_booking_num)
         revenue_total(rows_containing_booking_num)
+        time.sleep(1.5)
 
 
 def view_booking_date(booking_date):
@@ -701,6 +703,7 @@ def view_booking_date(booking_date):
 
         bookings_counter(rows_containing_booking_date)
         revenue_total(rows_containing_booking_date)
+        time.sleep(1.5)
 
 
 def view_dog_bookings(dogs_name):
@@ -735,6 +738,7 @@ def view_dog_bookings(dogs_name):
 
         bookings_counter(rows_containing_dog)
         revenue_total(rows_containing_dog)
+        time.sleep(1.5)
 
 
 def start():
