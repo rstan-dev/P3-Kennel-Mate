@@ -7,6 +7,7 @@
 * These issues included syntax errors, semantic errors and warnings similar to the below:
 * <img src="assets/images/tests_problems_panel.png">
 * All but 9 small issues were resolved. The remaining were considered inconsequential to the project, and noted, but left as small bugs unresolved.
+* The Pylint warning states there are 1086 lines.  Given more time the program could be refactored to fall below the recommended 1000 lines.
 * <img src="assets/images/bugs_unresolved1.png">
 * Once this was completed, the code was passed through a [PEP8 Validator](https://pep8ci.herokuapp.com/) and passed.
 * <img src="assets/images/tests_pep8_linter.png">
