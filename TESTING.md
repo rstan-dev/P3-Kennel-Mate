@@ -28,6 +28,18 @@
 
 ## USER STORY TESTS
 * The system was tested extensively and systematically as a user, entering information in the correct format and in various incorrect formats.
+* The tests were designed around the original User Story and Goals set out at the start of the project:
+ * The user is presented with an attractive intuitive command-line admin portal, navigating through various menu choices.
+ * The user can choose to create a booking,
+ * The user can choose to update a booking,
+ * The user can choose to delete a booking
+ * The user can choose to view bookings in the system.
+ * The user can find bookings by booking number
+ * The user can find bookings by booking date,
+ * The user can find bookings by dog’s name.
+ * The user will be presented with a list of relevant bookings at various points in the program, which will also include a useful count of the total bookings in the view and a total of the revenue for those bookings.
+ * The user will be notified when the data has been updated after each action
+
 * The results were captured and failing tests were rectified until the test passed.
 * <img src="assets/images/tests1_main_menu.png">
 * <img src="assets/images/tests2_create_booking1.png">
