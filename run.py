@@ -788,8 +788,8 @@ def display_main_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1]'
-                          ' and [5]\n', 'red'))
+            print(colored('\033[1m\\nInvalid input.  Please enter a number between [1]'
+                          ' and [5]\n\033[0m', 'red'))
     return menu_choice
 
 
