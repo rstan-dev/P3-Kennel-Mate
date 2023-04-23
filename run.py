@@ -780,16 +780,16 @@ def display_main_menu():
         print('[3] - Delete A Booking')
         print('[4] - View Bookings')
         print('[5] - Exit')
-        print(colored('\033[1m\nPlease choose a menu option between [1] and [5]:\033[0m',
-                      'yellow'))
+        print(colored('\033[1m\nPlease choose a menu option between [1] and '
+                      '[5]:\033[0m', 'yellow'))
         try:
             menu_choice = int(input())
             if menu_choice not in range(1, 6):
                 raise ValueError
             break
         except ValueError:
-            print(colored('\033[1m\\nInvalid input.  Please enter a number between [1]'
-                          ' and [5]\n\033[0m', 'red'))
+            print(colored('\033[1m\nInvalid input. Please enter a number '
+                          'between [1] and [5]\n\033[0m', 'red'))
     return menu_choice
 
 
