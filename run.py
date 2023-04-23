@@ -58,7 +58,7 @@ def get_booking_date():
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
 
     while True:
-        print(colored("\nPlease enter the booking date as: (DD-MM-YYYY)",
+        print(colored("\nPlease enter the booking date as: DD-MM-YYYY",
                       'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
