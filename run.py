@@ -271,7 +271,7 @@ def create_booking():
     bookings.append_row(data_list)
     print("\n")
     print(colored("\nBooking entered successfully\n", 'green'))
-    time.sleep(1)
+    time.sleep(1.5)
 
 
 def update_booking():
@@ -469,7 +469,7 @@ def update_booking():
         else:
             print(colored("\nBooking updates completed, returning to Upate "
                           "Booking Menu...", 'green'))
-            time.sleep(1)
+            time.sleep(1.5)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
 
@@ -563,7 +563,7 @@ def delete_booking():
         else:
             print(colored("\nBooking deletions completed, returning to Delete "
                           "Booking Menu...", 'green'))
-            time.sleep(1)
+            time.sleep(1.5)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
 
@@ -929,7 +929,7 @@ def choose_update_menu():
             break
         elif update_menu_choice == 4:
             print(colored("Returning to Main Menu\n", 'magenta'))
-            time.sleep(1)
+            time.sleep(1.5)
             choose_main_menu()
             break
         else:
@@ -979,7 +979,7 @@ def choose_delete_menu():
             break
         elif delete_menu_choice == 4:
             print(colored("Returning to Main Menu\n", 'magenta'))
-            time.sleep(1)
+            time.sleep(1.5)
             choose_main_menu()
         else:
             print(colored("Invalid choice, please choose between 1 and 4\n",
@@ -1031,7 +1031,7 @@ def choose_view_menu():
             break
         elif view_menu_choice == 5:
             print(colored("Returning to Main Menu\n", 'magenta'))
-            time.sleep(1)
+            time.sleep(1.5)
             choose_main_menu()
             break
         else:
@@ -1073,7 +1073,7 @@ def choose_main_menu():
             break
         elif main_menu_choice == 5:
             print(colored("Ending program...\n", 'magenta'))
-            time.sleep(1)
+            time.sleep(1.5)
             start()
         else:
             print(colored("Invalid choice, please choose between 1 and 5\n",
