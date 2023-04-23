@@ -291,7 +291,8 @@ def update_booking():
     # Prompts user to enter a booking number to update
     print('*' * 23)
     print("*** UPDATE BOOKING ***\n")
-    print(colored("Enter Booking Number (4-digit number only):\n", 'yellow'))
+    print(colored("Enter Booking Number (4-digit numerical number only):\n",
+                  'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -300,8 +301,8 @@ def update_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number:\n",
-                          'red'))
+            print(colored("Invalid entry. Please enter a 4-digit numerical "
+                          "number:\n", 'red'))
 
     print(colored("Collecting booking data...\n", 'magenta'))
 
@@ -488,7 +489,8 @@ def delete_booking():
     # Prompts user to enter a booking number to delete
     print('*' * 23)
     print("*** DELETE BOOKING ***\n")
-    print(colored("Enter Booking Number (4-digit number only):", 'yellow'))
+    print(colored("Enter Booking Number (4-digit numerical number only):",
+                  'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -497,8 +499,8 @@ def delete_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number.\n",
-                          'red'))
+            print(colored("Invalid entry. Please enter a 4-digit numerical "
+                          "number.\n", 'red'))
 
     print(colored("Collecting booking data...\n", 'magenta'))
 
@@ -624,7 +626,8 @@ def view_booking_no(booking_num):
     # Prompts user to enter a booking number to view
     print('*' * 30)
     print("*** VIEW BY BOOKING NUMBER ***\n")
-    print(colored("Enter Booking Number (4-digit number only):", 'yellow'))
+    print(colored("Enter Booking Number (4-digit numerical number only):",
+                  'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -633,8 +636,8 @@ def view_booking_no(booking_num):
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit number.\n",
-                          'red'))
+            print(colored("Invalid entry. Please enter a 4-digit numerical "
+                          "number.\n", 'red'))
 
     print(colored("Collecting booking data...\n", 'magenta'))
 
