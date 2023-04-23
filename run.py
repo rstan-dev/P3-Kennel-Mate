@@ -780,7 +780,7 @@ def display_main_menu():
         print('[3] - Delete A Booking')
         print('[4] - View Bookings')
         print('[5] - Exit')
-        print(colored('\nPlease choose a menu option between [1] and [5]:',
+        print(colored('\033[1m\nPlease choose a menu option between [1] and [5]:\033[0m',
                       'yellow'))
         try:
             menu_choice = int(input())
