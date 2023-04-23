@@ -202,7 +202,7 @@ def create_booking():
     This function obtains the last known booking number from the sheet, adds
     1 to it, and uses it as the next booking number. If no booking numbers are
     present in the sheet, the function starts the booking number sequence from
-    B-1001.
+    B1001.
 
     The function then prompts the user to input the booking date, dog's name,
     family name, and amount charged. It ensures that the user provides valid
@@ -361,10 +361,10 @@ def update_booking():
 
         if update_date_choice == "Y":
             new_date = get_booking_date()
-            print(colored(f"\nUpdating B-{booking_num} in progress...\n",
+            print(colored(f"\nUpdating B{booking_num} in progress...\n",
                           'magenta'))
             bookings.update_cell(row_index, 2, new_date)
-            print(colored(f"\nBooking B-{booking_num} updated successfully.\n",
+            print(colored(f"\nBooking B{booking_num} updated successfully.\n",
                           'green'))
         else:
             pass
@@ -391,10 +391,10 @@ def update_booking():
                                   "contain\n only white spaces. Please try"
                                   "again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in "
+                    print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
-                    print(colored(f"\nBooking B-{booking_num} updated "
+                    print(colored(f"\nBooking B{booking_num} updated "
                                   "successfully.\n", 'green'))
                     break
         else:
@@ -422,10 +422,10 @@ def update_booking():
                                   "contain\nonly white spaces. "
                                   "Please try again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in "
+                    print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 4, new_family_name)
-                    print(colored(f"\nBooking B-{booking_num} updated "
+                    print(colored(f"\nBooking B{booking_num} updated "
                                   "successfully.\n", 'green'))
                     break
         else:
@@ -458,11 +458,11 @@ def update_booking():
                                   "or a number with 2 decimal places. "
                                   "Please try again.", 'red'))
                 else:
-                    print(colored(f"\nUpdating B-{booking_num} in "
+                    print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 5,
                                          "{:.2f}".format(float_amount))
-                    print(colored(f"\nBooking B-{booking_num} updated "
+                    print(colored(f"\nBooking B{booking_num} updated "
                                   "successfully.\n", 'green'))
                     time.sleep(1)
                     break
@@ -553,10 +553,10 @@ def delete_booking():
                 print(colored("Invalid input.  Please enter Y or N\n", 'red'))
 
         if delete_choice == "Y":
-            print(colored(f"Deleting B-{booking_num} in progress...\n",
+            print(colored(f"Deleting B{booking_num} in progress...\n",
                           'magenta'))
             bookings.delete_rows(row_index)
-            print(colored(f"Booking B-{booking_num} deleted successfully.\n",
+            print(colored(f"Booking B{booking_num} deleted successfully.\n",
                           'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
