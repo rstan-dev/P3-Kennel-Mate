@@ -58,8 +58,8 @@ def get_booking_date():
     date_pattern = re.compile(r'^\d{2}-\d{2}-\d{4}$')
 
     while True:
-        print(colored("\nPlease enter the booking date as: DD-MM-YYYY",
-                      'yellow'))
+        print(colored("\033[1m\nPlease enter the booking date as: "
+                      "DD-MM-YYYY\033[0m", 'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
             print(colored("\nInvalid date format, please try again as "
@@ -181,8 +181,8 @@ def get_dogs_name():
     '''
     while True:
         dogs_name = input(
-            colored("\nPlease enter the Dog's name or the Family name:\n",
-                    'yellow')).strip().title()
+            colored("\033[1m\nPlease enter the Dog's name or the Family "
+                    "name:\n\033[0m", 'yellow')).strip().title()
         if not dogs_name:
             print(
                 colored(
@@ -228,8 +228,8 @@ def create_booking():
     # checks if the Dog's name input is empty or contains only
     # white spaces
     while True:
-        dogs_name = input(colored("\nPlease enter the Dog's name:\n",
-                                  'yellow')).strip().title()
+        dogs_name = input(colored("\033[1m\nPlease enter the Dog's "
+                                  "name:\n\033[0m", 'yellow')).strip().title()
 
         if not dogs_name:
             print(colored("Error: Dog's name cannot be empty or contain\n"
@@ -240,7 +240,8 @@ def create_booking():
     # checks if the Dog's Family name input is empty or contains
     # only white spaces
     while True:
-        family_name = input(colored("\nPlease enter the Dog's Family name:\n",
+        family_name = input(colored("\033[1m\nPlease enter the Dog's Family "
+                                    "name:\n\033[0m",
                                     'yellow')).strip().title()
         if not family_name:
             print(colored("Error: Family name cannot be empty or contain\n"
@@ -250,8 +251,8 @@ def create_booking():
 
     # checks if the amount charged input is a valid number
     while True:
-        amount_charged = input(colored("\nPlease enter amount charged:\n",
-                                       'yellow'))
+        amount_charged = input(colored("\033[1m\nPlease enter amount "
+                                       "charged:\n\033[0m", 'yellow'))
         float_amount = float(amount_charged)
         try:
             if not float_amount.is_integer() and \
@@ -270,7 +271,7 @@ def create_booking():
                  "{:.2f}".format(float_amount)]
     bookings.append_row(data_list)
     print("\n")
-    print(colored("\nBooking entered successfully\n", 'green'))
+    print(colored("Booking entered successfully\n", 'green'))
     time.sleep(1.5)
 
 
@@ -291,8 +292,8 @@ def update_booking():
     # Prompts user to enter a booking number to update
     print('*' * 23)
     print("*** UPDATE BOOKING ***\n")
-    print(colored("Enter Booking Number (4-digit numerical number only):\n",
-                  'yellow'))
+    print(colored("\033[1mEnter Booking Number (4-digit numerical number "
+                  "only):\033[0m", 'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -348,8 +349,8 @@ def update_booking():
 
         # Prompts user to update the booking date
         print("*" * 25)
-        print(colored("\nWould you like to update the date? Enter Y/N:",
-                      'yellow'))
+        print(colored("\033[1m\nWould you like to update the date? "
+                      "Enter Y/N:\033[0m", 'yellow'))
 
         # Validates Y/N for updating the date
         while True:
@@ -370,8 +371,8 @@ def update_booking():
             pass
 
         # Prompts user to update the dog's name
-        print(colored("\nWould you like to update the Dog's name? Enter Y/N:",
-                      'yellow'))
+        print(colored("\033[1m\nWould you like to update the Dog's name? "
+                      "Enter Y/N:\033[0m", 'yellow'))
 
         # validates Y/N for updating the dog's name
         while True:
@@ -383,8 +384,8 @@ def update_booking():
 
         if update_dog_choice == "Y":
             while True:
-                new_dogs_name = input(colored("\nPlease update the Dog's "
-                                              "name:\n",
+                new_dogs_name = input(colored("\033[1m\nPlease update the "
+                                              "Dog's name:\n\033[0m",
                                               'yellow')).strip().title()
                 if not new_dogs_name:
                     print(colored("Error: Dog's name cannot be empty or"
@@ -401,8 +402,8 @@ def update_booking():
             pass
 
         # Prompts user to update the dog's family name
-        print(colored("\nWould you like to update the Dog's Family name? "
-                      "Enter Y/N:", 'yellow'))
+        print(colored("\033[1m\nWould you like to update the Dog's Family "
+                      "name? Enter Y/N:\033[0m", 'yellow'))
 
         # Validates Y/N for updating the dog's family name
         while True:
@@ -414,8 +415,8 @@ def update_booking():
 
         if update_family_choice == "Y":
             while True:
-                new_family_name = input(colored("\nPlease update the Dog's "
-                                                "Family name\n:",
+                new_family_name = input(colored("\033[1m\nPlease update the "
+                                                "Dog's Family name:\n\033[0m",
                                                 'yellow')).strip().title()
                 if not new_family_name:
                     print(colored("Error: Family name cannot be empty or "
@@ -432,8 +433,8 @@ def update_booking():
             pass
 
         # Prompts user to update the amount paid
-        print(colored("\nWould you like to update the amount paid? "
-                      "Enter Y/N:", 'yellow'))
+        print(colored("\033[1m\nWould you like to update the amount paid? "
+                      "Enter Y/N:\033[0m", 'yellow'))
 
         # Validates Y/N for updating the amount paid
         while True:
@@ -445,8 +446,9 @@ def update_booking():
 
         if update_amount_choice == "Y":
             while True:
-                update_amount_paid = input(colored("\nPlease update the "
-                                                   "amount paid:\n", 'yellow'))
+                update_amount_paid = input(colored("\033[1m\nPlease update the "
+                                                   "amount paid:\n\033[0m",
+                                                   'yellow'))
                 try:
                     float_amount = float(update_amount_paid)
                     if not float_amount.is_integer() and \
@@ -489,8 +491,8 @@ def delete_booking():
     # Prompts user to enter a booking number to delete
     print('*' * 23)
     print("*** DELETE BOOKING ***\n")
-    print(colored("Enter Booking Number (4-digit numerical number only):",
-                  'yellow'))
+    print(colored("\033[1mEnter Booking Number (4-digit numerical number "
+                  "only):\033[0m", 'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -543,8 +545,8 @@ def delete_booking():
     # the gspread library.
     # The while loop validates for a correct Y or N input
     if row_index is not None:
-        print(colored("Are you sure you want to delete this booking? "
-                      "Enter Y/N:", 'yellow'))
+        print(colored("\033[1mAre you sure you want to delete this booking? "
+                      "Enter Y/N:\033[0m", 'yellow'))
         while True:
             delete_choice = input().upper()
             if delete_choice == 'Y' or delete_choice == "N":
@@ -626,8 +628,8 @@ def view_booking_no(booking_num):
     # Prompts user to enter a booking number to view
     print('*' * 30)
     print("*** VIEW BY BOOKING NUMBER ***\n")
-    print(colored("Enter Booking Number (4-digit numerical number only):",
-                  'yellow'))
+    print(colored("\033[1mEnter Booking Number (4-digit numerical number "
+                  "only):\033[0m", 'yellow'))
 
     # Validates the entry is a 4 digit number only
     while True:
@@ -753,7 +755,8 @@ def start():
     print('*' * 44)
     print("*** Welcome to Kennel-Mate Admin System. ***\n")
     print("** Book, Update, Delete and View bookings **\n")
-    print(colored("Press ENTER to start the program...", "yellow"))
+    print(colored("\033[1mPress ENTER to start the program...\033[0m",
+                  "yellow"))
     input()
     choose_main_menu()
 
@@ -812,8 +815,8 @@ def update_bkg_menu():
         print('[2] - Or, Search Bookings By Date')
         print("[3] - Or, Search Bookings By Dog or Family Name")
         print('[4] - Return to Main Menu')
-        print(colored('\nPlease choose a menu option between [1] and [4]:',
-                      'yellow'))
+        print(colored('\033[1m\nPlease choose a menu option between [1] and '
+                      '[4]:\033[0m', 'yellow'))
         try:
             update_menu_choice = int(input())
             if update_menu_choice not in range(1, 5):
@@ -842,8 +845,8 @@ def delete_bkg_menu():
         print('[2] - Or, Search Bookings By Date')
         print("[3] - Or, Search Bookings By Dog or Family Name")
         print('[4] - Return to Main Menu')
-        print(colored('\nPlease choose a menu option between [1] and [4]:',
-                      'yellow'))
+        print(colored('\033[1m\nPlease choose a menu option between [1] and '
+                      '[4]:\033[0m', 'yellow'))
         try:
             delete_menu_choice = int(input())
             if delete_menu_choice not in range(1, 5):
@@ -872,8 +875,8 @@ def view_bkg_menu():
         print('[3] - View By Booking Date')
         print("[4] - View By Booking Name")
         print('[5] - Return to Main Menu')
-        print(colored('\nPlease choose a menu option between [1] and [5]:',
-                      'yellow'))
+        print(colored('\033[1m\nPlease choose a menu option between [1] and '
+                      '[5]:\033[0m', 'yellow'))
         try:
             view_menu_choice = int(input())
             if view_menu_choice not in range(1, 6):
