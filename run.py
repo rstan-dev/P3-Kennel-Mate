@@ -670,7 +670,8 @@ def view_booking_no(booking_num):
             rows_containing_booking_num,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                      'Amount Paid']))
-        print(colored("\nNo booking data to display for this date\n", 'red'))
+        print(colored("\033[1m\nNo booking data to display for this "
+                      "date\n\033[0m", 'red'))
 
     else:
         print(tabulate(
