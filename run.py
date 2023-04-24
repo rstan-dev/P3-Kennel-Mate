@@ -146,7 +146,7 @@ def revenue_total(values):
             revenue_list.append(revenue)
             total += revenue
 
-    print(colored(f"Total Revenue: £{total:.2f}\n", 'magenta'))
+    print(colored(f"\033[1mTotal Revenue: £{total:.2f}\n\033[0m", 'magenta'))
 
 
 def bookings_counter(values):
@@ -165,7 +165,7 @@ def bookings_counter(values):
     '''
     count_bookings = sum(isinstance(elem, list) for elem in values)
     print("\n")
-    print(colored(f'Total Bookings: {count_bookings}', 'magenta'))
+    print(colored(f'\033[1mTotal Bookings: {count_bookings}\033[0m', 'magenta'))
 
 
 def get_dogs_name():
@@ -219,7 +219,7 @@ def create_booking():
     print('*' * 22)
     print("*** CREATE BOOKING ***\n")
 
-    print(colored("Bookings Today:\n", 'magenta'))
+    print(colored("\033[1mBookings Today:\n\033[0m", 'magenta'))
     view_booking_date(todays_date())
     print("\n")
 
@@ -309,7 +309,7 @@ def update_booking():
             print(colored("\033[1mInvalid entry. Please enter a 4-digit "
                           "numerical number:\n\033[0m", 'red'))
 
-    print(colored("Collecting booking data...\n", 'magenta'))
+    print(colored("\033[1mCollecting booking data...\n\033[0m", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
@@ -368,8 +368,8 @@ def update_booking():
 
         if update_date_choice == "Y":
             new_date = get_booking_date()
-            print(colored(f"\nUpdating B{booking_num} in progress...\n",
-                          'magenta'))
+            print(colored(f"\033[1m\nUpdating B{booking_num} in "
+                           "progress..\033[0m\n", 'magenta'))
             bookings.update_cell(row_index, 2, new_date)
             print(colored(f"\033[1m\nBooking B{booking_num} updated "
                            "successfully.\n\033[0m", 'green'))
@@ -399,8 +399,8 @@ def update_booking():
                                   "or contain\n only white spaces. Please try"
                                   "again.\033[0m", 'red'))
                 else:
-                    print(colored(f"\nUpdating B{booking_num} in "
-                                  "progress...\n", 'magenta'))
+                    print(colored(f"\033[1m\nUpdating B{booking_num} in "
+                                  "progress...\n\033[0m", 'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
                     print(colored(f"\033[1m\nBooking B{booking_num} updated "
                                   "successfully.\n\033[0m", 'green'))
@@ -431,8 +431,8 @@ def update_booking():
                                   "or contain\nonly white spaces. "
                                   "Please try again.\033[0m", 'red'))
                 else:
-                    print(colored(f"\nUpdating B{booking_num} in "
-                                  "progress...\n", 'magenta'))
+                    print(colored(f"\033[1m\nUpdating B{booking_num} in "
+                                  "progress...\n\033[0m", 'magenta'))
                     bookings.update_cell(row_index, 4, new_family_name)
                     print(colored(f"\033[1m\nBooking B{booking_num} updated "
                                   "successfully.\n\033[0m", 'green'))
@@ -469,8 +469,8 @@ def update_booking():
                                   "or a number with 2 decimal places. "
                                   "Please try again.\033[0m", 'red'))
                 else:
-                    print(colored(f"\nUpdating B{booking_num} in "
-                                  "progress...\n", 'magenta'))
+                    print(colored(f"\033[1m\nUpdating B{booking_num} in "
+                                  "progress...\n\033[0m", 'magenta'))
                     bookings.update_cell(row_index, 5,
                                          "{:.2f}".format(float_amount))
                     print(colored(f"\033[1m\nBooking B{booking_num} updated "
@@ -513,7 +513,7 @@ def delete_booking():
             print(colored("\033[1mInvalid entry. Please enter a 4-digit "
                           "numerical number.\n\033[0m", 'red'))
 
-    print(colored("Collecting booking data...\n", 'magenta'))
+    print(colored("\033[1mCollecting booking data...\n\033[0m", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
@@ -566,8 +566,8 @@ def delete_booking():
                               "Y or N\n\033[0m", 'red'))
 
         if delete_choice == "Y":
-            print(colored(f"Deleting B{booking_num} in progress...\n",
-                          'magenta'))
+            print(colored(f"\033[1mDeleting B{booking_num} in "
+                           "progress...\n\033[0m", 'magenta'))
             bookings.delete_rows(row_index)
             print(colored(f"\033[1mBooking B{booking_num} deleted "
                            "successfully.\033[1m\n", 'green'))
@@ -653,7 +653,7 @@ def view_booking_no(booking_num):
             print(colored("\033[1mInvalid entry. Please enter a 4-digit "
                           "numerical number.\n\033[0m", 'red'))
 
-    print(colored("Collecting booking data...\n", 'magenta'))
+    print(colored("\033[1mCollecting booking data...\n\033[0m", 'magenta'))
 
     rows_containing_booking_num = []
     no_booking_data = True
@@ -931,7 +931,8 @@ def choose_update_menu():
             print('*' * 22)
             print("*** SEARCH BY DATE ***\n")
             input_date = get_booking_date()
-            print(colored("Collecting booking data...\n", 'magenta'))
+            print(colored("\033[1mCollecting booking "
+                          "data...\n\033[0m", 'magenta'))
             view_booking_date(input_date)
             choose_update_menu()
             break
@@ -940,12 +941,13 @@ def choose_update_menu():
             print('*' * 36)
             print("*** SEARCH BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
-            print(colored("Collecting booking data...\n", 'magenta'))
+            print(colored("\033[1mCollecting booking "
+                          "data...\n\033[0m", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_update_menu()
             break
         elif update_menu_choice == 4:
-            print(colored("Returning to Main Menu\n", 'magenta'))
+            print(colored("\033[1mReturning to Main Menu\n\033[0m", 'magenta'))
             time.sleep(1.5)
             choose_main_menu()
             break
@@ -982,7 +984,8 @@ def choose_delete_menu():
             print('*' * 22)
             print("*** SEARCH BY DATE ***\n")
             input_date = get_booking_date()
-            print(colored("Collecting booking data...\n", 'magenta'))
+            print(colored("\033[1mCollecting booking "
+                          "data...\n\033[0m", 'magenta'))
             view_booking_date(input_date)
             choose_delete_menu()
             break
@@ -991,12 +994,13 @@ def choose_delete_menu():
             print('*' * 36)
             print("*** SEARCH BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
-            print(colored("Collecting booking data...\n", 'magenta'))
+            print(colored("\033[1mCollecting booking "
+                          "data...\n\033[0m", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_delete_menu()
             break
         elif delete_menu_choice == 4:
-            print(colored("Returning to Main Menu\n", 'magenta'))
+            print(colored("\033[1mReturning to Main Menu\n\033[0m", 'magenta'))
             time.sleep(1.5)
             choose_main_menu()
         else:
@@ -1034,7 +1038,8 @@ def choose_view_menu():
             print('*' * 20)
             print("*** VIEW BY DATE ***\n")
             input_date = get_booking_date()
-            print(colored("Collecting booking data...\n", 'magenta'))
+            print(colored("\033[1mCollecting booking "
+                          "data...\n\033[0m", 'magenta'))
             view_booking_date(input_date)
             choose_view_menu()
             break
@@ -1043,12 +1048,13 @@ def choose_view_menu():
             print('*' * 34)
             print("*** VIEW BY DOG OR FAMILY NAME ***\n")
             dogs_name = get_dogs_name()
-            print(colored("Collecting booking data...\n", 'magenta'))
+            print(colored("\033[1mCollecting booking "
+                          "data...\n\033[0m", 'magenta'))
             view_dog_bookings(dogs_name)
             choose_view_menu()
             break
         elif view_menu_choice == 5:
-            print(colored("Returning to Main Menu\n", 'magenta'))
+            print(colored("\033[1mReturning to Main Menu\n\033[0m", 'magenta'))
             time.sleep(1.5)
             choose_main_menu()
             break
@@ -1090,7 +1096,7 @@ def choose_main_menu():
             choose_view_menu()
             break
         elif main_menu_choice == 5:
-            print(colored("Ending program...\n", 'magenta'))
+            print(colored("\033[1mEnding program...\n\033[0m", 'magenta'))
             time.sleep(1.5)
             start()
         else:
