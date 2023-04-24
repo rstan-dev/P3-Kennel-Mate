@@ -62,26 +62,27 @@ def get_booking_date():
                       "DD-MM-YYYY\033[0m", 'yellow'))
         booking_date = input()
         if not date_pattern.match(booking_date):
-            print(colored("\nInvalid date format, please try again as "
+            print(colored("\033[1m\nInvalid date format, please try again as "
                           "DD-MM-YYY.\n"
                           "The day must be between 1 and 31,\n"
                           "The month must be between 1 and 12,\n"
-                          "And the year must be a four-digit number\n", 'red'))
+                          "And the year must be a four-digit number\n\033[0m",
+                          'red'))
             continue
         try:
             day, month, year = map(int, booking_date.split("-"))
             date = datetime.date(year, month, day)
             if date.month != month or date.day != day:
-                raise ValueError(colored("\nInvalid date format, "
+                raise ValueError(colored("\033[1m\nInvalid date format, "
                                          "please try again as DD-MM-YYY.\n"
                                          "The day must be between 1 and 31,\n"
                                          "The month must be between 1 and 12,"
                                          "\nAnd the year must be a four-digit"
-                                         "number\n", 'red'))
+                                         "number\n\033[0m", 'red'))
             return booking_date
 
         except ValueError as e:
-            print(colored(f"\nInvalid date input: {e}\n", 'red'))
+            print(colored(f"\033[1m\nInvalid date input: {e}\n\033[0m", 'red'))
 
 
 def increment_booking_number():
@@ -186,8 +187,8 @@ def get_dogs_name():
         if not dogs_name:
             print(
                 colored(
-                    "Error: name cannot be empty or contain\n"
-                    "only white spaces. Please try again.", 'red'))
+                    "\033[1mError: name cannot be empty or contain\n"
+                    "only white spaces. Please try again.\033[0m", 'red'))
         else:
             break
     return dogs_name
@@ -232,8 +233,10 @@ def create_booking():
                                   "name:\n\033[0m", 'yellow')).strip().title()
 
         if not dogs_name:
-            print(colored("Error: Dog's name cannot be empty or contain\n"
-                          "only white spaces. Please try again.", 'red'))
+            print(colored("\033[1mError: Dog's name cannot be empty or "
+                          "contain\nonly white spaces. Please try "
+                          "again.\033[0m",
+                          'red'))
         else:
             break
 
@@ -244,8 +247,9 @@ def create_booking():
                                     "name:\n\033[0m",
                                     'yellow')).strip().title()
         if not family_name:
-            print(colored("Error: Family name cannot be empty or contain\n"
-                          "only white spaces. Please try again.", 'red'))
+            print(colored("\033[1mError: Family name cannot be empty or "
+                          "contain\nonly white spaces. Please try "
+                          "again.\033[0m", 'red'))
         else:
             break
 
@@ -260,10 +264,10 @@ def create_booking():
                 raise ValueError
 
         except ValueError:
-            print(colored("Invalid Input: Amount charged must be a whole"
-                          "number\n"
+            print(colored("\033[1mInvalid Input: Amount charged must be a "
+                          "whole number\n"
                           "or a number with 2 decimal places. Please try"
-                          "again.", 'red'))
+                          "again.\033[0m", 'red'))
         else:
             break
 
@@ -302,8 +306,8 @@ def update_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit numerical "
-                          "number:\n", 'red'))
+            print(colored("\033[1mInvalid entry. Please enter a 4-digit "
+                          "numerical number:\n\033[0m", 'red'))
 
     print(colored("Collecting booking data...\n", 'magenta'))
 
@@ -321,7 +325,8 @@ def update_booking():
         print(tabulate(rows_containing_booking_num,
                        headers=['Booking No.', 'Date', 'Dogs Name',
                                 'Family Name', 'Amount Paid']))
-        print(colored("\nNo booking data to display for this date\n", 'red'))
+        print(colored("\033[1m\nNo booking data to display for this "
+                      "date\n\033[0m", 'red'))
     else:
         print(tabulate(rows_containing_booking_num,
                        headers=['Booking No.', 'Date', 'Dogs Name',
@@ -358,7 +363,8 @@ def update_booking():
             if update_date_choice == "Y" or update_date_choice == "N":
                 break
             else:
-                print(colored("Invalid input. Please enter Y or N\n", 'red'))
+                print(colored("\033[1mInvalid input. Please enter "
+                              "Y or N\n\033[0m", 'red'))
 
         if update_date_choice == "Y":
             new_date = get_booking_date()
@@ -380,7 +386,8 @@ def update_booking():
             if update_dog_choice == "Y" or update_dog_choice == "N":
                 break
             else:
-                print(colored("Invalid input. Please enter Y or N\n", 'red'))
+                print(colored("\033[1mInvalid input. Please enter "
+                              "Y or N\n\033[0m", 'red'))
 
         if update_dog_choice == "Y":
             while True:
@@ -388,9 +395,9 @@ def update_booking():
                                               "Dog's name:\n\033[0m",
                                               'yellow')).strip().title()
                 if not new_dogs_name:
-                    print(colored("Error: Dog's name cannot be empty or"
-                                  "contain\n only white spaces. Please try"
-                                  "again.", 'red'))
+                    print(colored("\033[1mError: Dog's name cannot be empty "
+                                  "or contain\n only white spaces. Please try"
+                                  "again.\033[0m", 'red'))
                 else:
                     print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
@@ -411,7 +418,8 @@ def update_booking():
             if update_family_choice == "Y" or update_family_choice == "N":
                 break
             else:
-                print(colored("Invalid input. Please enter Y or N\n", 'red'))
+                print(colored("\033[1mInvalid input. Please enter "
+                              "Y or N\n\033[0m", 'red'))
 
         if update_family_choice == "Y":
             while True:
@@ -419,9 +427,9 @@ def update_booking():
                                                 "Dog's Family name:\n\033[0m",
                                                 'yellow')).strip().title()
                 if not new_family_name:
-                    print(colored("Error: Family name cannot be empty or "
-                                  "contain\nonly white spaces. "
-                                  "Please try again.", 'red'))
+                    print(colored("\033[1mError: Family name cannot be empty "
+                                  "or contain\nonly white spaces. "
+                                  "Please try again.\033[0m", 'red'))
                 else:
                     print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
@@ -442,12 +450,13 @@ def update_booking():
             if update_amount_choice == "Y" or update_amount_choice == "N":
                 break
             else:
-                print(colored("Invalid input. Please enter Y or N\n", 'red'))
+                print(colored("\033[1mInvalid input. Please enter "
+                              "Y or N\n\033[0m", 'red'))
 
         if update_amount_choice == "Y":
             while True:
-                update_amount_paid = input(colored("\033[1m\nPlease update the "
-                                                   "amount paid:\n\033[0m",
+                update_amount_paid = input(colored("\033[1m\nPlease update "
+                                                   "the amount paid:\n\033[0m",
                                                    'yellow'))
                 try:
                     float_amount = float(update_amount_paid)
@@ -455,10 +464,10 @@ def update_booking():
                             round(float_amount, 2) != float_amount:
                         raise ValueError
                 except ValueError:
-                    print(colored("Invalid Input: Amount paid must be a "
-                                  "whole number\n"
+                    print(colored("\033[1mInvalid Input: Amount paid must be "
+                                  "a whole number\n"
                                   "or a number with 2 decimal places. "
-                                  "Please try again.", 'red'))
+                                  "Please try again.\033[0m", 'red'))
                 else:
                     print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
@@ -501,8 +510,8 @@ def delete_booking():
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit numerical "
-                          "number.\n", 'red'))
+            print(colored("\033[1mInvalid entry. Please enter a 4-digit "
+                          "numerical number.\n\033[0m", 'red'))
 
     print(colored("Collecting booking data...\n", 'magenta'))
 
@@ -521,7 +530,8 @@ def delete_booking():
             rows_containing_booking_num,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                      'Amount Paid']))
-        print(colored("\nNo booking data to display for this date\n", 'red'))
+        print(colored("\033[1m\nNo booking data to display for this "
+                      "date\n\033[0m", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_num,
@@ -552,7 +562,8 @@ def delete_booking():
             if delete_choice == 'Y' or delete_choice == "N":
                 break
             else:
-                print(colored("Invalid input.  Please enter Y or N\n", 'red'))
+                print(colored("\033[1mInvalid input.  Please enter "
+                              "Y or N\n\033[0m", 'red'))
 
         if delete_choice == "Y":
             print(colored(f"Deleting B{booking_num} in progress...\n",
@@ -594,7 +605,8 @@ def view_all_bookings():
                 bookings_data,
                 headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                          'Amount Paid']))
-        print(colored("\nNo booking data to display for this date\n", 'red'))
+        print(colored("\033[1m\nNo booking data to display for this "
+                      "date\n\033[0m", 'red'))
     else:
         print(
             tabulate(
@@ -638,8 +650,8 @@ def view_booking_no(booking_num):
             booking_num = int(booking_num)
             break
         else:
-            print(colored("Invalid entry. Please enter a 4-digit numerical "
-                          "number.\n", 'red'))
+            print(colored("\033[1mInvalid entry. Please enter a 4-digit "
+                          "numerical number.\n\033[0m", 'red'))
 
     print(colored("Collecting booking data...\n", 'magenta'))
 
@@ -697,7 +709,8 @@ def view_booking_date(booking_date):
             rows_containing_booking_date,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                      'Amount Paid']))
-        print(colored("\nNo booking data to display for this date\n", 'red'))
+        print(colored("\033[1m\nNo booking data to display for this "
+                      "date\n\033[0m", 'red'))
     else:
         print(tabulate(
             rows_containing_booking_date,
@@ -732,7 +745,8 @@ def view_dog_bookings(dogs_name):
             rows_containing_dog,
             headers=['Booking No.', 'Date', 'Dogs Name', 'Family Name',
                      'Amount Paid']))
-        print(colored("\nNo booking data to display for this date\n", 'red'))
+        print(colored("\033[1m\nNo booking data to display for this "
+                      "date\n\033[0m", 'red'))
     else:
         print(tabulate(
             rows_containing_dog,
@@ -823,8 +837,8 @@ def update_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1]'
-                          ' and [4]\n', 'red'))
+            print(colored('\033[1m\nInvalid input.  Please enter a number '
+                          'between [1] and [4]\n\033[0m', 'red'))
     return update_menu_choice
 
 
@@ -853,8 +867,8 @@ def delete_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1]'
-                          ' and [4]\n', 'red'))
+            print(colored('\033[1m\nInvalid input.  Please enter a number '
+                          'between [1] and [4]\n\033[0m', 'red'))
     return delete_menu_choice
 
 
@@ -883,8 +897,8 @@ def view_bkg_menu():
                 raise ValueError
             break
         except ValueError:
-            print(colored('\nInvalid input.  Please enter a number between [1]'
-                          ' and [5]\n', 'red'))
+            print(colored('\033[1m\nInvalid input.  Please enter a number '
+                          'between [1] and [5]\n\033[0m', 'red'))
     return view_menu_choice
 
 
@@ -936,7 +950,8 @@ def choose_update_menu():
             choose_main_menu()
             break
         else:
-            print(colored("Invalid choice, please choose between 1 and 4\n",
+            print(colored("\033[1mInvalid choice, please choose between "
+                          "1 and 4\n\033[0m",
                           'red'))
 
 
@@ -985,8 +1000,8 @@ def choose_delete_menu():
             time.sleep(1.5)
             choose_main_menu()
         else:
-            print(colored("Invalid choice, please choose between 1 and 4\n",
-                          'red'))
+            print(colored("\033[1mInvalid choice, please choose between "
+                          "1 and 4\n\033[0m", 'red'))
 
 
 def choose_view_menu():
@@ -1038,8 +1053,8 @@ def choose_view_menu():
             choose_main_menu()
             break
         else:
-            print(colored("Invalid choice, please choose between 1 and 5",
-                          'red'))
+            print(colored("\033[1mInvalid choice, please choose between "
+                          "1 and 5\033[0m", 'red'))
 
 
 def choose_main_menu():
@@ -1079,8 +1094,8 @@ def choose_main_menu():
             time.sleep(1.5)
             start()
         else:
-            print(colored("Invalid choice, please choose between 1 and 5\n",
-                          'red'))
+            print(colored("\033[1mInvalid choice, please choose between "
+                          "1 and 5\n\033[0m", 'red'))
         main_menu_choice = display_main_menu()
 
 
