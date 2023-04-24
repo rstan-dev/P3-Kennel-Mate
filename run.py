@@ -275,7 +275,7 @@ def create_booking():
                  "{:.2f}".format(float_amount)]
     bookings.append_row(data_list)
     print("\n")
-    print(colored("Booking entered successfully\n", 'green'))
+    print(colored("\033[1mBooking entered successfully\n\033[0m", 'green'))
     time.sleep(1.5)
 
 
@@ -371,8 +371,8 @@ def update_booking():
             print(colored(f"\nUpdating B{booking_num} in progress...\n",
                           'magenta'))
             bookings.update_cell(row_index, 2, new_date)
-            print(colored(f"\nBooking B{booking_num} updated successfully.\n",
-                          'green'))
+            print(colored(f"\033[1m\nBooking B{booking_num} updated "
+                           "successfully.\n\033[0m", 'green'))
         else:
             pass
 
@@ -402,8 +402,8 @@ def update_booking():
                     print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 3, new_dogs_name)
-                    print(colored(f"\nBooking B{booking_num} updated "
-                                  "successfully.\n", 'green'))
+                    print(colored(f"\033[1m\nBooking B{booking_num} updated "
+                                  "successfully.\n\033[0m", 'green'))
                     break
         else:
             pass
@@ -434,8 +434,8 @@ def update_booking():
                     print(colored(f"\nUpdating B{booking_num} in "
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 4, new_family_name)
-                    print(colored(f"\nBooking B{booking_num} updated "
-                                  "successfully.\n", 'green'))
+                    print(colored(f"\033[1m\nBooking B{booking_num} updated "
+                                  "successfully.\n\033[0m", 'green'))
                     break
         else:
             pass
@@ -473,13 +473,13 @@ def update_booking():
                                   "progress...\n", 'magenta'))
                     bookings.update_cell(row_index, 5,
                                          "{:.2f}".format(float_amount))
-                    print(colored(f"\nBooking B{booking_num} updated "
-                                  "successfully.\n", 'green'))
+                    print(colored(f"\033[1m\nBooking B{booking_num} updated "
+                                  "successfully.\n\033[0m", 'green'))
                     time.sleep(1)
                     break
         else:
-            print(colored("\nBooking updates completed, returning to Upate "
-                          "Booking Menu...", 'green'))
+            print(colored("\033[1m\nBooking updates completed, returning to "
+                          "Update Booking Menu...\033[0m", 'green'))
             time.sleep(1.5)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
@@ -569,13 +569,13 @@ def delete_booking():
             print(colored(f"Deleting B{booking_num} in progress...\n",
                           'magenta'))
             bookings.delete_rows(row_index)
-            print(colored(f"Booking B{booking_num} deleted successfully.\n",
-                          'green'))
+            print(colored(f"\033[1mBooking B{booking_num} deleted "
+                           "successfully.\033[1m\n", 'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
         else:
-            print(colored("\nBooking deletions completed, returning to Delete "
-                          "Booking Menu...", 'green'))
+            print(colored("\033[1m\nBooking deletions completed, returning to "
+                          "Delete Booking Menu...\033[0m", 'green'))
             time.sleep(1.5)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
 
