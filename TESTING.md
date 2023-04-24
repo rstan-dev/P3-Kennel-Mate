@@ -8,8 +8,8 @@
 <br>
 <br><img src="assets/images/tests_problems_panel.png">
 <br>
-* All but 9 small issues were resolved. The remaining were considered inconsequential to the project, and noted, but left as small bugs unresolved.
-* The Pylint warning states there are 1114 lines.  Given more time the program could be refactored to fall below the recommended 1000 lines.
+* All but 9 small issues were resolved. (5 of those were related to gitpod) The remaining were considered inconsequential to the project, and noted, but left as small bugs unresolved.
+* The Pylint warning states there are 1113 lines.  Given more time the program could be refactored to fall below the recommended 1000 lines.
 <br>
 <br><img src="assets/images/bugs_unresolved1.png">
 <br>
