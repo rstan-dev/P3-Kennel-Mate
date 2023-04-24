@@ -1,5 +1,5 @@
 # Project Name - Kennel-Mate
-* <img src="assets/images/readme_main_image.jpg">
+<br><img src="assets/images/readme_main_image.jpg">
 
 ## View Live Project
 * [Link to Deployed Project](https://kennel-mate.herokuapp.com/)
@@ -69,41 +69,61 @@
 * Due to the nature of the project, only desktop was considered.  The mock terminal is not suitable for mobile.
 
 ### Wireframes  (created in [Balsamiq](https://balsamiq.cloud/))
+<br>
+Start Page
+<br>
+<br><img src="assets/images/wire_frame_start.png">
+<br>
+<br>
+Main Menu
+<br>
+<br><img src="assets/images/wire_frame_main.png">
+<br>
+<br>
+Create Booking Menu
+<br>
+<br><img src="assets/images/wire_frame_create.png">
+<br>
+<br>
+Update Booking Menu
+<br>
+<br><img src="assets/images/wire_frame_update.png">
+<br>
+<br>
+Delete Booking Menu
+<br>
+ <br><img src="assets/images/wire_frame_delete.png">
+<br>
+<br>
+View Bookings Menu
+<br>
+<br><img src="assets/images/wire_frame_view.png">
+<br>
+<br>
 
-   * Start Page
-   * <img src="assets/images/wire_frame_start.png">
-
-   * Main Menu
-   * <img src="assets/images/wire_frame_main.png">
-
-   * Create Booking Menu
-   * <img src="assets/images/wire_frame_create.png">
-
-   * Update Booking Menu
-   * <img src="assets/images/wire_frame_update.png">
-
-   * Delete Booking Menu
-   * <img src="assets/images/wire_frame_delete.png">
-
-    * View Bookings Menu
-   * <img src="assets/images/wire_frame_view.png">
-
-### Color Scheme (created in [Canva](https://www.canva.com/))
+## Color Scheme (created in [Canva](https://www.canva.com/))
 
 ### Main Background
    * The app uses one background image which is a royalty-free template from Canva, to make the site relevant to the dog daycare industry
    * The design was initially conceived in Canva.
-   * <img src="assets/images/kennel_mate_canva.jpg">
+   <br><img src="assets/images/kennel_mate_canva.jpg">
 
 ### Terminal Colors
    * In the terminal several font colors were chosen:
    * White for Menu items and headers
    * Yellow for anything requiring user input
-   * <img src="assets/images/col_yellow_input_msg.png">
+   <br><img src="assets/images/col_yellow_input_msg.png">
+   <br>
+   <br>
    * Magenta for progress updates and displaying dynamic information such as the Bookings Counter and Revenue Total
-   * <img src="assets/images/col_magenta_activity_msg.png">
+   <br>
+   <br><img src="assets/images/col_magenta_activity_msg.png">
+   <br>
+   <br>
    * Green for success messages
-   * <img src="assets/images/col_green_success_msg.png">
+   <br><img src="assets/images/col_green_success_msg.png">
+   <br>
+   <br>
    * Red for invalid messages [(see validation section below)](#validation)
 
 ### Typography
@@ -124,18 +144,32 @@
 
 ## Logic
    * The system was conceived using process flow diagrams created in [Lucid](https://lucid.app/) as follows:
+   <br>
    * Main Menu Flow and Create Booking Logic:
-   * <img src="assets/images/logic_main_menu_flow.jpeg">
+   <br>
+   <br><img src="assets/images/logic_main_menu_flow.jpeg">
+   <br>
+   <br>
    * Update Booking Menu Flow and Logic:
-   * <img src="assets/images/logic_update_booking_menu_flow.jpeg">
+   <br>
+   <br><img src="assets/images/logic_update_booking_menu_flow.jpeg">
+   <br>
+   <br>
    * Delete Booking Menu Flow and Logic:
-   * <img src="assets/images/logic_delete_booking_menu_flow.jpeg">
+   <br>
+   <br><img src="assets/images/logic_delete_booking_menu_flow.jpeg">
+   <br>
+   <br>
    * View Booking Menu Flow and Logic:
-   * <img src="assets/images/logic_view_booking_menu_flow.jpeg">
+   <br>
+   <br><img src="assets/images/logic_view_booking_menu_flow.jpeg">
+   <br>
+   <br>
 
 ## Validation
 * Various validation messages were used to ensure that the user was notified correctly of any incorrect input and to ensure the program would not crash.
-* <img src="assets/images/col_red_invalid_msg.png">
+<br><img src="assets/images/col_red_invalid_msg.png">
+<br>
 
 ## Technology
 * The following tools and technology were used to complete this project:
@@ -179,10 +213,14 @@
 * Create New App - choosing a unique name
 * Under Settings / Config Vars enter the PORT in the KEY section as 8000
 * Add buildpacks: Python and then Node.js - in that order
-* <img src="assets/images/readme_heroku_settings.png">
+<br>
+<br><img src="assets/images/readme_heroku_settings.png">
+<br>
 * Under Deploy - select GitHub and link to repo name
 * Under Manual Deployment, click Deploy Branch
-* <img src="assets/images/readme_heroku_deployment.png">
+<br>
+<br><img src="assets/images/readme_heroku_deployment.png">
+<br>
 
 ## Testing
 * Extensive testing was carried out on the site which can be viewed here:
@@ -204,6 +242,7 @@
   * Additional fields could be added to collect dog-specific information such as dietary requirements, medication, health conditions, behavioural observations etc.
   * Additional services could be added and revenue tracked such as meals, grooming, half-day and full-day rates etc.
   * As stated above the KOT11 unresolved bug could be fixed for enhanced UX.
+  * There were several suggestions to improve the UX identified in the User Observation Exercise. See [TESTING.md](TESTING.md)
 
 ## Forking & Cloning Instructions
 * To create a copy of the repo in GitHub to edit:
