@@ -64,3 +64,9 @@
 * <img src="assets/images/tests_other_tests.png">
 * [Link to View Full Test Sheet List](https://docs.google.com/spreadsheets/d/18wAAf5659X_l63eENP5EIP3J_qt7uxNIzVXvtma-cgc/edit?usp=sharing)
 * [Link to View Google Worksheet with Kennel-Mate Data](https://docs.google.com/spreadsheets/d/1-GlTbADQ5tiuoQV7pvx7p1kAsNMagL4lQYM3nM3fjxI/edit?usp=sharing)
+
+## USER STORY TESTS
+* A further observation exercise was carried out using a volunteer who had never seen the system before.
+* The following observations and feedback were noted, some enhancements were made due to this exercise, and others were identified for future development.
+* <img src="assets/images/tests_user_obs.png">
+* [Link to View Full User Observation Sheet](https://docs.google.com/spreadsheets/d/18wAAf5659X_l63eENP5EIP3J_qt7uxNIzVXvtma-cgc/edit#gid=0)
