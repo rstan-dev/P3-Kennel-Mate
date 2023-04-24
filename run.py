@@ -258,8 +258,8 @@ def create_booking():
     while True:
         amount_charged = input(colored("\033[1m\nPlease enter amount "
                                        "charged:\n\033[0m", 'yellow'))
-        float_amount = float(amount_charged)
         try:
+            float_amount = float(amount_charged)
             if not float_amount.is_integer() and \
                     round(float_amount, 2) != float_amount:
                 raise ValueError
