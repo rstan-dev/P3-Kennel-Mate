@@ -165,7 +165,8 @@ def bookings_counter(values):
     '''
     count_bookings = sum(isinstance(elem, list) for elem in values)
     print("\n")
-    print(colored(f'\033[1mTotal Bookings: {count_bookings}\033[0m', 'magenta'))
+    print(colored(f'\033[1mTotal Bookings: {count_bookings}\033[0m',
+                  'magenta'))
 
 
 def get_dogs_name():
@@ -369,10 +370,10 @@ def update_booking():
         if update_date_choice == "Y":
             new_date = get_booking_date()
             print(colored(f"\033[1m\nUpdating B{booking_num} in "
-                           "progress..\033[0m\n", 'magenta'))
+                          "progress..\033[0m\n", 'magenta'))
             bookings.update_cell(row_index, 2, new_date)
             print(colored(f"\033[1m\nBooking B{booking_num} updated "
-                           "successfully.\n\033[0m", 'green'))
+                          "successfully.\n\033[0m", 'green'))
         else:
             pass
 
@@ -567,10 +568,10 @@ def delete_booking():
 
         if delete_choice == "Y":
             print(colored(f"\033[1mDeleting B{booking_num} in "
-                           "progress...\n\033[0m", 'magenta'))
+                          "progress...\n\033[0m", 'magenta'))
             bookings.delete_rows(row_index)
             print(colored(f"\033[1mBooking B{booking_num} deleted "
-                           "successfully.\033[1m\n", 'green'))
+                          "successfully.\033[1m\n", 'green'))
             time.sleep(1)
             os.system('cls' if os.name == 'nt' else "printf '\033c'")
         else:
