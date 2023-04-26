@@ -124,7 +124,7 @@ View Bookings Menu
    <br><img src="assets/images/col_green_success_msg.png">
    <br>
    <br>
-   * Red for invalid messages [(see validation section below)](#validation)
+   * [Red for invalid messages (see validation section below)](#validation)
 
 ### Typography
    * The main text font is the default font in the command line terminal.
