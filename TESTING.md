@@ -11,7 +11,6 @@
 
 * All but 9 small issues were resolved. (5 of those were related to gitpod) The remaining were considered inconsequential to the project, and noted, but left as small bugs unresolved.
 * The Pylint warning states there are 1113 lines.  Given more time the program could be refactored to fall below the recommended 1000 lines (for example the GSHEET update code could be refactored into a function), or the CRUD functions could be moved to another sheet and imported.
-* It should be noted that index.js contains some commented out code.  This is part of the Code Institute project template: Total.js start script // https://www.totaljs.com. This page has not been worked on as part of the project, so it has been noted here, but left as is.
 <br>
 <br><img src="assets/images/bugs_unresolved1.png">
 <br>
@@ -36,6 +35,9 @@
 <br>
 <br><img src="assets/images/tests_w3c_warnings.png">
 <br>
+
+## JS Validation
+* No Javascript was writen for thsi project. It should be noted that index.js contains some commented out code.  This is part of the Code Institute project template: Total.js start script // https://www.totaljs.com. This page has not been worked on as part of the project, so it has been noted here, but left as is.
 
 ## Lighthouse Report
 * This project was focused on the Terminal application and system design in Python, and less about website performance, however, a healthy Lighthouse report was generated.
