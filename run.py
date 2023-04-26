@@ -1,7 +1,7 @@
 # IMPORTS
 '''
 The following libraries are needed to clear the screen,
-handling date functions, regular exporessions, presenting
+handling date functions, regular expressions, presenting
 data in a table format on screen, and displaying colors for
 onscreen messages
 '''
@@ -77,7 +77,7 @@ def get_booking_date():
                                          "please try again as DD-MM-YYY.\n"
                                          "The day must be between 1 and 31,\n"
                                          "The month must be between 1 and 12,"
-                                         "\nAnd the year must be a four-digit"
+                                         "\nAnd the year must be a four-digit "
                                          "number\n\033[0m", 'red'))
             return booking_date
 
@@ -267,7 +267,7 @@ def create_booking():
         except ValueError:
             print(colored("\033[1mInvalid Input: Amount charged must be a "
                           "whole number\n"
-                          "or a number with 2 decimal places. Please try"
+                          "or a number with 2 decimal places. Please try "
                           "again.\033[0m", 'red'))
         else:
             break
@@ -397,7 +397,7 @@ def update_booking():
                                               'yellow')).strip().title()
                 if not new_dogs_name:
                     print(colored("\033[1mError: Dog's name cannot be empty "
-                                  "or contain\n only white spaces. Please try"
+                                  "or contain\n only white spaces. Please try "
                                   "again.\033[0m", 'red'))
                 else:
                     print(colored(f"\033[1m\nUpdating B{booking_num} in "
