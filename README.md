@@ -234,6 +234,7 @@ View Bookings Menu
 
 ### Unresolved bugs:
   * There is one Failed UX test (KOT11) where the Amount Charged is not always displayed with 2 decimal places. Due to time constraints and the fact that the Revenue Total figure is formatted correctly, and this does not affect the system performance, this was left for future development.
+  * During testing on the Mock Terminal, there have been a few occasions when the program seems to hang waiting for an input. This has been noticed in different areas, including choosing menus and creating or updating records. It is inconsistent and cannot be replicated. Observations have occurred on Mac and Windows using Chrome. A Google search indicates this is likely to be an issue with the Xterm terminal when under heavy load or not properly configured.
 
 ### Improvements and Future Developments:
   * The system could have an employee login allowing each booking to be linked to the employee that is logged in.
